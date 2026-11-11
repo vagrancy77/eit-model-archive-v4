@@ -1,0 +1,39 @@
+{
+  "id": "46_projection_fixed3_loop",
+  "name": "投影四方向初始化 + 三轮场修正",
+  "family": "projection_loop",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_final_c4_loop",
+    "eit_champion_loop_v2",
+    "eit_champion_adaptive_v3"
+  ],
+  "evidence": [
+    "eit_final_c4_loop/README.md"
+  ],
+  "outputs": [
+    "final_c4_loop_v1"
+  ],
+  "category": "结构／验收原型",
+  "note": "早期集成原型，无独立完整训练权重；final_c4_loop 名称不代表完整 Champion。投影网络初始化与反馈零头不能冒充反馈已训练。历史网格未继承后续覆盖修订。",
+  "config": {
+    "loop": "fixed3",
+    "ablate": "none"
+  },
+  "status": "未找到独立完整训练权重",
+  "entry": "eit_final_c4_loop/model.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [],
+  "source_file_count": 1994,
+  "source_bytes": 20457733,
+  "diagram_png": "diagrams/46_projection_fixed3_loop.png",
+  "diagram_svg": "diagrams/46_projection_fixed3_loop.svg",
+  "zip": "packages/46_projection_fixed3_loop_code.zip",
+  "zip_bytes": 7184355,
+  "zip_sha256": "f9fefed46659d0358b2dae2bd4bba2f07d52351fbd246e8810c9bf306508b1d8"
+}

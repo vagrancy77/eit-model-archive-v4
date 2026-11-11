@@ -1,0 +1,62 @@
+{
+  "id": "14_v4_4840_amplitude_calibrated",
+  "name": "V4 / 4840 正式对照：背景校准幅值",
+  "family": "native",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control"
+  ],
+  "evidence": [
+    "eit_reproduction/outputs/final4840_paper_suite/protocol.json"
+  ],
+  "outputs": [
+    "eit_reproduction/outputs/final4840_paper_suite/runs/amplitude_calibrated_seed20261016",
+    "eit_reproduction/outputs/final4840_paper_suite/runs/amplitude_calibrated_seed20261017",
+    "eit_reproduction/outputs/final4840_paper_suite/runs/amplitude_calibrated_seed20261018"
+  ],
+  "category": "输入／模块消融",
+  "note": "相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。",
+  "config": {
+    "input_mode": "amplitude_calibrated",
+    "ablation": "full",
+    "dataset": 4840
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_reproduction/comsol_v4/paper_train.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_calibrated_seed20261016\\best.pt",
+      "bytes": 269389109
+    },
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_calibrated_seed20261016\\last.pt",
+      "bytes": 269486069
+    },
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_calibrated_seed20261017\\best.pt",
+      "bytes": 269460213
+    },
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_calibrated_seed20261017\\last.pt",
+      "bytes": 269540981
+    },
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_calibrated_seed20261018\\best.pt",
+      "bytes": 269347061
+    },
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_calibrated_seed20261018\\last.pt",
+      "bytes": 269443957
+    }
+  ],
+  "source_file_count": 1808,
+  "source_bytes": 19383148,
+  "diagram_png": "diagrams/14_v4_4840_amplitude_calibrated.png",
+  "diagram_svg": "diagrams/14_v4_4840_amplitude_calibrated.svg",
+  "zip": "packages/14_v4_4840_amplitude_calibrated_code.zip",
+  "zip_bytes": 6600463,
+  "zip_sha256": "91376c60644f876aacb99d3260a1be66cfa8f482ede01402d26b3a8b25c69e86"
+}

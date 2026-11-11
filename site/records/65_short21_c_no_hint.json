@@ -1,0 +1,57 @@
+{
+  "id": "65_short21_c_no_hint",
+  "name": "21 组短训 / 自适应 Champion：空间提示置零",
+  "family": "champion_loop",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_final_c4_loop",
+    "eit_champion_loop_v2",
+    "eit_champion_adaptive_v3",
+    "eit_short_selection_v1",
+    "eit_short_completion_v1"
+  ],
+  "evidence": [
+    "short_selection_v1/protocol.json",
+    "short_selection_v1/completion_v2/execution_addendum.json",
+    "short_selection_v1/runs/c_no_hint/complete.json"
+  ],
+  "outputs": [
+    "short_selection_v1/runs/c_no_hint"
+  ],
+  "category": "短训消融",
+  "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+  "config": {
+    "id": "c_no_hint",
+    "route": "champion",
+    "loop": "adaptive",
+    "ablate": "hint",
+    "label": "动态反馈 · 禁用伴随提示",
+    "pool": true,
+    "short21": true
+  },
+  "status": "完整计算产物已登记",
+  "entry": "eit_short_selection_v1/model.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_hint\\initial.pt",
+      "bytes": 106161333
+    },
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_hint\\last.pt",
+      "bytes": 317019709
+    }
+  ],
+  "source_file_count": 2016,
+  "source_bytes": 20581480,
+  "diagram_png": "diagrams/65_short21_c_no_hint.png",
+  "diagram_svg": "diagrams/65_short21_c_no_hint.svg",
+  "zip": "packages/65_short21_c_no_hint_code.zip",
+  "zip_bytes": 7285414,
+  "zip_sha256": "aa964c9d0f79d7555f446e6b24be66c07b826d13dea587e9d73e0aa03b47b394"
+}

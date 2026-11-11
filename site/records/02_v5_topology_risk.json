@@ -1,0 +1,53 @@
+{
+  "id": "02_v5_topology_risk",
+  "name": "V5：面积保护与更保守的风险控制",
+  "family": "legacy_v5",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control"
+  ],
+  "evidence": [
+    "TOPOLOGY_RISK_EIT_V5_REPORT.md"
+  ],
+  "outputs": [
+    "topology_risk_eit_v5_final",
+    "topology_risk_eit_v5_multiseed_final",
+    "topology_risk_eit_v5_seed_20260911",
+    "topology_risk_eit_v5_seed_20260912",
+    "topology_risk_eit_v5_seed_20260913",
+    "topology_risk_eit_v5_seed_20260914"
+  ],
+  "category": "主线",
+  "note": "延续早期 V4；主要改变训练约束、测量扰动训练与验证门槛，不表示所有病例都优于 V4。",
+  "config": {},
+  "status": "历史源码／记录归档",
+  "entry": "eit_reproduction/scripts/train_topology_residual_eit_v3.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\topology_risk_eit_v5_seed_20260911\\topology_residual_v4_best.pt",
+      "bytes": 231043883
+    },
+    {
+      "path": "E:\\Codex\\topology_risk_eit_v5_seed_20260912\\topology_residual_v4_best.pt",
+      "bytes": 231040698
+    },
+    {
+      "path": "E:\\Codex\\topology_risk_eit_v5_seed_20260913\\topology_residual_v4_best.pt",
+      "bytes": 231040698
+    },
+    {
+      "path": "E:\\Codex\\topology_risk_eit_v5_seed_20260914\\topology_residual_v4_best.pt",
+      "bytes": 231040698
+    }
+  ],
+  "source_file_count": 1805,
+  "source_bytes": 19387553,
+  "diagram_png": "diagrams/02_v5_topology_risk.png",
+  "diagram_svg": "diagrams/02_v5_topology_risk.svg",
+  "zip": "packages/02_v5_topology_risk_code.zip",
+  "zip_bytes": 6568304,
+  "zip_sha256": "44f78cc6389c08e41ce824c2de8c170ae839936729f51064d9198eab10f8d6cd"
+}

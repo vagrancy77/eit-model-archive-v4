@@ -1,0 +1,62 @@
+{
+  "id": "07_v4_3872_complex",
+  "name": "V4 / 3872 数据：复数电压",
+  "family": "native",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_complex_information_study_20261013"
+  ],
+  "evidence": [
+    "eit_complex_information_study_20261013/EXPERIMENT_README.md",
+    "eit_complex_information_study_20261013/runs/controlled_v2/protocol.json"
+  ],
+  "outputs": [
+    "eit_complex_information_study_20261013/runs/controlled_v2"
+  ],
+  "category": "输入对照",
+  "note": "3872 例数据上的输入受控研究；不是最终 4840 数据实验。",
+  "config": {
+    "input_mode": "complex",
+    "ablation": "full",
+    "dataset": 3872
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_complex_information_study_20261013/run_experiment.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\complex_seed20261013\\best.pt",
+      "bytes": 89812855
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\complex_seed20261013\\last.pt",
+      "bytes": 269045474
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\complex_seed20261014\\best.pt",
+      "bytes": 89816887
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\complex_seed20261014\\last.pt",
+      "bytes": 269045474
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\complex_seed20261015\\best.pt",
+      "bytes": 89800631
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\complex_seed20261015\\last.pt",
+      "bytes": 269045474
+    }
+  ],
+  "source_file_count": 1825,
+  "source_bytes": 19507264,
+  "diagram_png": "diagrams/07_v4_3872_complex.png",
+  "diagram_svg": "diagrams/07_v4_3872_complex.svg",
+  "zip": "packages/07_v4_3872_complex_code.zip",
+  "zip_bytes": 6649838,
+  "zip_sha256": "34be1cd421bb4d362dc71c9eb3888f820fa8a14d6126efcf249d8567476f3317"
+}

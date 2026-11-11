@@ -1,0 +1,44 @@
+{
+  "id": "10_v4_4840_formal50",
+  "name": "V4 / 4840 数据：校准输入 50 轮版",
+  "family": "native",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control"
+  ],
+  "evidence": [
+    "eit_reproduction/FINAL4840_ADAPTATION.md"
+  ],
+  "outputs": [
+    "eit_reproduction/outputs/final4840_formal_calibrated_seed20261016"
+  ],
+  "category": "主线",
+  "note": "50 轮探索性适配，与后面的正式配对多种子实验区分。",
+  "config": {
+    "input_mode": "calibrated",
+    "ablation": "full",
+    "dataset": 4840
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_reproduction/comsol_v4/train.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_formal_calibrated_seed20261016\\best.pt",
+      "bytes": 269225525
+    },
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_formal_calibrated_seed20261016\\last.pt",
+      "bytes": 269231925
+    }
+  ],
+  "source_file_count": 1804,
+  "source_bytes": 19378835,
+  "diagram_png": "diagrams/10_v4_4840_formal50.png",
+  "diagram_svg": "diagrams/10_v4_4840_formal50.svg",
+  "zip": "packages/10_v4_4840_formal50_code.zip",
+  "zip_bytes": 6593471,
+  "zip_sha256": "fda8bc1fcbb26ea8cb7b9cda77a8ff77ee9bfddce613d2e5d04804932b423aa6"
+}

@@ -1,0 +1,54 @@
+{
+  "id": "41_shape2_multi16_extended",
+  "name": "通用形状第二阶段：多通道映射延长训练",
+  "family": "shape_learned",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general"
+  ],
+  "evidence": [
+    "shape_generalization_v1/phase2/protocol.json"
+  ],
+  "outputs": [
+    "shape_generalization_v1/phase2/runs/multi16_extended_seed20261023",
+    "shape_generalization_v1/phase2/runs/multi16_extended_seed20261024"
+  ],
+  "category": "表示／训练对照",
+  "note": "沿用第一阶段的学习式测量到空间映射，延长训练；本项没有固定物理投影或在线 FEM。",
+  "config": {
+    "variant": "multi16_extended",
+    "pool": false
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_shape_general/phase2.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\multi16_extended_seed20261023\\best.pt",
+      "bytes": 104120580
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\multi16_extended_seed20261023\\last.pt",
+      "bytes": 104145796
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\multi16_extended_seed20261024\\best.pt",
+      "bytes": 104110468
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\multi16_extended_seed20261024\\last.pt",
+      "bytes": 104138756
+    }
+  ],
+  "source_file_count": 1876,
+  "source_bytes": 19820723,
+  "diagram_png": "diagrams/41_shape2_multi16_extended.png",
+  "diagram_svg": "diagrams/41_shape2_multi16_extended.svg",
+  "zip": "packages/41_shape2_multi16_extended_code.zip",
+  "zip_bytes": 6737145,
+  "zip_sha256": "1c6b7f4140f5af84f2764e9c08ee183564930292a4af4a4fb826a2f71d5f25fd"
+}

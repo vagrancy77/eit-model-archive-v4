@@ -1,0 +1,52 @@
+{
+  "id": "71_release_v2",
+  "name": "历史短训发布快照 v2（已取代）",
+  "family": "champion_loop",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_final_c4_loop",
+    "eit_champion_loop_v2",
+    "eit_champion_adaptive_v3",
+    "eit_short_selection_v1",
+    "eit_short_completion_v1",
+    "eit_short_release_v2"
+  ],
+  "evidence": [
+    "eit_short_release_v2/README.md"
+  ],
+  "outputs": [
+    "eit_short_release_v2",
+    "short_selection_v1/runs/c_adaptive"
+  ],
+  "category": "发布别名",
+  "note": "发布快照不是新增架构，更不是本次跨轮次最终最优结论；保留原 SUPERSEDED 标记。",
+  "config": {
+    "loop": "adaptive",
+    "ablate": "none"
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_short_release_v2/infer.py",
+  "alias": "63_short21_c_adaptive",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\c_adaptive\\initial.pt",
+      "bytes": 106161333
+    },
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\c_adaptive\\last.pt",
+      "bytes": 317019645
+    }
+  ],
+  "source_file_count": 2020,
+  "source_bytes": 20724548,
+  "diagram_png": "diagrams/71_release_v2.png",
+  "diagram_svg": "diagrams/71_release_v2.svg",
+  "zip": "packages/71_release_v2_code.zip",
+  "zip_bytes": 7420495,
+  "zip_sha256": "66d90fba24052d52b64cdcd742af88ead668d681f3f33dde7b683968e2b9f378"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "57_short21_c_front_only",
+  "name": "21 组短训 / Champion：只保留注意力前端输出",
+  "family": "champion",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_final_c4_loop",
+    "eit_champion_loop_v2",
+    "eit_champion_adaptive_v3",
+    "eit_short_selection_v1",
+    "eit_short_completion_v1"
+  ],
+  "evidence": [
+    "short_selection_v1/protocol.json",
+    "short_selection_v1/completion_v2/execution_addendum.json",
+    "short_selection_v1/runs/c_front_only/complete.json"
+  ],
+  "outputs": [
+    "short_selection_v1/runs/c_front_only"
+  ],
+  "category": "短训消融",
+  "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+  "config": {
+    "id": "c_front_only",
+    "route": "champion",
+    "ablate": "backbone_query",
+    "label": "Champion · 仅注意力前端读出",
+    "pool": true,
+    "short21": true
+  },
+  "status": "完整计算产物已登记",
+  "entry": "eit_short_selection_v1/model.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\c_front_only\\initial.pt",
+      "bytes": 106161333
+    },
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\c_front_only\\last.pt",
+      "bytes": 108668883
+    }
+  ],
+  "source_file_count": 2016,
+  "source_bytes": 20581470,
+  "diagram_png": "diagrams/57_short21_c_front_only.png",
+  "diagram_svg": "diagrams/57_short21_c_front_only.svg",
+  "zip": "packages/57_short21_c_front_only_code.zip",
+  "zip_bytes": 7117631,
+  "zip_sha256": "f8159dca0e9dd031b8d6cae38e58330ccbd93b4a7907ed3ba5fb5e14b7d2d07c"
+}

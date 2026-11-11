@@ -1,0 +1,35 @@
+{
+  "source_files": 2794,
+  "archives": 83,
+  "diagrams": 83,
+  "source_bytes_unchanged": true,
+  "source_changed": [],
+  "zip_crc_pass": true,
+  "zip_source_sha256_pass": true,
+  "source_syntax_warnings": [
+    {
+      "path": "eit_reproduction/third_party/eidors/Netgen-5.3_x64/lib/tix8.4.3/pref/WmDefault.py",
+      "error": "inconsistent use of tabs and spaces in indentation (eit_reproduction/third_party/eidors/Netgen-5.3_x64/lib/tix8.4.3/pref/WmDefault.py, line 86)"
+    }
+  ],
+  "missing": {},
+  "entry_warnings": [],
+  "training_or_inference_executed": false,
+  "weights_included": false,
+  "portability_tested": false,
+  "elapsed_seconds": 199.77642607688904,
+  "final_checked_date": "2026-11-10",
+  "html_links_checked": 585,
+  "broken_html_links": [],
+  "final_source_bytes_unchanged": true,
+  "zip_diagram_and_config_pairing_pass": true,
+  "pdf_pages": 87,
+  "pdf_pages_rendered": 87,
+  "pdf_sha256": "89cc1f4e65d3f91c92e03ba7b2b93f8c3130be822475a3e5c621d75fb7bb7ab8",
+  "visual_review": "All 87 final PDF pages inspected via 11 contact sheets; repaired seven diagrams and key long/combined/final model pages additionally viewed individually.",
+  "all_final_archive_source_bytes_verified": true,
+  "archive_source_copies_verified": 152366,
+  "total_zip_mib": 525.5,
+  "final_pdf_links_checked": 83,
+  "final_pdf_page_pairing_pass": true
+}

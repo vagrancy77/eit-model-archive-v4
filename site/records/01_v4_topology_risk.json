@@ -1,0 +1,49 @@
+{
+  "id": "01_v4_topology_risk",
+  "name": "早期 V4：拓扑修正与风险门控",
+  "family": "legacy_v4",
+  "sources": [
+    "model_exports_20261008/v4_package"
+  ],
+  "evidence": [
+    "model_exports_20261008/v4_package/README_CN.md",
+    "model_exports_20261008/inventory.json"
+  ],
+  "outputs": [
+    "topology_risk_eit_v4_multiseed_final",
+    "model_exports_20261008/v4_package/results"
+  ],
+  "category": "主线",
+  "note": "这是早期 KTC 输入体系，不是后来双频 COMSOL 适配版；原归档源码优先。",
+  "config": {},
+  "status": "历史源码／记录归档",
+  "entry": "model_exports_20261008/v4_package/run_model.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v4_package\\results\\topology_risk_eit_v4_full\\topology_residual_v4_best.pt",
+      "bytes": 231041003
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v4_package\\results\\topology_risk_eit_v4_seed_20260912\\topology_residual_v4_best.pt",
+      "bytes": 231040939
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v4_package\\results\\topology_risk_eit_v4_seed_20260913\\topology_residual_v4_best.pt",
+      "bytes": 231040939
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v4_package\\results\\topology_risk_eit_v4_seed_20260914\\topology_residual_v4_best.pt",
+      "bytes": 231040939
+    }
+  ],
+  "source_file_count": 52,
+  "source_bytes": 2505451,
+  "diagram_png": "diagrams/01_v4_topology_risk.png",
+  "diagram_svg": "diagrams/01_v4_topology_risk.svg",
+  "zip": "packages/01_v4_topology_risk_code.zip",
+  "zip_bytes": 931738,
+  "zip_sha256": "b3dc35b1f9b106959ad3d83283677b17fe72f8bd65cba2aa7e70b6e8475742e1"
+}

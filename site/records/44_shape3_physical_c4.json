@@ -1,0 +1,75 @@
+{
+  "id": "44_shape3_physical_c4",
+  "name": "通用形状第三阶段：固定投影：四方向训练增强版",
+  "family": "projection",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general"
+  ],
+  "evidence": [
+    "shape_generalization_v1/phase3/protocol.json"
+  ],
+  "outputs": [
+    "shape_generalization_v1/phase3/runs/physical_c4_seed20261023",
+    "shape_generalization_v1/phase3/runs/physical_c4_seed20261024",
+    "shape_generalization_v1/phase3/runs/physical_c4_seed20261025"
+  ],
+  "category": "主线",
+  "note": "physical_c4 名称中的四方向是训练增强；这一历史评估路径在推理时只有一次网络计算。",
+  "config": {
+    "pool": false,
+    "train_c4": true
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_shape_general/phase3.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261023\\best.pt",
+      "bytes": 151997472
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261023\\best_guarded.pt",
+      "bytes": 151945848
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261023\\last.pt",
+      "bytes": 152022752
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261024\\best.pt",
+      "bytes": 152023776
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261024\\best_guarded.pt",
+      "bytes": 151932728
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261024\\last.pt",
+      "bytes": 152048992
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\best.pt",
+      "bytes": 152019680
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\best_guarded.pt",
+      "bytes": 151976120
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\last.pt",
+      "bytes": 152044960
+    }
+  ],
+  "source_file_count": 1875,
+  "source_bytes": 19832587,
+  "diagram_png": "diagrams/44_shape3_physical_c4.png",
+  "diagram_svg": "diagrams/44_shape3_physical_c4.svg",
+  "zip": "packages/44_shape3_physical_c4_code.zip",
+  "zip_bytes": 6799810,
+  "zip_sha256": "6d780ee093a53874fc31d8baec1f24103c3d4ef68b2167da559ac5cd022abe67"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "47_champion_fixed3_loop",
+  "name": "完整 Champion + 三轮场修正",
+  "family": "champion_loop",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_final_c4_loop",
+    "eit_champion_loop_v2",
+    "eit_champion_adaptive_v3"
+  ],
+  "evidence": [
+    "eit_champion_loop_v2/README.md"
+  ],
+  "outputs": [
+    "champion_loop_v2"
+  ],
+  "category": "结构／验收原型",
+  "note": "完成代码集成／接口验收，不是独立完整训练版本；默认预训练 Champion + 未训练反馈。以 Champion 替代初始化网络，没有同时保留完整旧 V4 闭环。",
+  "config": {
+    "loop": "fixed3",
+    "ablate": "none"
+  },
+  "status": "接口／梯度验收，未找到独立完整训练权重",
+  "entry": "eit_champion_loop_v2/model.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [],
+  "source_file_count": 1993,
+  "source_bytes": 20456460,
+  "diagram_png": "diagrams/47_champion_fixed3_loop.png",
+  "diagram_svg": "diagrams/47_champion_fixed3_loop.svg",
+  "zip": "packages/47_champion_fixed3_loop_code.zip",
+  "zip_bytes": 7220011,
+  "zip_sha256": "010e8b74543a46d27cff98db1679b8af19ff53bb3260aaafd7c9c24aef5ba224"
+}

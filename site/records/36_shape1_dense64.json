@@ -1,0 +1,53 @@
+{
+  "id": "36_shape1_dense64",
+  "name": "通用形状第一阶段：高分辨率直接映射",
+  "family": "shape_learned",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general"
+  ],
+  "evidence": [
+    "shape_generalization_v1/protocol.json"
+  ],
+  "outputs": [
+    "shape_generalization_v1/runs/dense64_seed20261023",
+    "shape_generalization_v1/runs/dense64_seed20261024"
+  ],
+  "category": "表示对照",
+  "note": "全图通用形状与材料预测，无 V4 删除门控、完整 Champion 或在线 FEM。",
+  "config": {
+    "variant": "dense64"
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_shape_general/run.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\runs\\dense64_seed20261023\\best.pt",
+      "bytes": 179710852
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\runs\\dense64_seed20261023\\last.pt",
+      "bytes": 179711876
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\runs\\dense64_seed20261024\\best.pt",
+      "bytes": 179705796
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\runs\\dense64_seed20261024\\last.pt",
+      "bytes": 179711876
+    }
+  ],
+  "source_file_count": 1874,
+  "source_bytes": 19826102,
+  "diagram_png": "diagrams/36_shape1_dense64.png",
+  "diagram_svg": "diagrams/36_shape1_dense64.svg",
+  "zip": "packages/36_shape1_dense64_code.zip",
+  "zip_bytes": 6736741,
+  "zip_sha256": "2ceb69665e318c3637612ed265a51238b8ff3c1991cb1cdc3d04cfd6f8887b2e"
+}

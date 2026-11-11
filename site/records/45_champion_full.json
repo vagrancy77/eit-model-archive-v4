@@ -1,0 +1,51 @@
+{
+  "id": "45_champion_full",
+  "name": "完整 Champion：四方向几何与区域材料重建",
+  "family": "champion",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_final_c4_loop",
+    "eit_champion_loop_v2"
+  ],
+  "evidence": [
+    "eit_champion_loop_v2/README.md"
+  ],
+  "outputs": [
+    "eit_champion_loop_v2/vendor/EIT_C4_Champion_20261020"
+  ],
+  "category": "主线",
+  "note": "含电压注意力、双路骨干、细几何查询、方向融合与界面宽度；不是把旧 V4 代码原封不动并联在内。",
+  "config": {
+    "ablate": "none",
+    "loop": "none"
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_champion_loop_v2/vendor/EIT_C4_Champion_20261020/infer.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\eit_champion_loop_v2\\vendor\\EIT_C4_Champion_20261020\\weights\\seed_20260911_epoch_6.pt",
+      "bytes": 84921895
+    },
+    {
+      "path": "E:\\Codex\\eit_champion_loop_v2\\vendor\\EIT_C4_Champion_20261020\\weights\\seed_20261013_epoch_10.pt",
+      "bytes": 84921895
+    },
+    {
+      "path": "E:\\Codex\\eit_champion_loop_v2\\vendor\\EIT_C4_Champion_20261020\\weights\\seed_20261017_epoch_15.pt",
+      "bytes": 84921895
+    }
+  ],
+  "source_file_count": 1983,
+  "source_bytes": 20400928,
+  "diagram_png": "diagrams/45_champion_full.png",
+  "diagram_svg": "diagrams/45_champion_full.svg",
+  "zip": "packages/45_champion_full_code.zip",
+  "zip_bytes": 7075536,
+  "zip_sha256": "df6373a00b9f6edc92b79849f4294af8f39830914ae6fda616e26b59a6565ec8"
+}

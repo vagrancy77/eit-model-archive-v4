@@ -1,0 +1,58 @@
+{
+  "id": "39_shape2_physical",
+  "name": "通用形状第二阶段：固定物理投影",
+  "family": "projection",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general"
+  ],
+  "evidence": [
+    "shape_generalization_v1/phase2/protocol.json"
+  ],
+  "outputs": [
+    "shape_generalization_v1/phase2/runs/physical_seed20261023",
+    "shape_generalization_v1/phase2/runs/physical_seed20261024"
+  ],
+  "category": "表示／训练对照",
+  "note": "固定投影不等于每次重新进行非线性 FEM 正求解；延长训练项延续原结构。",
+  "config": {
+    "variant": "physical",
+    "pool": false
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_shape_general/phase2.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_seed20261023\\best.pt",
+      "bytes": 151951008
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_seed20261023\\last.pt",
+      "bytes": 152014624
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_seed20261024\\best.pt",
+      "bytes": 151949024
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_seed20261024\\best_guarded.pt",
+      "bytes": 151937784
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_seed20261024\\last.pt",
+      "bytes": 152014624
+    }
+  ],
+  "source_file_count": 1874,
+  "source_bytes": 19822843,
+  "diagram_png": "diagrams/39_shape2_physical.png",
+  "diagram_svg": "diagrams/39_shape2_physical.svg",
+  "zip": "packages/39_shape2_physical_code.zip",
+  "zip_bytes": 6782430,
+  "zip_sha256": "8c3a294da14be4ed12bc531a11aeabf3477eba547ca1a81610b1fd693a2a1c06"
+}

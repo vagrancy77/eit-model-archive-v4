@@ -1,0 +1,57 @@
+{
+  "id": "79_old_champion_selected_no_auxiliary",
+  "name": "8 组共同底座 / 选中共同底座：去除中间监督",
+  "family": "combined",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_final_c4_loop",
+    "eit_champion_loop_v2",
+    "eit_champion_adaptive_v3",
+    "eit_short_selection_v1",
+    "eit_short_completion_v1",
+    "eit_old_champion_selection_v1",
+    "eit_execution_accel_v5",
+    "eit_short_release_v2"
+  ],
+  "evidence": [
+    "old_champion_selection_v1/protocol.json",
+    "old_champion_selection_v1/CROSS_ROUND_SELECTION_ADDENDUM_20261025.md",
+    "old_champion_selection_v1/runs/selected_no_auxiliary/complete.json"
+  ],
+  "outputs": [
+    "old_champion_selection_v1/runs/selected_no_auxiliary"
+  ],
+  "category": "共同底座短训",
+  "note": "完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。",
+  "config": {
+    "id": "selected_no_auxiliary",
+    "projection": true,
+    "loop": "adaptive",
+    "ablate": "auxiliary"
+  },
+  "status": "完整计算产物已登记",
+  "entry": "eit_old_champion_selection_v1/model.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\old_champion_selection_v1\\runs\\selected_no_auxiliary\\initial.pt",
+      "bytes": 277287341
+    },
+    {
+      "path": "E:\\Codex\\old_champion_selection_v1\\runs\\selected_no_auxiliary\\last.pt",
+      "bytes": 738634141
+    }
+  ],
+  "source_file_count": 2043,
+  "source_bytes": 20817535,
+  "diagram_png": "diagrams/79_old_champion_selected_no_auxiliary.png",
+  "diagram_svg": "diagrams/79_old_champion_selected_no_auxiliary.svg",
+  "zip": "packages/79_old_champion_selected_no_auxiliary_code.zip",
+  "zip_bytes": 7447404,
+  "zip_sha256": "7fa6a45640a287ea9383d6524aaeb71276c6faa84fbea1907118caf45c7e8968"
+}

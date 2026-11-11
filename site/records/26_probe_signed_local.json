@@ -1,0 +1,52 @@
+{
+  "id": "26_probe_signed_local",
+  "name": "外凸诊断：可增可减 + 局部监督",
+  "family": "probe",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study"
+  ],
+  "evidence": [
+    "protrusion_study_v1/selection.json"
+  ],
+  "outputs": [
+    "protrusion_study_v1/candidates"
+  ],
+  "category": "诊断候选",
+  "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+  "config": {
+    "variant": "signed_local",
+    "kind": "readout"
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_protrusion_study/readout.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_local_seed20261022\\best.pt",
+      "bytes": 100365
+    },
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_local_seed20261022\\last.pt",
+      "bytes": 306809
+    },
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_local_seed20261023\\best.pt",
+      "bytes": 100365
+    },
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_local_seed20261023\\last.pt",
+      "bytes": 306809
+    }
+  ],
+  "source_file_count": 1833,
+  "source_bytes": 19534441,
+  "diagram_png": "diagrams/26_probe_signed_local.png",
+  "diagram_svg": "diagrams/26_probe_signed_local.svg",
+  "zip": "packages/26_probe_signed_local_code.zip",
+  "zip_bytes": 6566031,
+  "zip_sha256": "43bae2a1e678e62bf707f8a47ccd4ad1dd5f31e1ac7b547a72213c46109531e7"
+}

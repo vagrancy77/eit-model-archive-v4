@@ -1,0 +1,56 @@
+{
+  "id": "74_old_champion_ocp_fixed3",
+  "name": "8 组共同底座 / 旧 V4 闭环 + Champion + 投影，固定三轮",
+  "family": "combined",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_final_c4_loop",
+    "eit_champion_loop_v2",
+    "eit_champion_adaptive_v3",
+    "eit_short_selection_v1",
+    "eit_short_completion_v1",
+    "eit_old_champion_selection_v1",
+    "eit_execution_accel_v5",
+    "eit_short_release_v2"
+  ],
+  "evidence": [
+    "old_champion_selection_v1/protocol.json",
+    "old_champion_selection_v1/CROSS_ROUND_SELECTION_ADDENDUM_20261025.md",
+    "old_champion_selection_v1/runs/ocp_fixed3/complete.json"
+  ],
+  "outputs": [
+    "old_champion_selection_v1/runs/ocp_fixed3"
+  ],
+  "category": "共同底座短训",
+  "note": "完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。",
+  "config": {
+    "id": "ocp_fixed3",
+    "projection": true,
+    "loop": "fixed3"
+  },
+  "status": "完整计算产物已登记",
+  "entry": "eit_old_champion_selection_v1/model.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\old_champion_selection_v1\\runs\\ocp_fixed3\\initial.pt",
+      "bytes": 277287341
+    },
+    {
+      "path": "E:\\Codex\\old_champion_selection_v1\\runs\\ocp_fixed3\\last.pt",
+      "bytes": 738634077
+    }
+  ],
+  "source_file_count": 2043,
+  "source_bytes": 20817494,
+  "diagram_png": "diagrams/74_old_champion_ocp_fixed3.png",
+  "diagram_svg": "diagrams/74_old_champion_ocp_fixed3.svg",
+  "zip": "packages/74_old_champion_ocp_fixed3_code.zip",
+  "zip_bytes": 7424416,
+  "zip_sha256": "d2e42d2dea1776b1ab4c0e8bed7125a1cdfa6dd57b11f4795e342ab4de5f6551"
+}

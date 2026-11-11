@@ -1,0 +1,39 @@
+{
+  "id": "48_champion_adaptive_loop",
+  "name": "完整 Champion + 自适应场修正",
+  "family": "champion_loop",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_final_c4_loop",
+    "eit_champion_loop_v2",
+    "eit_champion_adaptive_v3"
+  ],
+  "evidence": [
+    "eit_champion_adaptive_v3/README.md"
+  ],
+  "outputs": [
+    "champion_adaptive_v3"
+  ],
+  "category": "结构／验收原型",
+  "note": "本项是自适应接口原型；完整短训权重见后续 c_adaptive。3096/3096 像素覆盖修订 FEM 仍非原 COMSOL 完全等价；稳定停止、回退与上限终止分开。",
+  "config": {
+    "loop": "adaptive",
+    "ablate": "none"
+  },
+  "status": "自适应结构验收；训练版见后续 c_adaptive",
+  "entry": "eit_champion_adaptive_v3/model.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [],
+  "source_file_count": 1992,
+  "source_bytes": 20453083,
+  "diagram_png": "diagrams/48_champion_adaptive_loop.png",
+  "diagram_svg": "diagrams/48_champion_adaptive_loop.svg",
+  "zip": "packages/48_champion_adaptive_loop_code.zip",
+  "zip_bytes": 7225387,
+  "zip_sha256": "c5b9ff28a69c122e7d4b1eed35e0f7e14e61bfe911cb5b15ee29370b2b4560f8"
+}

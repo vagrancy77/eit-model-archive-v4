@@ -1,0 +1,59 @@
+{
+  "id": "20_v4_k1_long_no_feedback",
+  "name": "旧 V4 + 单轮修正（多种子长训）：无物理反馈对照",
+  "family": "k1",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control"
+  ],
+  "evidence": [
+    "complex_feedback_long_v1/protocol.json",
+    "eit_reproduction/comsol_feedback/README.md"
+  ],
+  "outputs": [
+    "complex_feedback_long_v1"
+  ],
+  "category": "消融",
+  "note": "冻结 V4，只训练一次修正；非三轮联合闭环。历史 FEM 有像素覆盖近似，不能套用后来的覆盖验收。",
+  "config": {
+    "no_feedback": true
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_reproduction/comsol_feedback/long_run.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261016\\runs\\no_feedback\\best.pt",
+      "bytes": 21462185
+    },
+    {
+      "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261016\\runs\\no_feedback\\last.pt",
+      "bytes": 64620266
+    },
+    {
+      "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261017\\runs\\no_feedback\\best.pt",
+      "bytes": 64353706
+    },
+    {
+      "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261017\\runs\\no_feedback\\last.pt",
+      "bytes": 64620266
+    },
+    {
+      "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261018\\runs\\no_feedback\\best.pt",
+      "bytes": 64353706
+    },
+    {
+      "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261018\\runs\\no_feedback\\last.pt",
+      "bytes": 64620266
+    }
+  ],
+  "source_file_count": 1822,
+  "source_bytes": 19391789,
+  "diagram_png": "diagrams/20_v4_k1_long_no_feedback.png",
+  "diagram_svg": "diagrams/20_v4_k1_long_no_feedback.svg",
+  "zip": "packages/20_v4_k1_long_no_feedback_code.zip",
+  "zip_bytes": 6541577,
+  "zip_sha256": "61553aa043eaa92d4a34dfbbfad71b466bba89f15b39ceb3f5f2185b02e84338"
+}

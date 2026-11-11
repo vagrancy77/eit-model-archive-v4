@@ -1,0 +1,56 @@
+{
+  "id": "54_short21_c_no_c4",
+  "name": "21 组短训 / Champion：取消推理四方向融合",
+  "family": "champion",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_final_c4_loop",
+    "eit_champion_loop_v2",
+    "eit_champion_adaptive_v3",
+    "eit_short_selection_v1",
+    "eit_short_completion_v1"
+  ],
+  "evidence": [
+    "short_selection_v1/protocol.json",
+    "short_selection_v1/completion_v2/execution_addendum.json",
+    "short_selection_v1/runs/c_no_c4/complete.json"
+  ],
+  "outputs": [
+    "short_selection_v1/runs/c_no_c4"
+  ],
+  "category": "短训消融",
+  "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+  "config": {
+    "id": "c_no_c4",
+    "route": "champion",
+    "ablate": "c4",
+    "label": "Champion · 禁用 C4",
+    "pool": true,
+    "short21": true
+  },
+  "status": "完整计算产物已登记",
+  "entry": "eit_short_selection_v1/model.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_c4\\initial.pt",
+      "bytes": 106161269
+    },
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_c4\\last.pt",
+      "bytes": 274612407
+    }
+  ],
+  "source_file_count": 2016,
+  "source_bytes": 20581432,
+  "diagram_png": "diagrams/54_short21_c_no_c4.png",
+  "diagram_svg": "diagrams/54_short21_c_no_c4.svg",
+  "zip": "packages/54_short21_c_no_c4_code.zip",
+  "zip_bytes": 7157381,
+  "zip_sha256": "2a115ccb0f836cb462afa6edbcaa28bb647a9b58228e8c99b23179cc09509686"
+}

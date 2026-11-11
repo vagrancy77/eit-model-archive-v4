@@ -1,0 +1,57 @@
+{
+  "id": "66_short21_c_no_residual",
+  "name": "21 组短训 / 自适应 Champion：残差输入置零",
+  "family": "champion_loop",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_final_c4_loop",
+    "eit_champion_loop_v2",
+    "eit_champion_adaptive_v3",
+    "eit_short_selection_v1",
+    "eit_short_completion_v1"
+  ],
+  "evidence": [
+    "short_selection_v1/protocol.json",
+    "short_selection_v1/completion_v2/execution_addendum.json",
+    "short_selection_v1/runs/c_no_residual/complete.json"
+  ],
+  "outputs": [
+    "short_selection_v1/runs/c_no_residual"
+  ],
+  "category": "短训消融",
+  "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+  "config": {
+    "id": "c_no_residual",
+    "route": "champion",
+    "loop": "adaptive",
+    "ablate": "residual",
+    "label": "动态反馈 · 禁用残差输入",
+    "pool": true,
+    "short21": true
+  },
+  "status": "完整计算产物已登记",
+  "entry": "eit_short_selection_v1/model.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_residual\\initial.pt",
+      "bytes": 106161333
+    },
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_residual\\last.pt",
+      "bytes": 317019709
+    }
+  ],
+  "source_file_count": 2016,
+  "source_bytes": 20581489,
+  "diagram_png": "diagrams/66_short21_c_no_residual.png",
+  "diagram_svg": "diagrams/66_short21_c_no_residual.svg",
+  "zip": "packages/66_short21_c_no_residual_code.zip",
+  "zip_bytes": 7291863,
+  "zip_sha256": "69213863bcccc8de236933300edb305324faee4f4c06b058f003b8eacae19da4"
+}

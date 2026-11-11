@@ -1,0 +1,39 @@
+{
+  "id": "05_v4_imported_long",
+  "name": "导入 V4：延长耐心训练版",
+  "family": "imported",
+  "sources": [
+    "eit_reproduction/integrations/v4_20261015"
+  ],
+  "evidence": [
+    "eit_reproduction/integrations/v4_20261015/README.md"
+  ],
+  "outputs": [
+    "eit_reproduction/integrations/v4_20261015/upstream"
+  ],
+  "category": "同结构训练版本",
+  "note": "与上一项同架构，训练历史及检查点不同；不能把长训当成额外推理模块。",
+  "config": {},
+  "status": "历史源码／记录归档",
+  "entry": "eit_reproduction/integrations/v4_20261015/upstream/EIT_Comparison/v4_long_patience.py",
+  "alias": "04_v4_imported",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\eit_reproduction\\integrations\\v4_20261015\\upstream\\EIT_Comparison\\results\\project_v4_long_patience\\best.pt",
+      "bytes": 245761963
+    },
+    {
+      "path": "E:\\Codex\\eit_reproduction\\integrations\\v4_20261015\\upstream\\EIT_Comparison\\results\\project_v4_long_patience\\last.pt",
+      "bytes": 245764075
+    }
+  ],
+  "source_file_count": 38,
+  "source_bytes": 199449,
+  "diagram_png": "diagrams/05_v4_imported_long.png",
+  "diagram_svg": "diagrams/05_v4_imported_long.svg",
+  "zip": "packages/05_v4_imported_long_code.zip",
+  "zip_bytes": 402107,
+  "zip_sha256": "82f78994cd5135726d22b78ac2ec2e62ecd7fabd2c72cbc87d3c42adb3fd084b"
+}

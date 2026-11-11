@@ -1,0 +1,52 @@
+{
+  "id": "25_probe_signed_boundary",
+  "name": "外凸诊断：可增可减 + 边界监督",
+  "family": "probe",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study"
+  ],
+  "evidence": [
+    "protrusion_study_v1/selection.json"
+  ],
+  "outputs": [
+    "protrusion_study_v1/candidates"
+  ],
+  "category": "诊断候选",
+  "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+  "config": {
+    "variant": "signed_boundary",
+    "kind": "readout"
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_protrusion_study/readout.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_boundary_seed20261022\\best.pt",
+      "bytes": 301113
+    },
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_boundary_seed20261022\\last.pt",
+      "bytes": 307961
+    },
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_boundary_seed20261023\\best.pt",
+      "bytes": 301113
+    },
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_boundary_seed20261023\\last.pt",
+      "bytes": 307961
+    }
+  ],
+  "source_file_count": 1833,
+  "source_bytes": 19534441,
+  "diagram_png": "diagrams/25_probe_signed_boundary.png",
+  "diagram_svg": "diagrams/25_probe_signed_boundary.svg",
+  "zip": "packages/25_probe_signed_boundary_code.zip",
+  "zip_bytes": 6565916,
+  "zip_sha256": "be67bd1eb4e686f3c3c31dfb2195b8918d75d067707a8a73d2535bd43f12aa79"
+}

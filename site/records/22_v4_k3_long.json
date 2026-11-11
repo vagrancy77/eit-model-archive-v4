@@ -1,0 +1,41 @@
+{
+  "id": "22_v4_k3_long",
+  "name": "旧 V4 联合微调：三轮长训分支",
+  "family": "k3",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control"
+  ],
+  "evidence": [
+    "complex_feedback_loop_v2/protocol.json",
+    "eit_reproduction/comsol_feedback_loop/README.md"
+  ],
+  "outputs": [
+    "complex_feedback_loop_v2"
+  ],
+  "category": "主线",
+  "note": "保留原长训分支的实际状态，不恢复训练，也不声称它已完成。 历史 FEM 并非后来 3096 像素覆盖修订版。",
+  "config": {},
+  "status": "历史源码／记录归档",
+  "entry": "eit_reproduction/comsol_feedback_loop/run.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\complex_feedback_loop_v2\\best.pt",
+      "bytes": 111340550
+    },
+    {
+      "path": "E:\\Codex\\complex_feedback_loop_v2\\last.pt",
+      "bytes": 333453405
+    }
+  ],
+  "source_file_count": 1806,
+  "source_bytes": 19386697,
+  "diagram_png": "diagrams/22_v4_k3_long.png",
+  "diagram_svg": "diagrams/22_v4_k3_long.svg",
+  "zip": "packages/22_v4_k3_long_code.zip",
+  "zip_bytes": 6576231,
+  "zip_sha256": "8eca3ca81020963c28e8a443149d03ddf8c35cb2fa69ab9bb6b9837cb368ecce"
+}

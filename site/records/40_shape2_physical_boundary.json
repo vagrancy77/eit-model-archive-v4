@@ -1,0 +1,58 @@
+{
+  "id": "40_shape2_physical_boundary",
+  "name": "通用形状第二阶段：固定物理投影 + 边界监督",
+  "family": "projection",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general"
+  ],
+  "evidence": [
+    "shape_generalization_v1/phase2/protocol.json"
+  ],
+  "outputs": [
+    "shape_generalization_v1/phase2/runs/physical_boundary_seed20261023",
+    "shape_generalization_v1/phase2/runs/physical_boundary_seed20261024"
+  ],
+  "category": "表示／训练对照",
+  "note": "固定投影不等于每次重新进行非线性 FEM 正求解；延长训练项延续原结构。",
+  "config": {
+    "variant": "physical_boundary",
+    "pool": false
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_shape_general/phase2.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_boundary_seed20261023\\best.pt",
+      "bytes": 151951008
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_boundary_seed20261023\\best_guarded.pt",
+      "bytes": 151949880
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_boundary_seed20261023\\last.pt",
+      "bytes": 152014688
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_boundary_seed20261024\\best.pt",
+      "bytes": 151966176
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_boundary_seed20261024\\last.pt",
+      "bytes": 152014688
+    }
+  ],
+  "source_file_count": 1874,
+  "source_bytes": 19822850,
+  "diagram_png": "diagrams/40_shape2_physical_boundary.png",
+  "diagram_svg": "diagrams/40_shape2_physical_boundary.svg",
+  "zip": "packages/40_shape2_physical_boundary_code.zip",
+  "zip_bytes": 6796029,
+  "zip_sha256": "b53dbb21b2ea2fe0eaa9a704d2c4dd14494419f79ed5fbbd53b95cb6d68a03a0"
+}

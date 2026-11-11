@@ -1,0 +1,52 @@
+{
+  "id": "30_probe_joint_local_precise",
+  "name": "外凸诊断：联合局部监督 + 邻近误填约束",
+  "family": "probe",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study"
+  ],
+  "evidence": [
+    "protrusion_study_v1/selection.json"
+  ],
+  "outputs": [
+    "protrusion_study_v1/joint_candidates"
+  ],
+  "category": "诊断候选",
+  "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+  "config": {
+    "variant": "joint_local_precise",
+    "kind": "joint"
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_protrusion_study/joint_probe.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_local_precise_seed20261022\\best.pt",
+      "bytes": 269154717
+    },
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_local_precise_seed20261022\\last.pt",
+      "bytes": 269164061
+    },
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_local_precise_seed20261023\\best.pt",
+      "bytes": 89732536
+    },
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_local_precise_seed20261023\\last.pt",
+      "bytes": 269164061
+    }
+  ],
+  "source_file_count": 1829,
+  "source_bytes": 19519649,
+  "diagram_png": "diagrams/30_probe_joint_local_precise.png",
+  "diagram_svg": "diagrams/30_probe_joint_local_precise.svg",
+  "zip": "packages/30_probe_joint_local_precise_code.zip",
+  "zip_bytes": 6565693,
+  "zip_sha256": "eb223a60734eee144d74055fd4506d282900c4e1734c56549557babb2199c1ba"
+}

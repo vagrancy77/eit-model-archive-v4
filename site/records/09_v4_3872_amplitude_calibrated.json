@@ -1,0 +1,62 @@
+{
+  "id": "09_v4_3872_amplitude_calibrated",
+  "name": "V4 / 3872 数据：背景校准幅值",
+  "family": "native",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_complex_information_study_20261013"
+  ],
+  "evidence": [
+    "eit_complex_information_study_20261013/EXPERIMENT_README.md",
+    "eit_complex_information_study_20261013/runs/controlled_v2/protocol.json"
+  ],
+  "outputs": [
+    "eit_complex_information_study_20261013/runs/amplitude_calibration_control"
+  ],
+  "category": "输入对照",
+  "note": "3872 例数据上的输入受控研究；不是最终 4840 数据实验。",
+  "config": {
+    "input_mode": "amplitude_calibrated",
+    "ablation": "full",
+    "dataset": 3872
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_complex_information_study_20261013/run_experiment.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\amplitude_calibration_control\\amplitude_calibrated_seed20261013\\best.pt",
+      "bytes": 89812855
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\amplitude_calibration_control\\amplitude_calibrated_seed20261013\\last.pt",
+      "bytes": 269045474
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\amplitude_calibration_control\\amplitude_calibrated_seed20261014\\best.pt",
+      "bytes": 89814903
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\amplitude_calibration_control\\amplitude_calibrated_seed20261014\\last.pt",
+      "bytes": 269045474
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\amplitude_calibration_control\\amplitude_calibrated_seed20261015\\best.pt",
+      "bytes": 89812855
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\amplitude_calibration_control\\amplitude_calibrated_seed20261015\\last.pt",
+      "bytes": 269045474
+    }
+  ],
+  "source_file_count": 1826,
+  "source_bytes": 19508759,
+  "diagram_png": "diagrams/09_v4_3872_amplitude_calibrated.png",
+  "diagram_svg": "diagrams/09_v4_3872_amplitude_calibrated.svg",
+  "zip": "packages/09_v4_3872_amplitude_calibrated_code.zip",
+  "zip_bytes": 6653870,
+  "zip_sha256": "48e9b6f77bb7641619e4d85ec02668f2e39fdf99b525ce8623c79ab5925c4f4a"
+}

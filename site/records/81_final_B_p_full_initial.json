@@ -1,0 +1,56 @@
+{
+  "id": "81_final_B_p_full_initial",
+  "name": "最终候选 B：p_full 预训练初始版",
+  "family": "projection",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_final_c4_loop",
+    "eit_champion_loop_v2",
+    "eit_champion_adaptive_v3",
+    "eit_short_selection_v1",
+    "eit_short_completion_v1",
+    "model_packages_20261028/p_full_initial"
+  ],
+  "evidence": [
+    "short_selection_v1/runs/p_full/complete.json",
+    "model_packages_20261028/p_full_initial/config.json"
+  ],
+  "outputs": [
+    "short_selection_v1/runs/p_full",
+    "model_packages_20261028/p_full_initial"
+  ],
+  "category": "选定检查点",
+  "note": "选定 initial.pt；源于 seed20261023 父模型。四方向共用权重，先对齐并平均形状及材料潜在输出，再转换为数值。",
+  "config": {
+    "pool": true
+  },
+  "status": "历史源码／记录归档",
+  "entry": "model_packages_20261028/p_full_initial/infer.py",
+  "alias": "50_short21_p_full",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\p_full\\initial.pt",
+      "bytes": 102475037
+    },
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\p_full\\last.pt",
+      "bytes": 173271704
+    },
+    {
+      "path": "E:\\Codex\\model_packages_20261028\\p_full_initial\\weights\\initial.pt",
+      "bytes": 102475037
+    }
+  ],
+  "source_file_count": 2299,
+  "source_bytes": 22818491,
+  "diagram_png": "diagrams/81_final_B_p_full_initial.png",
+  "diagram_svg": "diagrams/81_final_B_p_full_initial.svg",
+  "zip": "packages/81_final_B_p_full_initial_code.zip",
+  "zip_bytes": 7926027,
+  "zip_sha256": "ffe4d82bb9115c27fbce2512d95d54b02a862c7d63ad67dff35ed901fd57a6cc"
+}

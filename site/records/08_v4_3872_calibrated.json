@@ -1,0 +1,62 @@
+{
+  "id": "08_v4_3872_calibrated",
+  "name": "V4 / 3872 数据：背景校准复数电压",
+  "family": "native",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_complex_information_study_20261013"
+  ],
+  "evidence": [
+    "eit_complex_information_study_20261013/EXPERIMENT_README.md",
+    "eit_complex_information_study_20261013/runs/controlled_v2/protocol.json"
+  ],
+  "outputs": [
+    "eit_complex_information_study_20261013/runs/controlled_v2"
+  ],
+  "category": "输入对照",
+  "note": "3872 例数据上的输入受控研究；不是最终 4840 数据实验。",
+  "config": {
+    "input_mode": "calibrated",
+    "ablation": "full",
+    "dataset": 3872
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_complex_information_study_20261013/run_experiment.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\calibrated_seed20261013\\best.pt",
+      "bytes": 89814903
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\calibrated_seed20261013\\last.pt",
+      "bytes": 269045474
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\calibrated_seed20261014\\best.pt",
+      "bytes": 89816887
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\calibrated_seed20261014\\last.pt",
+      "bytes": 269045474
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\calibrated_seed20261015\\best.pt",
+      "bytes": 89814903
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\calibrated_seed20261015\\last.pt",
+      "bytes": 269045474
+    }
+  ],
+  "source_file_count": 1825,
+  "source_bytes": 19507264,
+  "diagram_png": "diagrams/08_v4_3872_calibrated.png",
+  "diagram_svg": "diagrams/08_v4_3872_calibrated.svg",
+  "zip": "packages/08_v4_3872_calibrated_code.zip",
+  "zip_bytes": 6652023,
+  "zip_sha256": "7d87af3706716bfc3a6a228cf2c24181d5c7f47006bd210b6966dfd3a1ec7cba"
+}

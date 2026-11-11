@@ -1,0 +1,53 @@
+{
+  "id": "34_shape1_single16",
+  "name": "通用形状第一阶段：单通道低分辨率映射",
+  "family": "shape_learned",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general"
+  ],
+  "evidence": [
+    "shape_generalization_v1/protocol.json"
+  ],
+  "outputs": [
+    "shape_generalization_v1/runs/single16_seed20261023",
+    "shape_generalization_v1/runs/single16_seed20261024"
+  ],
+  "category": "表示对照",
+  "note": "全图通用形状与材料预测，无 V4 删除门控、完整 Champion 或在线 FEM。",
+  "config": {
+    "variant": "single16"
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_shape_general/run.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\runs\\single16_seed20261023\\best.pt",
+      "bytes": 80420036
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\runs\\single16_seed20261023\\last.pt",
+      "bytes": 80420036
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\runs\\single16_seed20261024\\best.pt",
+      "bytes": 80414980
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\runs\\single16_seed20261024\\last.pt",
+      "bytes": 80420036
+    }
+  ],
+  "source_file_count": 1874,
+  "source_bytes": 19826094,
+  "diagram_png": "diagrams/34_shape1_single16.png",
+  "diagram_svg": "diagrams/34_shape1_single16.svg",
+  "zip": "packages/34_shape1_single16_code.zip",
+  "zip_bytes": 6734878,
+  "zip_sha256": "80e95ead20eaa487f2f8d234e0e97124352d81751d574791f58c829fd8ca9627"
+}

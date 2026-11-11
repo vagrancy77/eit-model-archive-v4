@@ -1,0 +1,43 @@
+{
+  "id": "18_v4_k1_no_feedback",
+  "name": "旧 V4 + 单轮修正：无物理反馈对照",
+  "family": "k1",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control"
+  ],
+  "evidence": [
+    "complex_feedback_v1/protocol.json",
+    "eit_reproduction/comsol_feedback/README.md"
+  ],
+  "outputs": [
+    "complex_feedback_v1"
+  ],
+  "category": "消融",
+  "note": "冻结 V4，只训练一次修正；非三轮联合闭环。历史 FEM 有像素覆盖近似，不能套用后来的覆盖验收。",
+  "config": {
+    "no_feedback": true
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_reproduction/comsol_feedback/run.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\complex_feedback_v1\\runs\\no_feedback\\best.pt",
+      "bytes": 21462185
+    },
+    {
+      "path": "E:\\Codex\\complex_feedback_v1\\runs\\no_feedback\\last.pt",
+      "bytes": 64402666
+    }
+  ],
+  "source_file_count": 1809,
+  "source_bytes": 19381995,
+  "diagram_png": "diagrams/18_v4_k1_no_feedback.png",
+  "diagram_svg": "diagrams/18_v4_k1_no_feedback.svg",
+  "zip": "packages/18_v4_k1_no_feedback_code.zip",
+  "zip_bytes": 6526251,
+  "zip_sha256": "846d8a44882e244d59b130af1a81e36760af9933e412f30f4eca699bca771aec"
+}

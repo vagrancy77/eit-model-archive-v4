@@ -1,0 +1,50 @@
+{
+  "id": "82_A_same_weight_c4",
+  "name": "A 的同权重四方向推理验证版",
+  "family": "projection",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_c4_same_weight_validation_v1"
+  ],
+  "evidence": [],
+  "outputs": [
+    "c4_same_weight_validation_v1",
+    "c4_same_weight_validation_v2",
+    "shape_generalization_v1/phase3/runs/physical_c4_seed20261025"
+  ],
+  "category": "推理配置对照",
+  "note": "固定 A 权重，只改变推理包装；不同于 B 的父模型，也不是新训练。",
+  "config": {
+    "pool": true,
+    "train_c4": true
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_c4_same_weight_validation_v1",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\best.pt",
+      "bytes": 152019680
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\best_guarded.pt",
+      "bytes": 151976120
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\last.pt",
+      "bytes": 152044960
+    }
+  ],
+  "source_file_count": 1880,
+  "source_bytes": 19861294,
+  "diagram_png": "diagrams/82_A_same_weight_c4.png",
+  "diagram_svg": "diagrams/82_A_same_weight_c4.svg",
+  "zip": "packages/82_A_same_weight_c4_code.zip",
+  "zip_bytes": 6816161,
+  "zip_sha256": "9143898605af37890fcc83e92700d5b9a71a419dd07ef7255234a7abcd03f0e9"
+}

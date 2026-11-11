@@ -1,0 +1,43 @@
+{
+  "id": "17_v4_k1_feedback",
+  "name": "旧 V4 + 单轮修正",
+  "family": "k1",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control"
+  ],
+  "evidence": [
+    "complex_feedback_v1/protocol.json",
+    "eit_reproduction/comsol_feedback/README.md"
+  ],
+  "outputs": [
+    "complex_feedback_v1"
+  ],
+  "category": "主线",
+  "note": "冻结 V4，只训练一次修正；非三轮联合闭环。历史 FEM 有像素覆盖近似，不能套用后来的覆盖验收。",
+  "config": {
+    "no_feedback": false
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_reproduction/comsol_feedback/run.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\complex_feedback_v1\\runs\\feedback\\best.pt",
+      "bytes": 64372714
+    },
+    {
+      "path": "E:\\Codex\\complex_feedback_v1\\runs\\feedback\\last.pt",
+      "bytes": 64402666
+    }
+  ],
+  "source_file_count": 1809,
+  "source_bytes": 19381995,
+  "diagram_png": "diagrams/17_v4_k1_feedback.png",
+  "diagram_svg": "diagrams/17_v4_k1_feedback.svg",
+  "zip": "packages/17_v4_k1_feedback_code.zip",
+  "zip_bytes": 6515752,
+  "zip_sha256": "6d8a8d3a05fd3d585bc2b484b8209a1a399d1c26914fe3e9291e7f5d4741bc79"
+}

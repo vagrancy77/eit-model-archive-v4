@@ -1,0 +1,354 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="description" content="EIT 模型版本档案，包含 83 个版本与实验配置、中文流程图和对应代码包。"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V4 起模型代码与流程图</title><style>
+*{box-sizing:border-box}body{margin:0;background:#17191d;color:#e0e8f0;font:16px/1.7 "Microsoft YaHei",sans-serif}
+main{max-width:1080px;margin:auto;padding:28px}h1{font-size:30px}h2{font-size:19px;line-height:1.5;color:#c6e2f5}
+a{color:#83cbff}header,.card{background:#22262c;border:1px solid #3d4653;border-radius:14px;padding:24px;margin-bottom:24px}
+.tag{background:#163b56;padding:4px 10px;border-radius:20px;font-size:13px}.actions{display:flex;flex-wrap:wrap;gap:18px}
+img{display:block;width:100%;max-width:760px;height:auto;margin:20px auto;border:1px solid #445}summary{cursor:pointer;color:#9bd7ff}
+input,select,button{font:inherit;padding:8px 12px;background:#162a39;color:white;border:1px solid #4f738e;border-radius:6px;max-width:100%}
+nav{max-height:340px;overflow:auto;margin-top:16px}nav a{display:block;text-decoration:none;font-size:14px;padding:3px}
+.controls{position:sticky;top:0;background:#17191df5;padding:12px 0;z-index:5;display:flex;gap:12px;flex-wrap:wrap}.warn{color:#f0c98b}
+</style><main><header><h1>从 V4 开始的模型档案</h1><p style="color:#91cbb5">公共资料库 · 可在线查看流程图并下载对应代码包</p>
+<p>83 个版本／配置，83 张对应流程图，83 个独立代码 ZIP。包含主线、输入／损失消融、诊断候选和发布别名，<b>不等于 83 个不同架构</b>。</p>
+<p class="warn">本批为代码归档，不含权重、数据和数值算子；每包保留原路径、配置、权重位置与 SHA256 源码清单。没有重启任何实验。</p>
+<p><a href="output/pdf/V4_model_history.pdf">流程图 PDF 合集</a> · <a href="README.md">范围说明</a> · <a href="REVIEW_LOG.md">分步核对与修订记录</a> · <a href="PACKAGING_QA.json">打包核验</a></p>
+<details><summary>按版本跳转</summary><nav><a href="#01_v4_topology_risk">01 早期 V4：拓扑修正与风险门控</a><a href="#02_v5_topology_risk">02 V5：面积保护与更保守的风险控制</a><a href="#03_v6_local_corrected">03 V6：局部修正与双风险门控</a><a href="#04_v4_imported">04 导入 V4：双频初始图与电压联合重建</a><a href="#05_v4_imported_long">05 导入 V4：延长耐心训练版</a><a href="#06_v4_3872_amplitude">06 V4 / 3872 数据：仅幅值</a><a href="#07_v4_3872_complex">07 V4 / 3872 数据：复数电压</a><a href="#08_v4_3872_calibrated">08 V4 / 3872 数据：背景校准复数电压</a><a href="#09_v4_3872_amplitude_calibrated">09 V4 / 3872 数据：背景校准幅值</a><a href="#10_v4_4840_formal50">10 V4 / 4840 数据：校准输入 50 轮版</a><a href="#11_v4_4840_calibrated">11 V4 / 4840 正式对照：背景校准复数电压</a><a href="#12_v4_4840_amplitude">12 V4 / 4840 正式对照：仅幅值</a><a href="#13_v4_4840_complex">13 V4 / 4840 正式对照：复数电压</a><a href="#14_v4_4840_amplitude_calibrated">14 V4 / 4840 正式对照：背景校准幅值</a><a href="#15_v4_4840_no_topology">15 V4 / 4840 正式对照：去除拓扑修正</a><a href="#16_v4_4840_no_risk">16 V4 / 4840 正式对照：去除风险门控</a><a href="#17_v4_k1_feedback">17 旧 V4 + 单轮修正</a><a href="#18_v4_k1_no_feedback">18 旧 V4 + 单轮修正：无物理反馈对照</a><a href="#19_v4_k1_long_feedback">19 旧 V4 + 单轮修正（多种子长训）</a><a href="#20_v4_k1_long_no_feedback">20 旧 V4 + 单轮修正（多种子长训）：无物理反馈对照</a><a href="#21_v4_k3_quick">21 旧 V4 联合微调：固定三轮短训版</a><a href="#22_v4_k3_long">22 旧 V4 联合微调：三轮长训分支</a><a href="#23_probe_delete_global">23 外凸诊断：只减不增的全局修正</a><a href="#24_probe_signed_global">24 外凸诊断：可增可减的全局修正</a><a href="#25_probe_signed_boundary">25 外凸诊断：可增可减 + 边界监督</a><a href="#26_probe_signed_local">26 外凸诊断：可增可减 + 局部监督</a><a href="#27_probe_probability_local">27 外凸诊断：概率直接修正 + 局部监督</a><a href="#28_probe_joint_global">28 外凸诊断：V4 联合训练 + 全局修正</a><a href="#29_probe_joint_local">29 外凸诊断：V4 联合训练 + 局部监督</a><a href="#30_probe_joint_local_precise">30 外凸诊断：联合局部监督 + 邻近误填约束</a><a href="#31_probe_gate_control">31 外凸诊断：预测边界带内的门控修正</a><a href="#32_probe_gate_supervised">32 外凸诊断：门控修正 + 局部定位监督</a><a href="#33_probe_k3_integration">33 局部概率修正接入旧 K3 的验证版</a><a href="#34_shape1_single16">34 通用形状第一阶段：单通道低分辨率映射</a><a href="#35_shape1_multi16">35 通用形状第一阶段：多通道低分辨率映射</a><a href="#36_shape1_dense64">36 通用形状第一阶段：高分辨率直接映射</a><a href="#37_shape1_dense64_boundary">37 通用形状第一阶段：高分辨率映射 + 边界监督</a><a href="#38_shape1_query_boundary">38 通用形状第一阶段：逐位置查询 + 边界监督</a><a href="#39_shape2_physical">39 通用形状第二阶段：固定物理投影</a><a href="#40_shape2_physical_boundary">40 通用形状第二阶段：固定物理投影 + 边界监督</a><a href="#41_shape2_multi16_extended">41 通用形状第二阶段：多通道映射延长训练</a><a href="#42_shape2_dense64_boundary_extended">42 通用形状第二阶段：高分辨率边界版延长训练</a><a href="#43_shape3_physical_control">43 通用形状第三阶段：固定投影：不加旋转训练对照</a><a href="#44_shape3_physical_c4">44 通用形状第三阶段：固定投影：四方向训练增强版</a><a href="#45_champion_full">45 完整 Champion：四方向几何与区域材料重建</a><a href="#46_projection_fixed3_loop">46 投影四方向初始化 + 三轮场修正</a><a href="#47_champion_fixed3_loop">47 完整 Champion + 三轮场修正</a><a href="#48_champion_adaptive_loop">48 完整 Champion + 自适应场修正</a><a href="#49_short21_c_full">49 21 组短训 / 完整 Champion，无反馈</a><a href="#50_short21_p_full">50 21 组短训 / 投影四方向网络，无反馈</a><a href="#51_short21_p_no_projection">51 21 组短训 / 投影路线：空间投影置零</a><a href="#52_short21_p_no_context">52 21 组短训 / 投影路线：全局电压支路置零</a><a href="#53_short21_p_no_c4">53 21 组短训 / 投影路线：取消推理四方向融合</a><a href="#54_short21_c_no_c4">54 21 组短训 / Champion：取消推理四方向融合</a><a href="#55_short21_c_no_query">55 21 组短训 / Champion：取消细几何查询</a><a href="#56_short21_c_fixed_width">56 21 组短训 / Champion：固定界面宽度</a><a href="#57_short21_c_front_only">57 21 组短训 / Champion：只保留注意力前端输出</a><a href="#58_short21_c_no_image">58 21 组短训 / Champion：图像支路输入置零</a><a href="#59_short21_c_no_voltage_encoder">59 21 组短训 / Champion：骨干电压编码输出置零</a><a href="#60_short21_c_no_bce">60 21 组短训 / Champion：去除像素分类损失</a><a href="#61_short21_c_no_dice">61 21 组短训 / Champion：去除区域重叠损失</a><a href="#62_short21_c_no_material">62 21 组短训 / Champion：去除材料监督损失</a><a href="#63_short21_c_adaptive">63 21 组短训 / Champion + 自适应反馈</a><a href="#64_short21_c_fixed3">64 21 组短训 / Champion + 固定三轮反馈</a><a href="#65_short21_c_no_hint">65 21 组短训 / 自适应 Champion：空间提示置零</a><a href="#66_short21_c_no_residual">66 21 组短训 / 自适应 Champion：残差输入置零</a><a href="#67_short21_c_no_physics_loss">67 21 组短训 / 自适应 Champion：去除电压残差损失</a><a href="#68_short21_c_no_auxiliary">68 21 组短训 / 自适应 Champion：去除中间监督</a><a href="#69_short21_p_adaptive">69 21 组短训 / 投影四方向网络 + 自适应反馈</a><a href="#70_release_v1">70 历史短训发布快照 v1（已取代）</a><a href="#71_release_v2">71 历史短训发布快照 v2（已取代）</a><a href="#72_old_champion_oc_fixed3">72 8 组共同底座 / 旧 V4 闭环 + Champion，固定三轮</a><a href="#73_old_champion_oc_adaptive">73 8 组共同底座 / 旧 V4 闭环 + Champion，自适应</a><a href="#74_old_champion_ocp_fixed3">74 8 组共同底座 / 旧 V4 闭环 + Champion + 投影，固定三轮</a><a href="#75_old_champion_ocp_adaptive">75 8 组共同底座 / 旧 V4 闭环 + Champion + 投影，自适应</a><a href="#76_old_champion_selected_no_hint">76 8 组共同底座 / 选中共同底座：空间提示置零</a><a href="#77_old_champion_selected_no_residual">77 8 组共同底座 / 选中共同底座：残差输入置零</a><a href="#78_old_champion_selected_no_physics">78 8 组共同底座 / 选中共同底座：去除物理损失</a><a href="#79_old_champion_selected_no_auxiliary">79 8 组共同底座 / 选中共同底座：去除中间监督</a><a href="#80_final_A_phase3_seed25">80 最终候选 A：历史 phase3 独立版</a><a href="#81_final_B_p_full_initial">81 最终候选 B：p_full 预训练初始版</a><a href="#82_A_same_weight_c4">82 A 的同权重四方向推理验证版</a><a href="#83_phase3_c4_long">83 phase3 四方向继续训练冻结版</a></nav></details><p class="warn">下载包保留历史代码与许可文件；不含权重、数据和数值算子。配置中的本机路径仅用于追溯。请勿未经检查直接运行历史训练入口。</p></header>
+<div class="controls"><input id="q" placeholder="搜索版本 / 模块 / 配置"><select id="type"><option value="">所有类别</option><option>主线</option><option>同结构训练版本</option><option>输入对照</option><option>输入／模块消融</option><option>消融</option><option>诊断候选</option><option>诊断组合</option><option>表示对照</option><option>表示／训练对照</option><option>结构／验收原型</option><option>短训消融</option><option>发布别名</option><option>共同底座短训</option><option>选定检查点</option><option>推理配置对照</option><option>后续训练版本</option></select>
+<button id="expand">展开当前全部流程图</button><span id="count"></span></div><article class="card" id="01_v4_topology_risk" data-category="主线"><h2>01_v4_topology_risk<br>早期 V4：拓扑修正与风险门控</h2>
+<span class="tag">主线</span><p>这是早期 KTC 输入体系，不是后来双频 COMSOL 适配版；原归档源码优先。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/01_v4_topology_risk.svg" target="_blank"><img loading="lazy" src="diagrams/01_v4_topology_risk.png" alt="早期 V4：拓扑修正与风险门控流程图"></a></details>
+<p class="actions"><a href="packages/01_v4_topology_risk_code.zip" download>下载对应代码包 (0.9 MiB)</a>
+<a href="diagrams/01_v4_topology_risk.png" target="_blank">PNG 图</a><a href="diagrams/01_v4_topology_risk.svg" target="_blank">SVG 图</a><a href="records/01_v4_topology_risk.json">配置与路径</a></p></article><article class="card" id="02_v5_topology_risk" data-category="主线"><h2>02_v5_topology_risk<br>V5：面积保护与更保守的风险控制</h2>
+<span class="tag">主线</span><p>延续早期 V4；主要改变训练约束、测量扰动训练与验证门槛，不表示所有病例都优于 V4。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/02_v5_topology_risk.svg" target="_blank"><img loading="lazy" src="diagrams/02_v5_topology_risk.png" alt="V5：面积保护与更保守的风险控制流程图"></a></details>
+<p class="actions"><a href="packages/02_v5_topology_risk_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/02_v5_topology_risk.png" target="_blank">PNG 图</a><a href="diagrams/02_v5_topology_risk.svg" target="_blank">SVG 图</a><a href="records/02_v5_topology_risk.json">配置与路径</a></p></article><article class="card" id="03_v6_local_corrected" data-category="主线"><h2>03_v6_local_corrected<br>V6：局部修正与双风险门控</h2>
+<span class="tag">主线</span><p>采用 corrected 记录。未加 corrected 的旧结果存在评估索引错误，不能据此报告性能。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/03_v6_local_corrected.svg" target="_blank"><img loading="lazy" src="diagrams/03_v6_local_corrected.png" alt="V6：局部修正与双风险门控流程图"></a></details>
+<p class="actions"><a href="packages/03_v6_local_corrected_code.zip" download>下载对应代码包 (1.0 MiB)</a>
+<a href="diagrams/03_v6_local_corrected.png" target="_blank">PNG 图</a><a href="diagrams/03_v6_local_corrected.svg" target="_blank">SVG 图</a><a href="records/03_v6_local_corrected.json">配置与路径</a></p></article><article class="card" id="04_v4_imported" data-category="主线"><h2>04_v4_imported<br>导入 V4：双频初始图与电压联合重建</h2>
+<span class="tag">主线</span><p>20261015 导入包；7 通道初始图与 4 通道复电压。与本地 12 通道 V4 权重不通用。外部引擎／缓存并非全部随代码提供。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/04_v4_imported.svg" target="_blank"><img loading="lazy" src="diagrams/04_v4_imported.png" alt="导入 V4：双频初始图与电压联合重建流程图"></a></details>
+<p class="actions"><a href="packages/04_v4_imported_code.zip" download>下载对应代码包 (0.4 MiB)</a>
+<a href="diagrams/04_v4_imported.png" target="_blank">PNG 图</a><a href="diagrams/04_v4_imported.svg" target="_blank">SVG 图</a><a href="records/04_v4_imported.json">配置与路径</a></p></article><article class="card" id="05_v4_imported_long" data-category="同结构训练版本"><h2>05_v4_imported_long<br>导入 V4：延长耐心训练版</h2>
+<span class="tag">同结构训练版本</span><p>与上一项同架构，训练历史及检查点不同；不能把长训当成额外推理模块。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/05_v4_imported_long.svg" target="_blank"><img loading="lazy" src="diagrams/05_v4_imported_long.png" alt="导入 V4：延长耐心训练版流程图"></a></details>
+<p class="actions"><a href="packages/05_v4_imported_long_code.zip" download>下载对应代码包 (0.4 MiB)</a>
+<a href="diagrams/05_v4_imported_long.png" target="_blank">PNG 图</a><a href="diagrams/05_v4_imported_long.svg" target="_blank">SVG 图</a><a href="records/05_v4_imported_long.json">配置与路径</a></p></article><article class="card" id="06_v4_3872_amplitude" data-category="输入对照"><h2>06_v4_3872_amplitude<br>V4 / 3872 数据：仅幅值</h2>
+<span class="tag">输入对照</span><p>3872 例数据上的输入受控研究；不是最终 4840 数据实验。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/06_v4_3872_amplitude.svg" target="_blank"><img loading="lazy" src="diagrams/06_v4_3872_amplitude.png" alt="V4 / 3872 数据：仅幅值流程图"></a></details>
+<p class="actions"><a href="packages/06_v4_3872_amplitude_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/06_v4_3872_amplitude.png" target="_blank">PNG 图</a><a href="diagrams/06_v4_3872_amplitude.svg" target="_blank">SVG 图</a><a href="records/06_v4_3872_amplitude.json">配置与路径</a></p></article><article class="card" id="07_v4_3872_complex" data-category="输入对照"><h2>07_v4_3872_complex<br>V4 / 3872 数据：复数电压</h2>
+<span class="tag">输入对照</span><p>3872 例数据上的输入受控研究；不是最终 4840 数据实验。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/07_v4_3872_complex.svg" target="_blank"><img loading="lazy" src="diagrams/07_v4_3872_complex.png" alt="V4 / 3872 数据：复数电压流程图"></a></details>
+<p class="actions"><a href="packages/07_v4_3872_complex_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/07_v4_3872_complex.png" target="_blank">PNG 图</a><a href="diagrams/07_v4_3872_complex.svg" target="_blank">SVG 图</a><a href="records/07_v4_3872_complex.json">配置与路径</a></p></article><article class="card" id="08_v4_3872_calibrated" data-category="输入对照"><h2>08_v4_3872_calibrated<br>V4 / 3872 数据：背景校准复数电压</h2>
+<span class="tag">输入对照</span><p>3872 例数据上的输入受控研究；不是最终 4840 数据实验。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/08_v4_3872_calibrated.svg" target="_blank"><img loading="lazy" src="diagrams/08_v4_3872_calibrated.png" alt="V4 / 3872 数据：背景校准复数电压流程图"></a></details>
+<p class="actions"><a href="packages/08_v4_3872_calibrated_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/08_v4_3872_calibrated.png" target="_blank">PNG 图</a><a href="diagrams/08_v4_3872_calibrated.svg" target="_blank">SVG 图</a><a href="records/08_v4_3872_calibrated.json">配置与路径</a></p></article><article class="card" id="09_v4_3872_amplitude_calibrated" data-category="输入对照"><h2>09_v4_3872_amplitude_calibrated<br>V4 / 3872 数据：背景校准幅值</h2>
+<span class="tag">输入对照</span><p>3872 例数据上的输入受控研究；不是最终 4840 数据实验。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/09_v4_3872_amplitude_calibrated.svg" target="_blank"><img loading="lazy" src="diagrams/09_v4_3872_amplitude_calibrated.png" alt="V4 / 3872 数据：背景校准幅值流程图"></a></details>
+<p class="actions"><a href="packages/09_v4_3872_amplitude_calibrated_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/09_v4_3872_amplitude_calibrated.png" target="_blank">PNG 图</a><a href="diagrams/09_v4_3872_amplitude_calibrated.svg" target="_blank">SVG 图</a><a href="records/09_v4_3872_amplitude_calibrated.json">配置与路径</a></p></article><article class="card" id="10_v4_4840_formal50" data-category="主线"><h2>10_v4_4840_formal50<br>V4 / 4840 数据：校准输入 50 轮版</h2>
+<span class="tag">主线</span><p>50 轮探索性适配，与后面的正式配对多种子实验区分。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/10_v4_4840_formal50.svg" target="_blank"><img loading="lazy" src="diagrams/10_v4_4840_formal50.png" alt="V4 / 4840 数据：校准输入 50 轮版流程图"></a></details>
+<p class="actions"><a href="packages/10_v4_4840_formal50_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/10_v4_4840_formal50.png" target="_blank">PNG 图</a><a href="diagrams/10_v4_4840_formal50.svg" target="_blank">SVG 图</a><a href="records/10_v4_4840_formal50.json">配置与路径</a></p></article><article class="card" id="11_v4_4840_calibrated" data-category="主线"><h2>11_v4_4840_calibrated<br>V4 / 4840 正式对照：背景校准复数电压</h2>
+<span class="tag">主线</span><p>相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/11_v4_4840_calibrated.svg" target="_blank"><img loading="lazy" src="diagrams/11_v4_4840_calibrated.png" alt="V4 / 4840 正式对照：背景校准复数电压流程图"></a></details>
+<p class="actions"><a href="packages/11_v4_4840_calibrated_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/11_v4_4840_calibrated.png" target="_blank">PNG 图</a><a href="diagrams/11_v4_4840_calibrated.svg" target="_blank">SVG 图</a><a href="records/11_v4_4840_calibrated.json">配置与路径</a></p></article><article class="card" id="12_v4_4840_amplitude" data-category="输入／模块消融"><h2>12_v4_4840_amplitude<br>V4 / 4840 正式对照：仅幅值</h2>
+<span class="tag">输入／模块消融</span><p>相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/12_v4_4840_amplitude.svg" target="_blank"><img loading="lazy" src="diagrams/12_v4_4840_amplitude.png" alt="V4 / 4840 正式对照：仅幅值流程图"></a></details>
+<p class="actions"><a href="packages/12_v4_4840_amplitude_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/12_v4_4840_amplitude.png" target="_blank">PNG 图</a><a href="diagrams/12_v4_4840_amplitude.svg" target="_blank">SVG 图</a><a href="records/12_v4_4840_amplitude.json">配置与路径</a></p></article><article class="card" id="13_v4_4840_complex" data-category="输入／模块消融"><h2>13_v4_4840_complex<br>V4 / 4840 正式对照：复数电压</h2>
+<span class="tag">输入／模块消融</span><p>相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/13_v4_4840_complex.svg" target="_blank"><img loading="lazy" src="diagrams/13_v4_4840_complex.png" alt="V4 / 4840 正式对照：复数电压流程图"></a></details>
+<p class="actions"><a href="packages/13_v4_4840_complex_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/13_v4_4840_complex.png" target="_blank">PNG 图</a><a href="diagrams/13_v4_4840_complex.svg" target="_blank">SVG 图</a><a href="records/13_v4_4840_complex.json">配置与路径</a></p></article><article class="card" id="14_v4_4840_amplitude_calibrated" data-category="输入／模块消融"><h2>14_v4_4840_amplitude_calibrated<br>V4 / 4840 正式对照：背景校准幅值</h2>
+<span class="tag">输入／模块消融</span><p>相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/14_v4_4840_amplitude_calibrated.svg" target="_blank"><img loading="lazy" src="diagrams/14_v4_4840_amplitude_calibrated.png" alt="V4 / 4840 正式对照：背景校准幅值流程图"></a></details>
+<p class="actions"><a href="packages/14_v4_4840_amplitude_calibrated_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/14_v4_4840_amplitude_calibrated.png" target="_blank">PNG 图</a><a href="diagrams/14_v4_4840_amplitude_calibrated.svg" target="_blank">SVG 图</a><a href="records/14_v4_4840_amplitude_calibrated.json">配置与路径</a></p></article><article class="card" id="15_v4_4840_no_topology" data-category="输入／模块消融"><h2>15_v4_4840_no_topology<br>V4 / 4840 正式对照：去除拓扑修正</h2>
+<span class="tag">输入／模块消融</span><p>相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/15_v4_4840_no_topology.svg" target="_blank"><img loading="lazy" src="diagrams/15_v4_4840_no_topology.png" alt="V4 / 4840 正式对照：去除拓扑修正流程图"></a></details>
+<p class="actions"><a href="packages/15_v4_4840_no_topology_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/15_v4_4840_no_topology.png" target="_blank">PNG 图</a><a href="diagrams/15_v4_4840_no_topology.svg" target="_blank">SVG 图</a><a href="records/15_v4_4840_no_topology.json">配置与路径</a></p></article><article class="card" id="16_v4_4840_no_risk" data-category="输入／模块消融"><h2>16_v4_4840_no_risk<br>V4 / 4840 正式对照：去除风险门控</h2>
+<span class="tag">输入／模块消融</span><p>相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/16_v4_4840_no_risk.svg" target="_blank"><img loading="lazy" src="diagrams/16_v4_4840_no_risk.png" alt="V4 / 4840 正式对照：去除风险门控流程图"></a></details>
+<p class="actions"><a href="packages/16_v4_4840_no_risk_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/16_v4_4840_no_risk.png" target="_blank">PNG 图</a><a href="diagrams/16_v4_4840_no_risk.svg" target="_blank">SVG 图</a><a href="records/16_v4_4840_no_risk.json">配置与路径</a></p></article><article class="card" id="17_v4_k1_feedback" data-category="主线"><h2>17_v4_k1_feedback<br>旧 V4 + 单轮修正</h2>
+<span class="tag">主线</span><p>冻结 V4，只训练一次修正；非三轮联合闭环。历史 FEM 有像素覆盖近似，不能套用后来的覆盖验收。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/17_v4_k1_feedback.svg" target="_blank"><img loading="lazy" src="diagrams/17_v4_k1_feedback.png" alt="旧 V4 + 单轮修正流程图"></a></details>
+<p class="actions"><a href="packages/17_v4_k1_feedback_code.zip" download>下载对应代码包 (6.2 MiB)</a>
+<a href="diagrams/17_v4_k1_feedback.png" target="_blank">PNG 图</a><a href="diagrams/17_v4_k1_feedback.svg" target="_blank">SVG 图</a><a href="records/17_v4_k1_feedback.json">配置与路径</a></p></article><article class="card" id="18_v4_k1_no_feedback" data-category="消融"><h2>18_v4_k1_no_feedback<br>旧 V4 + 单轮修正：无物理反馈对照</h2>
+<span class="tag">消融</span><p>冻结 V4，只训练一次修正；非三轮联合闭环。历史 FEM 有像素覆盖近似，不能套用后来的覆盖验收。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/18_v4_k1_no_feedback.svg" target="_blank"><img loading="lazy" src="diagrams/18_v4_k1_no_feedback.png" alt="旧 V4 + 单轮修正：无物理反馈对照流程图"></a></details>
+<p class="actions"><a href="packages/18_v4_k1_no_feedback_code.zip" download>下载对应代码包 (6.2 MiB)</a>
+<a href="diagrams/18_v4_k1_no_feedback.png" target="_blank">PNG 图</a><a href="diagrams/18_v4_k1_no_feedback.svg" target="_blank">SVG 图</a><a href="records/18_v4_k1_no_feedback.json">配置与路径</a></p></article><article class="card" id="19_v4_k1_long_feedback" data-category="主线"><h2>19_v4_k1_long_feedback<br>旧 V4 + 单轮修正（多种子长训）</h2>
+<span class="tag">主线</span><p>冻结 V4，只训练一次修正；非三轮联合闭环。历史 FEM 有像素覆盖近似，不能套用后来的覆盖验收。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/19_v4_k1_long_feedback.svg" target="_blank"><img loading="lazy" src="diagrams/19_v4_k1_long_feedback.png" alt="旧 V4 + 单轮修正（多种子长训）流程图"></a></details>
+<p class="actions"><a href="packages/19_v4_k1_long_feedback_code.zip" download>下载对应代码包 (6.2 MiB)</a>
+<a href="diagrams/19_v4_k1_long_feedback.png" target="_blank">PNG 图</a><a href="diagrams/19_v4_k1_long_feedback.svg" target="_blank">SVG 图</a><a href="records/19_v4_k1_long_feedback.json">配置与路径</a></p></article><article class="card" id="20_v4_k1_long_no_feedback" data-category="消融"><h2>20_v4_k1_long_no_feedback<br>旧 V4 + 单轮修正（多种子长训）：无物理反馈对照</h2>
+<span class="tag">消融</span><p>冻结 V4，只训练一次修正；非三轮联合闭环。历史 FEM 有像素覆盖近似，不能套用后来的覆盖验收。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/20_v4_k1_long_no_feedback.svg" target="_blank"><img loading="lazy" src="diagrams/20_v4_k1_long_no_feedback.png" alt="旧 V4 + 单轮修正（多种子长训）：无物理反馈对照流程图"></a></details>
+<p class="actions"><a href="packages/20_v4_k1_long_no_feedback_code.zip" download>下载对应代码包 (6.2 MiB)</a>
+<a href="diagrams/20_v4_k1_long_no_feedback.png" target="_blank">PNG 图</a><a href="diagrams/20_v4_k1_long_no_feedback.svg" target="_blank">SVG 图</a><a href="records/20_v4_k1_long_no_feedback.json">配置与路径</a></p></article><article class="card" id="21_v4_k3_quick" data-category="主线"><h2>21_v4_k3_quick<br>旧 V4 联合微调：固定三轮短训版</h2>
+<span class="tag">主线</span><p>3 个完整 epoch，选第 2 轮；外凸研究前的旧 K3 对照。 历史 FEM 并非后来 3096 像素覆盖修订版。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/21_v4_k3_quick.svg" target="_blank"><img loading="lazy" src="diagrams/21_v4_k3_quick.png" alt="旧 V4 联合微调：固定三轮短训版流程图"></a></details>
+<p class="actions"><a href="packages/21_v4_k3_quick_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/21_v4_k3_quick.png" target="_blank">PNG 图</a><a href="diagrams/21_v4_k3_quick.svg" target="_blank">SVG 图</a><a href="records/21_v4_k3_quick.json">配置与路径</a></p></article><article class="card" id="22_v4_k3_long" data-category="主线"><h2>22_v4_k3_long<br>旧 V4 联合微调：三轮长训分支</h2>
+<span class="tag">主线</span><p>保留原长训分支的实际状态，不恢复训练，也不声称它已完成。 历史 FEM 并非后来 3096 像素覆盖修订版。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/22_v4_k3_long.svg" target="_blank"><img loading="lazy" src="diagrams/22_v4_k3_long.png" alt="旧 V4 联合微调：三轮长训分支流程图"></a></details>
+<p class="actions"><a href="packages/22_v4_k3_long_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/22_v4_k3_long.png" target="_blank">PNG 图</a><a href="diagrams/22_v4_k3_long.svg" target="_blank">SVG 图</a><a href="records/22_v4_k3_long.json">配置与路径</a></p></article><article class="card" id="23_probe_delete_global" data-category="诊断候选"><h2>23_probe_delete_global<br>外凸诊断：只减不增的全局修正</h2>
+<span class="tag">诊断候选</span><p>不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/23_probe_delete_global.svg" target="_blank"><img loading="lazy" src="diagrams/23_probe_delete_global.png" alt="外凸诊断：只减不增的全局修正流程图"></a></details>
+<p class="actions"><a href="packages/23_probe_delete_global_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/23_probe_delete_global.png" target="_blank">PNG 图</a><a href="diagrams/23_probe_delete_global.svg" target="_blank">SVG 图</a><a href="records/23_probe_delete_global.json">配置与路径</a></p></article><article class="card" id="24_probe_signed_global" data-category="诊断候选"><h2>24_probe_signed_global<br>外凸诊断：可增可减的全局修正</h2>
+<span class="tag">诊断候选</span><p>不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/24_probe_signed_global.svg" target="_blank"><img loading="lazy" src="diagrams/24_probe_signed_global.png" alt="外凸诊断：可增可减的全局修正流程图"></a></details>
+<p class="actions"><a href="packages/24_probe_signed_global_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/24_probe_signed_global.png" target="_blank">PNG 图</a><a href="diagrams/24_probe_signed_global.svg" target="_blank">SVG 图</a><a href="records/24_probe_signed_global.json">配置与路径</a></p></article><article class="card" id="25_probe_signed_boundary" data-category="诊断候选"><h2>25_probe_signed_boundary<br>外凸诊断：可增可减 + 边界监督</h2>
+<span class="tag">诊断候选</span><p>不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/25_probe_signed_boundary.svg" target="_blank"><img loading="lazy" src="diagrams/25_probe_signed_boundary.png" alt="外凸诊断：可增可减 + 边界监督流程图"></a></details>
+<p class="actions"><a href="packages/25_probe_signed_boundary_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/25_probe_signed_boundary.png" target="_blank">PNG 图</a><a href="diagrams/25_probe_signed_boundary.svg" target="_blank">SVG 图</a><a href="records/25_probe_signed_boundary.json">配置与路径</a></p></article><article class="card" id="26_probe_signed_local" data-category="诊断候选"><h2>26_probe_signed_local<br>外凸诊断：可增可减 + 局部监督</h2>
+<span class="tag">诊断候选</span><p>不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/26_probe_signed_local.svg" target="_blank"><img loading="lazy" src="diagrams/26_probe_signed_local.png" alt="外凸诊断：可增可减 + 局部监督流程图"></a></details>
+<p class="actions"><a href="packages/26_probe_signed_local_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/26_probe_signed_local.png" target="_blank">PNG 图</a><a href="diagrams/26_probe_signed_local.svg" target="_blank">SVG 图</a><a href="records/26_probe_signed_local.json">配置与路径</a></p></article><article class="card" id="27_probe_probability_local" data-category="诊断候选"><h2>27_probe_probability_local<br>外凸诊断：概率直接修正 + 局部监督</h2>
+<span class="tag">诊断候选</span><p>不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/27_probe_probability_local.svg" target="_blank"><img loading="lazy" src="diagrams/27_probe_probability_local.png" alt="外凸诊断：概率直接修正 + 局部监督流程图"></a></details>
+<p class="actions"><a href="packages/27_probe_probability_local_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/27_probe_probability_local.png" target="_blank">PNG 图</a><a href="diagrams/27_probe_probability_local.svg" target="_blank">SVG 图</a><a href="records/27_probe_probability_local.json">配置与路径</a></p></article><article class="card" id="28_probe_joint_global" data-category="诊断候选"><h2>28_probe_joint_global<br>外凸诊断：V4 联合训练 + 全局修正</h2>
+<span class="tag">诊断候选</span><p>不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/28_probe_joint_global.svg" target="_blank"><img loading="lazy" src="diagrams/28_probe_joint_global.png" alt="外凸诊断：V4 联合训练 + 全局修正流程图"></a></details>
+<p class="actions"><a href="packages/28_probe_joint_global_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/28_probe_joint_global.png" target="_blank">PNG 图</a><a href="diagrams/28_probe_joint_global.svg" target="_blank">SVG 图</a><a href="records/28_probe_joint_global.json">配置与路径</a></p></article><article class="card" id="29_probe_joint_local" data-category="诊断候选"><h2>29_probe_joint_local<br>外凸诊断：V4 联合训练 + 局部监督</h2>
+<span class="tag">诊断候选</span><p>不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/29_probe_joint_local.svg" target="_blank"><img loading="lazy" src="diagrams/29_probe_joint_local.png" alt="外凸诊断：V4 联合训练 + 局部监督流程图"></a></details>
+<p class="actions"><a href="packages/29_probe_joint_local_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/29_probe_joint_local.png" target="_blank">PNG 图</a><a href="diagrams/29_probe_joint_local.svg" target="_blank">SVG 图</a><a href="records/29_probe_joint_local.json">配置与路径</a></p></article><article class="card" id="30_probe_joint_local_precise" data-category="诊断候选"><h2>30_probe_joint_local_precise<br>外凸诊断：联合局部监督 + 邻近误填约束</h2>
+<span class="tag">诊断候选</span><p>不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/30_probe_joint_local_precise.svg" target="_blank"><img loading="lazy" src="diagrams/30_probe_joint_local_precise.png" alt="外凸诊断：联合局部监督 + 邻近误填约束流程图"></a></details>
+<p class="actions"><a href="packages/30_probe_joint_local_precise_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/30_probe_joint_local_precise.png" target="_blank">PNG 图</a><a href="diagrams/30_probe_joint_local_precise.svg" target="_blank">SVG 图</a><a href="records/30_probe_joint_local_precise.json">配置与路径</a></p></article><article class="card" id="31_probe_gate_control" data-category="诊断候选"><h2>31_probe_gate_control<br>外凸诊断：预测边界带内的门控修正</h2>
+<span class="tag">诊断候选</span><p>不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/31_probe_gate_control.svg" target="_blank"><img loading="lazy" src="diagrams/31_probe_gate_control.png" alt="外凸诊断：预测边界带内的门控修正流程图"></a></details>
+<p class="actions"><a href="packages/31_probe_gate_control_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/31_probe_gate_control.png" target="_blank">PNG 图</a><a href="diagrams/31_probe_gate_control.svg" target="_blank">SVG 图</a><a href="records/31_probe_gate_control.json">配置与路径</a></p></article><article class="card" id="32_probe_gate_supervised" data-category="诊断候选"><h2>32_probe_gate_supervised<br>外凸诊断：门控修正 + 局部定位监督</h2>
+<span class="tag">诊断候选</span><p>不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/32_probe_gate_supervised.svg" target="_blank"><img loading="lazy" src="diagrams/32_probe_gate_supervised.png" alt="外凸诊断：门控修正 + 局部定位监督流程图"></a></details>
+<p class="actions"><a href="packages/32_probe_gate_supervised_code.zip" download>下载对应代码包 (6.3 MiB)</a>
+<a href="diagrams/32_probe_gate_supervised.png" target="_blank">PNG 图</a><a href="diagrams/32_probe_gate_supervised.svg" target="_blank">SVG 图</a><a href="records/32_probe_gate_supervised.json">配置与路径</a></p></article><article class="card" id="33_probe_k3_integration" data-category="诊断组合"><h2>33_probe_k3_integration<br>局部概率修正接入旧 K3 的验证版</h2>
+<span class="tag">诊断组合</span><p>probability_local 改初始几何并重新耦合材料，再接原 K3 修正器；不能视作重新联合训练的最佳模型。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/33_probe_k3_integration.svg" target="_blank"><img loading="lazy" src="diagrams/33_probe_k3_integration.png" alt="局部概率修正接入旧 K3 的验证版流程图"></a></details>
+<p class="actions"><a href="packages/33_probe_k3_integration_code.zip" download>下载对应代码包 (6.4 MiB)</a>
+<a href="diagrams/33_probe_k3_integration.png" target="_blank">PNG 图</a><a href="diagrams/33_probe_k3_integration.svg" target="_blank">SVG 图</a><a href="records/33_probe_k3_integration.json">配置与路径</a></p></article><article class="card" id="34_shape1_single16" data-category="表示对照"><h2>34_shape1_single16<br>通用形状第一阶段：单通道低分辨率映射</h2>
+<span class="tag">表示对照</span><p>全图通用形状与材料预测，无 V4 删除门控、完整 Champion 或在线 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/34_shape1_single16.svg" target="_blank"><img loading="lazy" src="diagrams/34_shape1_single16.png" alt="通用形状第一阶段：单通道低分辨率映射流程图"></a></details>
+<p class="actions"><a href="packages/34_shape1_single16_code.zip" download>下载对应代码包 (6.4 MiB)</a>
+<a href="diagrams/34_shape1_single16.png" target="_blank">PNG 图</a><a href="diagrams/34_shape1_single16.svg" target="_blank">SVG 图</a><a href="records/34_shape1_single16.json">配置与路径</a></p></article><article class="card" id="35_shape1_multi16" data-category="表示对照"><h2>35_shape1_multi16<br>通用形状第一阶段：多通道低分辨率映射</h2>
+<span class="tag">表示对照</span><p>全图通用形状与材料预测，无 V4 删除门控、完整 Champion 或在线 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/35_shape1_multi16.svg" target="_blank"><img loading="lazy" src="diagrams/35_shape1_multi16.png" alt="通用形状第一阶段：多通道低分辨率映射流程图"></a></details>
+<p class="actions"><a href="packages/35_shape1_multi16_code.zip" download>下载对应代码包 (6.4 MiB)</a>
+<a href="diagrams/35_shape1_multi16.png" target="_blank">PNG 图</a><a href="diagrams/35_shape1_multi16.svg" target="_blank">SVG 图</a><a href="records/35_shape1_multi16.json">配置与路径</a></p></article><article class="card" id="36_shape1_dense64" data-category="表示对照"><h2>36_shape1_dense64<br>通用形状第一阶段：高分辨率直接映射</h2>
+<span class="tag">表示对照</span><p>全图通用形状与材料预测，无 V4 删除门控、完整 Champion 或在线 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/36_shape1_dense64.svg" target="_blank"><img loading="lazy" src="diagrams/36_shape1_dense64.png" alt="通用形状第一阶段：高分辨率直接映射流程图"></a></details>
+<p class="actions"><a href="packages/36_shape1_dense64_code.zip" download>下载对应代码包 (6.4 MiB)</a>
+<a href="diagrams/36_shape1_dense64.png" target="_blank">PNG 图</a><a href="diagrams/36_shape1_dense64.svg" target="_blank">SVG 图</a><a href="records/36_shape1_dense64.json">配置与路径</a></p></article><article class="card" id="37_shape1_dense64_boundary" data-category="表示对照"><h2>37_shape1_dense64_boundary<br>通用形状第一阶段：高分辨率映射 + 边界监督</h2>
+<span class="tag">表示对照</span><p>全图通用形状与材料预测，无 V4 删除门控、完整 Champion 或在线 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/37_shape1_dense64_boundary.svg" target="_blank"><img loading="lazy" src="diagrams/37_shape1_dense64_boundary.png" alt="通用形状第一阶段：高分辨率映射 + 边界监督流程图"></a></details>
+<p class="actions"><a href="packages/37_shape1_dense64_boundary_code.zip" download>下载对应代码包 (6.4 MiB)</a>
+<a href="diagrams/37_shape1_dense64_boundary.png" target="_blank">PNG 图</a><a href="diagrams/37_shape1_dense64_boundary.svg" target="_blank">SVG 图</a><a href="records/37_shape1_dense64_boundary.json">配置与路径</a></p></article><article class="card" id="38_shape1_query_boundary" data-category="表示对照"><h2>38_shape1_query_boundary<br>通用形状第一阶段：逐位置查询 + 边界监督</h2>
+<span class="tag">表示对照</span><p>全图通用形状与材料预测，无 V4 删除门控、完整 Champion 或在线 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/38_shape1_query_boundary.svg" target="_blank"><img loading="lazy" src="diagrams/38_shape1_query_boundary.png" alt="通用形状第一阶段：逐位置查询 + 边界监督流程图"></a></details>
+<p class="actions"><a href="packages/38_shape1_query_boundary_code.zip" download>下载对应代码包 (6.4 MiB)</a>
+<a href="diagrams/38_shape1_query_boundary.png" target="_blank">PNG 图</a><a href="diagrams/38_shape1_query_boundary.svg" target="_blank">SVG 图</a><a href="records/38_shape1_query_boundary.json">配置与路径</a></p></article><article class="card" id="39_shape2_physical" data-category="表示／训练对照"><h2>39_shape2_physical<br>通用形状第二阶段：固定物理投影</h2>
+<span class="tag">表示／训练对照</span><p>固定投影不等于每次重新进行非线性 FEM 正求解；延长训练项延续原结构。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/39_shape2_physical.svg" target="_blank"><img loading="lazy" src="diagrams/39_shape2_physical.png" alt="通用形状第二阶段：固定物理投影流程图"></a></details>
+<p class="actions"><a href="packages/39_shape2_physical_code.zip" download>下载对应代码包 (6.5 MiB)</a>
+<a href="diagrams/39_shape2_physical.png" target="_blank">PNG 图</a><a href="diagrams/39_shape2_physical.svg" target="_blank">SVG 图</a><a href="records/39_shape2_physical.json">配置与路径</a></p></article><article class="card" id="40_shape2_physical_boundary" data-category="表示／训练对照"><h2>40_shape2_physical_boundary<br>通用形状第二阶段：固定物理投影 + 边界监督</h2>
+<span class="tag">表示／训练对照</span><p>固定投影不等于每次重新进行非线性 FEM 正求解；延长训练项延续原结构。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/40_shape2_physical_boundary.svg" target="_blank"><img loading="lazy" src="diagrams/40_shape2_physical_boundary.png" alt="通用形状第二阶段：固定物理投影 + 边界监督流程图"></a></details>
+<p class="actions"><a href="packages/40_shape2_physical_boundary_code.zip" download>下载对应代码包 (6.5 MiB)</a>
+<a href="diagrams/40_shape2_physical_boundary.png" target="_blank">PNG 图</a><a href="diagrams/40_shape2_physical_boundary.svg" target="_blank">SVG 图</a><a href="records/40_shape2_physical_boundary.json">配置与路径</a></p></article><article class="card" id="41_shape2_multi16_extended" data-category="表示／训练对照"><h2>41_shape2_multi16_extended<br>通用形状第二阶段：多通道映射延长训练</h2>
+<span class="tag">表示／训练对照</span><p>沿用第一阶段的学习式测量到空间映射，延长训练；本项没有固定物理投影或在线 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/41_shape2_multi16_extended.svg" target="_blank"><img loading="lazy" src="diagrams/41_shape2_multi16_extended.png" alt="通用形状第二阶段：多通道映射延长训练流程图"></a></details>
+<p class="actions"><a href="packages/41_shape2_multi16_extended_code.zip" download>下载对应代码包 (6.4 MiB)</a>
+<a href="diagrams/41_shape2_multi16_extended.png" target="_blank">PNG 图</a><a href="diagrams/41_shape2_multi16_extended.svg" target="_blank">SVG 图</a><a href="records/41_shape2_multi16_extended.json">配置与路径</a></p></article><article class="card" id="42_shape2_dense64_boundary_extended" data-category="表示／训练对照"><h2>42_shape2_dense64_boundary_extended<br>通用形状第二阶段：高分辨率边界版延长训练</h2>
+<span class="tag">表示／训练对照</span><p>沿用第一阶段的学习式测量到空间映射，延长训练；本项没有固定物理投影或在线 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/42_shape2_dense64_boundary_extended.svg" target="_blank"><img loading="lazy" src="diagrams/42_shape2_dense64_boundary_extended.png" alt="通用形状第二阶段：高分辨率边界版延长训练流程图"></a></details>
+<p class="actions"><a href="packages/42_shape2_dense64_boundary_extended_code.zip" download>下载对应代码包 (6.4 MiB)</a>
+<a href="diagrams/42_shape2_dense64_boundary_extended.png" target="_blank">PNG 图</a><a href="diagrams/42_shape2_dense64_boundary_extended.svg" target="_blank">SVG 图</a><a href="records/42_shape2_dense64_boundary_extended.json">配置与路径</a></p></article><article class="card" id="43_shape3_physical_control" data-category="主线"><h2>43_shape3_physical_control<br>通用形状第三阶段：固定投影：不加旋转训练对照</h2>
+<span class="tag">主线</span><p>physical_c4 名称中的四方向是训练增强；这一历史评估路径在推理时只有一次网络计算。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/43_shape3_physical_control.svg" target="_blank"><img loading="lazy" src="diagrams/43_shape3_physical_control.png" alt="通用形状第三阶段：固定投影：不加旋转训练对照流程图"></a></details>
+<p class="actions"><a href="packages/43_shape3_physical_control_code.zip" download>下载对应代码包 (6.5 MiB)</a>
+<a href="diagrams/43_shape3_physical_control.png" target="_blank">PNG 图</a><a href="diagrams/43_shape3_physical_control.svg" target="_blank">SVG 图</a><a href="records/43_shape3_physical_control.json">配置与路径</a></p></article><article class="card" id="44_shape3_physical_c4" data-category="主线"><h2>44_shape3_physical_c4<br>通用形状第三阶段：固定投影：四方向训练增强版</h2>
+<span class="tag">主线</span><p>physical_c4 名称中的四方向是训练增强；这一历史评估路径在推理时只有一次网络计算。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/44_shape3_physical_c4.svg" target="_blank"><img loading="lazy" src="diagrams/44_shape3_physical_c4.png" alt="通用形状第三阶段：固定投影：四方向训练增强版流程图"></a></details>
+<p class="actions"><a href="packages/44_shape3_physical_c4_code.zip" download>下载对应代码包 (6.5 MiB)</a>
+<a href="diagrams/44_shape3_physical_c4.png" target="_blank">PNG 图</a><a href="diagrams/44_shape3_physical_c4.svg" target="_blank">SVG 图</a><a href="records/44_shape3_physical_c4.json">配置与路径</a></p></article><article class="card" id="45_champion_full" data-category="主线"><h2>45_champion_full<br>完整 Champion：四方向几何与区域材料重建</h2>
+<span class="tag">主线</span><p>含电压注意力、双路骨干、细几何查询、方向融合与界面宽度；不是把旧 V4 代码原封不动并联在内。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/45_champion_full.svg" target="_blank"><img loading="lazy" src="diagrams/45_champion_full.png" alt="完整 Champion：四方向几何与区域材料重建流程图"></a></details>
+<p class="actions"><a href="packages/45_champion_full_code.zip" download>下载对应代码包 (6.7 MiB)</a>
+<a href="diagrams/45_champion_full.png" target="_blank">PNG 图</a><a href="diagrams/45_champion_full.svg" target="_blank">SVG 图</a><a href="records/45_champion_full.json">配置与路径</a></p></article><article class="card" id="46_projection_fixed3_loop" data-category="结构／验收原型"><h2>46_projection_fixed3_loop<br>投影四方向初始化 + 三轮场修正</h2>
+<span class="tag">结构／验收原型</span><p>早期集成原型，无独立完整训练权重；final_c4_loop 名称不代表完整 Champion。投影网络初始化与反馈零头不能冒充反馈已训练。历史网格未继承后续覆盖修订。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/46_projection_fixed3_loop.svg" target="_blank"><img loading="lazy" src="diagrams/46_projection_fixed3_loop.png" alt="投影四方向初始化 + 三轮场修正流程图"></a></details>
+<p class="actions"><a href="packages/46_projection_fixed3_loop_code.zip" download>下载对应代码包 (6.9 MiB)</a>
+<a href="diagrams/46_projection_fixed3_loop.png" target="_blank">PNG 图</a><a href="diagrams/46_projection_fixed3_loop.svg" target="_blank">SVG 图</a><a href="records/46_projection_fixed3_loop.json">配置与路径</a></p></article><article class="card" id="47_champion_fixed3_loop" data-category="结构／验收原型"><h2>47_champion_fixed3_loop<br>完整 Champion + 三轮场修正</h2>
+<span class="tag">结构／验收原型</span><p>完成代码集成／接口验收，不是独立完整训练版本；默认预训练 Champion + 未训练反馈。以 Champion 替代初始化网络，没有同时保留完整旧 V4 闭环。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/47_champion_fixed3_loop.svg" target="_blank"><img loading="lazy" src="diagrams/47_champion_fixed3_loop.png" alt="完整 Champion + 三轮场修正流程图"></a></details>
+<p class="actions"><a href="packages/47_champion_fixed3_loop_code.zip" download>下载对应代码包 (6.9 MiB)</a>
+<a href="diagrams/47_champion_fixed3_loop.png" target="_blank">PNG 图</a><a href="diagrams/47_champion_fixed3_loop.svg" target="_blank">SVG 图</a><a href="records/47_champion_fixed3_loop.json">配置与路径</a></p></article><article class="card" id="48_champion_adaptive_loop" data-category="结构／验收原型"><h2>48_champion_adaptive_loop<br>完整 Champion + 自适应场修正</h2>
+<span class="tag">结构／验收原型</span><p>本项是自适应接口原型；完整短训权重见后续 c_adaptive。3096/3096 像素覆盖修订 FEM 仍非原 COMSOL 完全等价；稳定停止、回退与上限终止分开。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/48_champion_adaptive_loop.svg" target="_blank"><img loading="lazy" src="diagrams/48_champion_adaptive_loop.png" alt="完整 Champion + 自适应场修正流程图"></a></details>
+<p class="actions"><a href="packages/48_champion_adaptive_loop_code.zip" download>下载对应代码包 (6.9 MiB)</a>
+<a href="diagrams/48_champion_adaptive_loop.png" target="_blank">PNG 图</a><a href="diagrams/48_champion_adaptive_loop.svg" target="_blank">SVG 图</a><a href="records/48_champion_adaptive_loop.json">配置与路径</a></p></article><article class="card" id="49_short21_c_full" data-category="短训消融"><h2>49_short21_c_full<br>21 组短训 / 完整 Champion，无反馈</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/49_short21_c_full.svg" target="_blank"><img loading="lazy" src="diagrams/49_short21_c_full.png" alt="21 组短训 / 完整 Champion，无反馈流程图"></a></details>
+<p class="actions"><a href="packages/49_short21_c_full_code.zip" download>下载对应代码包 (6.8 MiB)</a>
+<a href="diagrams/49_short21_c_full.png" target="_blank">PNG 图</a><a href="diagrams/49_short21_c_full.svg" target="_blank">SVG 图</a><a href="records/49_short21_c_full.json">配置与路径</a></p></article><article class="card" id="50_short21_p_full" data-category="短训消融"><h2>50_short21_p_full<br>21 组短训 / 投影四方向网络，无反馈</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/50_short21_p_full.svg" target="_blank"><img loading="lazy" src="diagrams/50_short21_p_full.png" alt="21 组短训 / 投影四方向网络，无反馈流程图"></a></details>
+<p class="actions"><a href="packages/50_short21_p_full_code.zip" download>下载对应代码包 (6.8 MiB)</a>
+<a href="diagrams/50_short21_p_full.png" target="_blank">PNG 图</a><a href="diagrams/50_short21_p_full.svg" target="_blank">SVG 图</a><a href="records/50_short21_p_full.json">配置与路径</a></p></article><article class="card" id="51_short21_p_no_projection" data-category="短训消融"><h2>51_short21_p_no_projection<br>21 组短训 / 投影路线：空间投影置零</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/51_short21_p_no_projection.svg" target="_blank"><img loading="lazy" src="diagrams/51_short21_p_no_projection.png" alt="21 组短训 / 投影路线：空间投影置零流程图"></a></details>
+<p class="actions"><a href="packages/51_short21_p_no_projection_code.zip" download>下载对应代码包 (6.8 MiB)</a>
+<a href="diagrams/51_short21_p_no_projection.png" target="_blank">PNG 图</a><a href="diagrams/51_short21_p_no_projection.svg" target="_blank">SVG 图</a><a href="records/51_short21_p_no_projection.json">配置与路径</a></p></article><article class="card" id="52_short21_p_no_context" data-category="短训消融"><h2>52_short21_p_no_context<br>21 组短训 / 投影路线：全局电压支路置零</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/52_short21_p_no_context.svg" target="_blank"><img loading="lazy" src="diagrams/52_short21_p_no_context.png" alt="21 组短训 / 投影路线：全局电压支路置零流程图"></a></details>
+<p class="actions"><a href="packages/52_short21_p_no_context_code.zip" download>下载对应代码包 (6.8 MiB)</a>
+<a href="diagrams/52_short21_p_no_context.png" target="_blank">PNG 图</a><a href="diagrams/52_short21_p_no_context.svg" target="_blank">SVG 图</a><a href="records/52_short21_p_no_context.json">配置与路径</a></p></article><article class="card" id="53_short21_p_no_c4" data-category="短训消融"><h2>53_short21_p_no_c4<br>21 组短训 / 投影路线：取消推理四方向融合</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/53_short21_p_no_c4.svg" target="_blank"><img loading="lazy" src="diagrams/53_short21_p_no_c4.png" alt="21 组短训 / 投影路线：取消推理四方向融合流程图"></a></details>
+<p class="actions"><a href="packages/53_short21_p_no_c4_code.zip" download>下载对应代码包 (6.8 MiB)</a>
+<a href="diagrams/53_short21_p_no_c4.png" target="_blank">PNG 图</a><a href="diagrams/53_short21_p_no_c4.svg" target="_blank">SVG 图</a><a href="records/53_short21_p_no_c4.json">配置与路径</a></p></article><article class="card" id="54_short21_c_no_c4" data-category="短训消融"><h2>54_short21_c_no_c4<br>21 组短训 / Champion：取消推理四方向融合</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/54_short21_c_no_c4.svg" target="_blank"><img loading="lazy" src="diagrams/54_short21_c_no_c4.png" alt="21 组短训 / Champion：取消推理四方向融合流程图"></a></details>
+<p class="actions"><a href="packages/54_short21_c_no_c4_code.zip" download>下载对应代码包 (6.8 MiB)</a>
+<a href="diagrams/54_short21_c_no_c4.png" target="_blank">PNG 图</a><a href="diagrams/54_short21_c_no_c4.svg" target="_blank">SVG 图</a><a href="records/54_short21_c_no_c4.json">配置与路径</a></p></article><article class="card" id="55_short21_c_no_query" data-category="短训消融"><h2>55_short21_c_no_query<br>21 组短训 / Champion：取消细几何查询</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/55_short21_c_no_query.svg" target="_blank"><img loading="lazy" src="diagrams/55_short21_c_no_query.png" alt="21 组短训 / Champion：取消细几何查询流程图"></a></details>
+<p class="actions"><a href="packages/55_short21_c_no_query_code.zip" download>下载对应代码包 (6.8 MiB)</a>
+<a href="diagrams/55_short21_c_no_query.png" target="_blank">PNG 图</a><a href="diagrams/55_short21_c_no_query.svg" target="_blank">SVG 图</a><a href="records/55_short21_c_no_query.json">配置与路径</a></p></article><article class="card" id="56_short21_c_fixed_width" data-category="短训消融"><h2>56_short21_c_fixed_width<br>21 组短训 / Champion：固定界面宽度</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/56_short21_c_fixed_width.svg" target="_blank"><img loading="lazy" src="diagrams/56_short21_c_fixed_width.png" alt="21 组短训 / Champion：固定界面宽度流程图"></a></details>
+<p class="actions"><a href="packages/56_short21_c_fixed_width_code.zip" download>下载对应代码包 (6.8 MiB)</a>
+<a href="diagrams/56_short21_c_fixed_width.png" target="_blank">PNG 图</a><a href="diagrams/56_short21_c_fixed_width.svg" target="_blank">SVG 图</a><a href="records/56_short21_c_fixed_width.json">配置与路径</a></p></article><article class="card" id="57_short21_c_front_only" data-category="短训消融"><h2>57_short21_c_front_only<br>21 组短训 / Champion：只保留注意力前端输出</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/57_short21_c_front_only.svg" target="_blank"><img loading="lazy" src="diagrams/57_short21_c_front_only.png" alt="21 组短训 / Champion：只保留注意力前端输出流程图"></a></details>
+<p class="actions"><a href="packages/57_short21_c_front_only_code.zip" download>下载对应代码包 (6.8 MiB)</a>
+<a href="diagrams/57_short21_c_front_only.png" target="_blank">PNG 图</a><a href="diagrams/57_short21_c_front_only.svg" target="_blank">SVG 图</a><a href="records/57_short21_c_front_only.json">配置与路径</a></p></article><article class="card" id="58_short21_c_no_image" data-category="短训消融"><h2>58_short21_c_no_image<br>21 组短训 / Champion：图像支路输入置零</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/58_short21_c_no_image.svg" target="_blank"><img loading="lazy" src="diagrams/58_short21_c_no_image.png" alt="21 组短训 / Champion：图像支路输入置零流程图"></a></details>
+<p class="actions"><a href="packages/58_short21_c_no_image_code.zip" download>下载对应代码包 (6.8 MiB)</a>
+<a href="diagrams/58_short21_c_no_image.png" target="_blank">PNG 图</a><a href="diagrams/58_short21_c_no_image.svg" target="_blank">SVG 图</a><a href="records/58_short21_c_no_image.json">配置与路径</a></p></article><article class="card" id="59_short21_c_no_voltage_encoder" data-category="短训消融"><h2>59_short21_c_no_voltage_encoder<br>21 组短训 / Champion：骨干电压编码输出置零</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/59_short21_c_no_voltage_encoder.svg" target="_blank"><img loading="lazy" src="diagrams/59_short21_c_no_voltage_encoder.png" alt="21 组短训 / Champion：骨干电压编码输出置零流程图"></a></details>
+<p class="actions"><a href="packages/59_short21_c_no_voltage_encoder_code.zip" download>下载对应代码包 (6.8 MiB)</a>
+<a href="diagrams/59_short21_c_no_voltage_encoder.png" target="_blank">PNG 图</a><a href="diagrams/59_short21_c_no_voltage_encoder.svg" target="_blank">SVG 图</a><a href="records/59_short21_c_no_voltage_encoder.json">配置与路径</a></p></article><article class="card" id="60_short21_c_no_bce" data-category="短训消融"><h2>60_short21_c_no_bce<br>21 组短训 / Champion：去除像素分类损失</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/60_short21_c_no_bce.svg" target="_blank"><img loading="lazy" src="diagrams/60_short21_c_no_bce.png" alt="21 组短训 / Champion：去除像素分类损失流程图"></a></details>
+<p class="actions"><a href="packages/60_short21_c_no_bce_code.zip" download>下载对应代码包 (6.9 MiB)</a>
+<a href="diagrams/60_short21_c_no_bce.png" target="_blank">PNG 图</a><a href="diagrams/60_short21_c_no_bce.svg" target="_blank">SVG 图</a><a href="records/60_short21_c_no_bce.json">配置与路径</a></p></article><article class="card" id="61_short21_c_no_dice" data-category="短训消融"><h2>61_short21_c_no_dice<br>21 组短训 / Champion：去除区域重叠损失</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/61_short21_c_no_dice.svg" target="_blank"><img loading="lazy" src="diagrams/61_short21_c_no_dice.png" alt="21 组短训 / Champion：去除区域重叠损失流程图"></a></details>
+<p class="actions"><a href="packages/61_short21_c_no_dice_code.zip" download>下载对应代码包 (6.8 MiB)</a>
+<a href="diagrams/61_short21_c_no_dice.png" target="_blank">PNG 图</a><a href="diagrams/61_short21_c_no_dice.svg" target="_blank">SVG 图</a><a href="records/61_short21_c_no_dice.json">配置与路径</a></p></article><article class="card" id="62_short21_c_no_material" data-category="短训消融"><h2>62_short21_c_no_material<br>21 组短训 / Champion：去除材料监督损失</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/62_short21_c_no_material.svg" target="_blank"><img loading="lazy" src="diagrams/62_short21_c_no_material.png" alt="21 组短训 / Champion：去除材料监督损失流程图"></a></details>
+<p class="actions"><a href="packages/62_short21_c_no_material_code.zip" download>下载对应代码包 (6.8 MiB)</a>
+<a href="diagrams/62_short21_c_no_material.png" target="_blank">PNG 图</a><a href="diagrams/62_short21_c_no_material.svg" target="_blank">SVG 图</a><a href="records/62_short21_c_no_material.json">配置与路径</a></p></article><article class="card" id="63_short21_c_adaptive" data-category="短训消融"><h2>63_short21_c_adaptive<br>21 组短训 / Champion + 自适应反馈</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/63_short21_c_adaptive.svg" target="_blank"><img loading="lazy" src="diagrams/63_short21_c_adaptive.png" alt="21 组短训 / Champion + 自适应反馈流程图"></a></details>
+<p class="actions"><a href="packages/63_short21_c_adaptive_code.zip" download>下载对应代码包 (6.9 MiB)</a>
+<a href="diagrams/63_short21_c_adaptive.png" target="_blank">PNG 图</a><a href="diagrams/63_short21_c_adaptive.svg" target="_blank">SVG 图</a><a href="records/63_short21_c_adaptive.json">配置与路径</a></p></article><article class="card" id="64_short21_c_fixed3" data-category="短训消融"><h2>64_short21_c_fixed3<br>21 组短训 / Champion + 固定三轮反馈</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/64_short21_c_fixed3.svg" target="_blank"><img loading="lazy" src="diagrams/64_short21_c_fixed3.png" alt="21 组短训 / Champion + 固定三轮反馈流程图"></a></details>
+<p class="actions"><a href="packages/64_short21_c_fixed3_code.zip" download>下载对应代码包 (6.9 MiB)</a>
+<a href="diagrams/64_short21_c_fixed3.png" target="_blank">PNG 图</a><a href="diagrams/64_short21_c_fixed3.svg" target="_blank">SVG 图</a><a href="records/64_short21_c_fixed3.json">配置与路径</a></p></article><article class="card" id="65_short21_c_no_hint" data-category="短训消融"><h2>65_short21_c_no_hint<br>21 组短训 / 自适应 Champion：空间提示置零</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/65_short21_c_no_hint.svg" target="_blank"><img loading="lazy" src="diagrams/65_short21_c_no_hint.png" alt="21 组短训 / 自适应 Champion：空间提示置零流程图"></a></details>
+<p class="actions"><a href="packages/65_short21_c_no_hint_code.zip" download>下载对应代码包 (6.9 MiB)</a>
+<a href="diagrams/65_short21_c_no_hint.png" target="_blank">PNG 图</a><a href="diagrams/65_short21_c_no_hint.svg" target="_blank">SVG 图</a><a href="records/65_short21_c_no_hint.json">配置与路径</a></p></article><article class="card" id="66_short21_c_no_residual" data-category="短训消融"><h2>66_short21_c_no_residual<br>21 组短训 / 自适应 Champion：残差输入置零</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/66_short21_c_no_residual.svg" target="_blank"><img loading="lazy" src="diagrams/66_short21_c_no_residual.png" alt="21 组短训 / 自适应 Champion：残差输入置零流程图"></a></details>
+<p class="actions"><a href="packages/66_short21_c_no_residual_code.zip" download>下载对应代码包 (7.0 MiB)</a>
+<a href="diagrams/66_short21_c_no_residual.png" target="_blank">PNG 图</a><a href="diagrams/66_short21_c_no_residual.svg" target="_blank">SVG 图</a><a href="records/66_short21_c_no_residual.json">配置与路径</a></p></article><article class="card" id="67_short21_c_no_physics_loss" data-category="短训消融"><h2>67_short21_c_no_physics_loss<br>21 组短训 / 自适应 Champion：去除电压残差损失</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/67_short21_c_no_physics_loss.svg" target="_blank"><img loading="lazy" src="diagrams/67_short21_c_no_physics_loss.png" alt="21 组短训 / 自适应 Champion：去除电压残差损失流程图"></a></details>
+<p class="actions"><a href="packages/67_short21_c_no_physics_loss_code.zip" download>下载对应代码包 (7.0 MiB)</a>
+<a href="diagrams/67_short21_c_no_physics_loss.png" target="_blank">PNG 图</a><a href="diagrams/67_short21_c_no_physics_loss.svg" target="_blank">SVG 图</a><a href="records/67_short21_c_no_physics_loss.json">配置与路径</a></p></article><article class="card" id="68_short21_c_no_auxiliary" data-category="短训消融"><h2>68_short21_c_no_auxiliary<br>21 组短训 / 自适应 Champion：去除中间监督</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/68_short21_c_no_auxiliary.svg" target="_blank"><img loading="lazy" src="diagrams/68_short21_c_no_auxiliary.png" alt="21 组短训 / 自适应 Champion：去除中间监督流程图"></a></details>
+<p class="actions"><a href="packages/68_short21_c_no_auxiliary_code.zip" download>下载对应代码包 (7.0 MiB)</a>
+<a href="diagrams/68_short21_c_no_auxiliary.png" target="_blank">PNG 图</a><a href="diagrams/68_short21_c_no_auxiliary.svg" target="_blank">SVG 图</a><a href="records/68_short21_c_no_auxiliary.json">配置与路径</a></p></article><article class="card" id="69_short21_p_adaptive" data-category="短训消融"><h2>69_short21_p_adaptive<br>21 组短训 / 投影四方向网络 + 自适应反馈</h2>
+<span class="tag">短训消融</span><p>各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/69_short21_p_adaptive.svg" target="_blank"><img loading="lazy" src="diagrams/69_short21_p_adaptive.png" alt="21 组短训 / 投影四方向网络 + 自适应反馈流程图"></a></details>
+<p class="actions"><a href="packages/69_short21_p_adaptive_code.zip" download>下载对应代码包 (6.9 MiB)</a>
+<a href="diagrams/69_short21_p_adaptive.png" target="_blank">PNG 图</a><a href="diagrams/69_short21_p_adaptive.svg" target="_blank">SVG 图</a><a href="records/69_short21_p_adaptive.json">配置与路径</a></p></article><article class="card" id="70_release_v1" data-category="发布别名"><h2>70_release_v1<br>历史短训发布快照 v1（已取代）</h2>
+<span class="tag">发布别名</span><p>发布快照不是新增架构，更不是本次跨轮次最终最优结论；保留原 SUPERSEDED 标记。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/70_release_v1.svg" target="_blank"><img loading="lazy" src="diagrams/70_release_v1.png" alt="历史短训发布快照 v1（已取代）流程图"></a></details>
+<p class="actions"><a href="packages/70_release_v1_code.zip" download>下载对应代码包 (7.1 MiB)</a>
+<a href="diagrams/70_release_v1.png" target="_blank">PNG 图</a><a href="diagrams/70_release_v1.svg" target="_blank">SVG 图</a><a href="records/70_release_v1.json">配置与路径</a></p></article><article class="card" id="71_release_v2" data-category="发布别名"><h2>71_release_v2<br>历史短训发布快照 v2（已取代）</h2>
+<span class="tag">发布别名</span><p>发布快照不是新增架构，更不是本次跨轮次最终最优结论；保留原 SUPERSEDED 标记。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/71_release_v2.svg" target="_blank"><img loading="lazy" src="diagrams/71_release_v2.png" alt="历史短训发布快照 v2（已取代）流程图"></a></details>
+<p class="actions"><a href="packages/71_release_v2_code.zip" download>下载对应代码包 (7.1 MiB)</a>
+<a href="diagrams/71_release_v2.png" target="_blank">PNG 图</a><a href="diagrams/71_release_v2.svg" target="_blank">SVG 图</a><a href="records/71_release_v2.json">配置与路径</a></p></article><article class="card" id="72_old_champion_oc_fixed3" data-category="共同底座短训"><h2>72_old_champion_oc_fixed3<br>8 组共同底座 / 旧 V4 闭环 + Champion，固定三轮</h2>
+<span class="tag">共同底座短训</span><p>完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/72_old_champion_oc_fixed3.svg" target="_blank"><img loading="lazy" src="diagrams/72_old_champion_oc_fixed3.png" alt="8 组共同底座 / 旧 V4 闭环 + Champion，固定三轮流程图"></a></details>
+<p class="actions"><a href="packages/72_old_champion_oc_fixed3_code.zip" download>下载对应代码包 (7.1 MiB)</a>
+<a href="diagrams/72_old_champion_oc_fixed3.png" target="_blank">PNG 图</a><a href="diagrams/72_old_champion_oc_fixed3.svg" target="_blank">SVG 图</a><a href="records/72_old_champion_oc_fixed3.json">配置与路径</a></p></article><article class="card" id="73_old_champion_oc_adaptive" data-category="共同底座短训"><h2>73_old_champion_oc_adaptive<br>8 组共同底座 / 旧 V4 闭环 + Champion，自适应</h2>
+<span class="tag">共同底座短训</span><p>完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/73_old_champion_oc_adaptive.svg" target="_blank"><img loading="lazy" src="diagrams/73_old_champion_oc_adaptive.png" alt="8 组共同底座 / 旧 V4 闭环 + Champion，自适应流程图"></a></details>
+<p class="actions"><a href="packages/73_old_champion_oc_adaptive_code.zip" download>下载对应代码包 (7.1 MiB)</a>
+<a href="diagrams/73_old_champion_oc_adaptive.png" target="_blank">PNG 图</a><a href="diagrams/73_old_champion_oc_adaptive.svg" target="_blank">SVG 图</a><a href="records/73_old_champion_oc_adaptive.json">配置与路径</a></p></article><article class="card" id="74_old_champion_ocp_fixed3" data-category="共同底座短训"><h2>74_old_champion_ocp_fixed3<br>8 组共同底座 / 旧 V4 闭环 + Champion + 投影，固定三轮</h2>
+<span class="tag">共同底座短训</span><p>完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/74_old_champion_ocp_fixed3.svg" target="_blank"><img loading="lazy" src="diagrams/74_old_champion_ocp_fixed3.png" alt="8 组共同底座 / 旧 V4 闭环 + Champion + 投影，固定三轮流程图"></a></details>
+<p class="actions"><a href="packages/74_old_champion_ocp_fixed3_code.zip" download>下载对应代码包 (7.1 MiB)</a>
+<a href="diagrams/74_old_champion_ocp_fixed3.png" target="_blank">PNG 图</a><a href="diagrams/74_old_champion_ocp_fixed3.svg" target="_blank">SVG 图</a><a href="records/74_old_champion_ocp_fixed3.json">配置与路径</a></p></article><article class="card" id="75_old_champion_ocp_adaptive" data-category="共同底座短训"><h2>75_old_champion_ocp_adaptive<br>8 组共同底座 / 旧 V4 闭环 + Champion + 投影，自适应</h2>
+<span class="tag">共同底座短训</span><p>完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/75_old_champion_ocp_adaptive.svg" target="_blank"><img loading="lazy" src="diagrams/75_old_champion_ocp_adaptive.png" alt="8 组共同底座 / 旧 V4 闭环 + Champion + 投影，自适应流程图"></a></details>
+<p class="actions"><a href="packages/75_old_champion_ocp_adaptive_code.zip" download>下载对应代码包 (7.1 MiB)</a>
+<a href="diagrams/75_old_champion_ocp_adaptive.png" target="_blank">PNG 图</a><a href="diagrams/75_old_champion_ocp_adaptive.svg" target="_blank">SVG 图</a><a href="records/75_old_champion_ocp_adaptive.json">配置与路径</a></p></article><article class="card" id="76_old_champion_selected_no_hint" data-category="共同底座短训"><h2>76_old_champion_selected_no_hint<br>8 组共同底座 / 选中共同底座：空间提示置零</h2>
+<span class="tag">共同底座短训</span><p>完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/76_old_champion_selected_no_hint.svg" target="_blank"><img loading="lazy" src="diagrams/76_old_champion_selected_no_hint.png" alt="8 组共同底座 / 选中共同底座：空间提示置零流程图"></a></details>
+<p class="actions"><a href="packages/76_old_champion_selected_no_hint_code.zip" download>下载对应代码包 (7.1 MiB)</a>
+<a href="diagrams/76_old_champion_selected_no_hint.png" target="_blank">PNG 图</a><a href="diagrams/76_old_champion_selected_no_hint.svg" target="_blank">SVG 图</a><a href="records/76_old_champion_selected_no_hint.json">配置与路径</a></p></article><article class="card" id="77_old_champion_selected_no_residual" data-category="共同底座短训"><h2>77_old_champion_selected_no_residual<br>8 组共同底座 / 选中共同底座：残差输入置零</h2>
+<span class="tag">共同底座短训</span><p>完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/77_old_champion_selected_no_residual.svg" target="_blank"><img loading="lazy" src="diagrams/77_old_champion_selected_no_residual.png" alt="8 组共同底座 / 选中共同底座：残差输入置零流程图"></a></details>
+<p class="actions"><a href="packages/77_old_champion_selected_no_residual_code.zip" download>下载对应代码包 (7.1 MiB)</a>
+<a href="diagrams/77_old_champion_selected_no_residual.png" target="_blank">PNG 图</a><a href="diagrams/77_old_champion_selected_no_residual.svg" target="_blank">SVG 图</a><a href="records/77_old_champion_selected_no_residual.json">配置与路径</a></p></article><article class="card" id="78_old_champion_selected_no_physics" data-category="共同底座短训"><h2>78_old_champion_selected_no_physics<br>8 组共同底座 / 选中共同底座：去除物理损失</h2>
+<span class="tag">共同底座短训</span><p>完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/78_old_champion_selected_no_physics.svg" target="_blank"><img loading="lazy" src="diagrams/78_old_champion_selected_no_physics.png" alt="8 组共同底座 / 选中共同底座：去除物理损失流程图"></a></details>
+<p class="actions"><a href="packages/78_old_champion_selected_no_physics_code.zip" download>下载对应代码包 (7.1 MiB)</a>
+<a href="diagrams/78_old_champion_selected_no_physics.png" target="_blank">PNG 图</a><a href="diagrams/78_old_champion_selected_no_physics.svg" target="_blank">SVG 图</a><a href="records/78_old_champion_selected_no_physics.json">配置与路径</a></p></article><article class="card" id="79_old_champion_selected_no_auxiliary" data-category="共同底座短训"><h2>79_old_champion_selected_no_auxiliary<br>8 组共同底座 / 选中共同底座：去除中间监督</h2>
+<span class="tag">共同底座短训</span><p>完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/79_old_champion_selected_no_auxiliary.svg" target="_blank"><img loading="lazy" src="diagrams/79_old_champion_selected_no_auxiliary.png" alt="8 组共同底座 / 选中共同底座：去除中间监督流程图"></a></details>
+<p class="actions"><a href="packages/79_old_champion_selected_no_auxiliary_code.zip" download>下载对应代码包 (7.1 MiB)</a>
+<a href="diagrams/79_old_champion_selected_no_auxiliary.png" target="_blank">PNG 图</a><a href="diagrams/79_old_champion_selected_no_auxiliary.svg" target="_blank">SVG 图</a><a href="records/79_old_champion_selected_no_auxiliary.json">配置与路径</a></p></article><article class="card" id="80_final_A_phase3_seed25" data-category="选定检查点"><h2>80_final_A_phase3_seed25<br>最终候选 A：历史 phase3 独立版</h2>
+<span class="tag">选定检查点</span><p>选定 seed20261025 的 best；单次推理。与 B 的父权重、种子和训练历史不同，不能当成纯方向融合消融。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/80_final_A_phase3_seed25.svg" target="_blank"><img loading="lazy" src="diagrams/80_final_A_phase3_seed25.png" alt="最终候选 A：历史 phase3 独立版流程图"></a></details>
+<p class="actions"><a href="packages/80_final_A_phase3_seed25_code.zip" download>下载对应代码包 (6.9 MiB)</a>
+<a href="diagrams/80_final_A_phase3_seed25.png" target="_blank">PNG 图</a><a href="diagrams/80_final_A_phase3_seed25.svg" target="_blank">SVG 图</a><a href="records/80_final_A_phase3_seed25.json">配置与路径</a></p></article><article class="card" id="81_final_B_p_full_initial" data-category="选定检查点"><h2>81_final_B_p_full_initial<br>最终候选 B：p_full 预训练初始版</h2>
+<span class="tag">选定检查点</span><p>选定 initial.pt；源于 seed20261023 父模型。四方向共用权重，先对齐并平均形状及材料潜在输出，再转换为数值。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/81_final_B_p_full_initial.svg" target="_blank"><img loading="lazy" src="diagrams/81_final_B_p_full_initial.png" alt="最终候选 B：p_full 预训练初始版流程图"></a></details>
+<p class="actions"><a href="packages/81_final_B_p_full_initial_code.zip" download>下载对应代码包 (7.6 MiB)</a>
+<a href="diagrams/81_final_B_p_full_initial.png" target="_blank">PNG 图</a><a href="diagrams/81_final_B_p_full_initial.svg" target="_blank">SVG 图</a><a href="records/81_final_B_p_full_initial.json">配置与路径</a></p></article><article class="card" id="82_A_same_weight_c4" data-category="推理配置对照"><h2>82_A_same_weight_c4<br>A 的同权重四方向推理验证版</h2>
+<span class="tag">推理配置对照</span><p>固定 A 权重，只改变推理包装；不同于 B 的父模型，也不是新训练。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/82_A_same_weight_c4.svg" target="_blank"><img loading="lazy" src="diagrams/82_A_same_weight_c4.png" alt="A 的同权重四方向推理验证版流程图"></a></details>
+<p class="actions"><a href="packages/82_A_same_weight_c4_code.zip" download>下载对应代码包 (6.5 MiB)</a>
+<a href="diagrams/82_A_same_weight_c4.png" target="_blank">PNG 图</a><a href="diagrams/82_A_same_weight_c4.svg" target="_blank">SVG 图</a><a href="records/82_A_same_weight_c4.json">配置与路径</a></p></article><article class="card" id="83_phase3_c4_long" data-category="后续训练版本"><h2>83_phase3_c4_long<br>phase3 四方向继续训练冻结版</h2>
+<span class="tag">后续训练版本</span><p>从 A 的历史权重继续训练；训练每例一个旋转，验证／推理四方向。保存的冻结版本与 A、B 均需区分；归档不恢复训练。</p><details><summary>查看对应流程图</summary>
+<a href="diagrams/83_phase3_c4_long.svg" target="_blank"><img loading="lazy" src="diagrams/83_phase3_c4_long.png" alt="phase3 四方向继续训练冻结版流程图"></a></details>
+<p class="actions"><a href="packages/83_phase3_c4_long_code.zip" download>下载对应代码包 (6.5 MiB)</a>
+<a href="diagrams/83_phase3_c4_long.png" target="_blank">PNG 图</a><a href="diagrams/83_phase3_c4_long.svg" target="_blank">SVG 图</a><a href="records/83_phase3_c4_long.json">配置与路径</a></p></article>
+<script>
+const q=document.querySelector('#q'),type=document.querySelector('#type'),cards=[...document.querySelectorAll('.card')];
+function filter(){let n=0;for(const c of cards){const ok=c.textContent.toLowerCase().includes(q.value.toLowerCase())&&(!type.value||c.dataset.category===type.value);c.hidden=!ok;if(ok)n++}document.querySelector('#count').textContent=n+' / '+cards.length+' 项'}
+q.addEventListener('input',filter);type.addEventListener('change',filter);document.querySelector('#expand').onclick=()=>cards.filter(c=>!c.hidden).forEach(c=>c.querySelector('details').open=true);filter();
+</script></main></html>

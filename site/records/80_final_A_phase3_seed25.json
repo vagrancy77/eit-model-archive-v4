@@ -1,0 +1,55 @@
+{
+  "id": "80_final_A_phase3_seed25",
+  "name": "最终候选 A：历史 phase3 独立版",
+  "family": "projection",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "model_packages_20261028/phase3_seed20261025"
+  ],
+  "evidence": [
+    "model_packages_20261028/phase3_seed20261025/config.json"
+  ],
+  "outputs": [
+    "shape_generalization_v1/phase3/runs/physical_c4_seed20261025",
+    "model_packages_20261028/phase3_seed20261025"
+  ],
+  "category": "选定检查点",
+  "note": "选定 seed20261025 的 best；单次推理。与 B 的父权重、种子和训练历史不同，不能当成纯方向融合消融。",
+  "config": {
+    "pool": false,
+    "train_c4": true
+  },
+  "status": "历史源码／记录归档",
+  "entry": "model_packages_20261028/phase3_seed20261025/infer.py",
+  "alias": "44_shape3_physical_c4",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\best.pt",
+      "bytes": 152019680
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\best_guarded.pt",
+      "bytes": 151976120
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\last.pt",
+      "bytes": 152044960
+    },
+    {
+      "path": "E:\\Codex\\model_packages_20261028\\phase3_seed20261025\\weights\\best.pt",
+      "bytes": 152019680
+    }
+  ],
+  "source_file_count": 2035,
+  "source_bytes": 21085102,
+  "diagram_png": "diagrams/80_final_A_phase3_seed25.png",
+  "diagram_svg": "diagrams/80_final_A_phase3_seed25.svg",
+  "zip": "packages/80_final_A_phase3_seed25_code.zip",
+  "zip_bytes": 7262143,
+  "zip_sha256": "dd8eb769efa4d5d2e367e7eb58bcc9ab05a1e5c46889e804599a9653bdfb67f7"
+}

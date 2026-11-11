@@ -1,0 +1,41 @@
+{
+  "id": "21_v4_k3_quick",
+  "name": "旧 V4 联合微调：固定三轮短训版",
+  "family": "k3",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control"
+  ],
+  "evidence": [
+    "complex_feedback_quick_v2/protocol.json",
+    "eit_reproduction/comsol_feedback_loop/README.md"
+  ],
+  "outputs": [
+    "complex_feedback_quick_v2"
+  ],
+  "category": "主线",
+  "note": "3 个完整 epoch，选第 2 轮；外凸研究前的旧 K3 对照。 历史 FEM 并非后来 3096 像素覆盖修订版。",
+  "config": {},
+  "status": "历史源码／记录归档",
+  "entry": "eit_experiment_control/quick_loop.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\complex_feedback_quick_v2\\best.pt",
+      "bytes": 333456541
+    },
+    {
+      "path": "E:\\Codex\\complex_feedback_quick_v2\\last.pt",
+      "bytes": 333459613
+    }
+  ],
+  "source_file_count": 1808,
+  "source_bytes": 19388017,
+  "diagram_png": "diagrams/21_v4_k3_quick.png",
+  "diagram_svg": "diagrams/21_v4_k3_quick.svg",
+  "zip": "packages/21_v4_k3_quick_code.zip",
+  "zip_bytes": 6577528,
+  "zip_sha256": "2c0eb65288403c1a854b00ce4c95ac596959126edd0b6e18caf3ac2601142c1f"
+}

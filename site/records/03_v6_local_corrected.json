@@ -1,0 +1,81 @@
+{
+  "id": "03_v6_local_corrected",
+  "name": "V6：局部修正与双风险门控",
+  "family": "legacy_v6",
+  "sources": [
+    "model_exports_20261008/v6_package"
+  ],
+  "evidence": [
+    "model_exports_20261008/v6_package/README_CN.md",
+    "V6_SUPERSEDED_RESULTS.md"
+  ],
+  "outputs": [
+    "topology_local_eit_v6_corrected_paper_final",
+    "model_exports_20261008/v6_package/results"
+  ],
+  "category": "主线",
+  "note": "采用 corrected 记录。未加 corrected 的旧结果存在评估索引错误，不能据此报告性能。",
+  "config": {},
+  "status": "历史源码／记录归档",
+  "entry": "model_exports_20261008/v6_package/run_model.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260911\\dual_risk_gate_v6_best.pt",
+      "bytes": 88354
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260911\\local_corrector_v6_best.pt",
+      "bytes": 12735234
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260912\\dual_risk_gate_v6_best.pt",
+      "bytes": 88290
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260912\\local_corrector_v6_best.pt",
+      "bytes": 12735234
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260913\\dual_risk_gate_v6_best.pt",
+      "bytes": 88290
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260913\\local_corrector_v6_best.pt",
+      "bytes": 12735234
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260914\\dual_risk_gate_v6_best.pt",
+      "bytes": 88290
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260914\\local_corrector_v6_best.pt",
+      "bytes": 12735234
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_risk_eit_v4_full\\topology_residual_v4_best.pt",
+      "bytes": 231041003
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_risk_eit_v4_seed_20260912\\topology_residual_v4_best.pt",
+      "bytes": 231040939
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_risk_eit_v4_seed_20260913\\topology_residual_v4_best.pt",
+      "bytes": 231040939
+    },
+    {
+      "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_risk_eit_v4_seed_20260914\\topology_residual_v4_best.pt",
+      "bytes": 231040939
+    }
+  ],
+  "source_file_count": 65,
+  "source_bytes": 2764233,
+  "diagram_png": "diagrams/03_v6_local_corrected.png",
+  "diagram_svg": "diagrams/03_v6_local_corrected.svg",
+  "zip": "packages/03_v6_local_corrected_code.zip",
+  "zip_bytes": 1007491,
+  "zip_sha256": "09d7fec9b94b4d041a33f0332f3a8a472b3f2c0d4f73b22bdacda3a6aef03846"
+}

@@ -1,0 +1,4566 @@
+{
+  "created": "2026-11-09",
+  "scope": "83 version/configuration entries, not 83 distinct neural architectures",
+  "exclusions": [
+    [
+      "随机种子、best/last/initial/epoch 检查点",
+      "同一配置内作为权重实例列出，不各自虚构新架构。"
+    ],
+    [
+      "数据集 V6_3872 / V6_4840",
+      "数据集版本不是神经网络 V6。"
+    ],
+    [
+      "早期 V6 未修正评估结果",
+      "保留来源说明；corrected 版本才是可引用的评估记录，非新增网络。"
+    ],
+    [
+      "CPU 执行加速 v1-v5、GPU 求解原型",
+      "执行后端或诊断工具，不另画成新模型；v5 代码随共同底座归档，未启用新测试。"
+    ],
+    [
+      "shape phase4/5 的场优化、网格与可辨识性诊断",
+      "有关脚本随形状研究源码保留，不当成已经训练好的新网络。"
+    ],
+    [
+      "eit_multi_long_v1 计划",
+      "只有候选盘点和执行建议，不冒称已经训练出新版本。"
+    ],
+    [
+      "Champion 原始包内的更早耦合／界面／查询研究",
+      "完整原始源码随 Champion 相关 ZIP 保留；未在本工作区独立登记的导入子研究不虚构独立训练版本。"
+    ],
+    [
+      "论文插图、排版、期刊筛选与实验监控网页",
+      "非模型代码；仅保留模型源码目录自带工具，不把论文文稿当成模型。"
+    ]
+  ],
+  "items": [
+    {
+      "id": "01_v4_topology_risk",
+      "name": "早期 V4：拓扑修正与风险门控",
+      "family": "legacy_v4",
+      "sources": [
+        "model_exports_20261008/v4_package"
+      ],
+      "evidence": [
+        "model_exports_20261008/v4_package/README_CN.md",
+        "model_exports_20261008/inventory.json"
+      ],
+      "outputs": [
+        "topology_risk_eit_v4_multiseed_final",
+        "model_exports_20261008/v4_package/results"
+      ],
+      "category": "主线",
+      "note": "这是早期 KTC 输入体系，不是后来双频 COMSOL 适配版；原归档源码优先。",
+      "config": {},
+      "status": "历史源码／记录归档",
+      "entry": "model_exports_20261008/v4_package/run_model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v4_package\\results\\topology_risk_eit_v4_full\\topology_residual_v4_best.pt",
+          "bytes": 231041003
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v4_package\\results\\topology_risk_eit_v4_seed_20260912\\topology_residual_v4_best.pt",
+          "bytes": 231040939
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v4_package\\results\\topology_risk_eit_v4_seed_20260913\\topology_residual_v4_best.pt",
+          "bytes": 231040939
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v4_package\\results\\topology_risk_eit_v4_seed_20260914\\topology_residual_v4_best.pt",
+          "bytes": 231040939
+        }
+      ],
+      "source_file_count": 52,
+      "source_bytes": 2505451,
+      "diagram_png": "diagrams/01_v4_topology_risk.png",
+      "diagram_svg": "diagrams/01_v4_topology_risk.svg",
+      "zip": "packages/01_v4_topology_risk_code.zip",
+      "zip_bytes": 931738,
+      "zip_sha256": "b3dc35b1f9b106959ad3d83283677b17fe72f8bd65cba2aa7e70b6e8475742e1"
+    },
+    {
+      "id": "02_v5_topology_risk",
+      "name": "V5：面积保护与更保守的风险控制",
+      "family": "legacy_v5",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "TOPOLOGY_RISK_EIT_V5_REPORT.md"
+      ],
+      "outputs": [
+        "topology_risk_eit_v5_final",
+        "topology_risk_eit_v5_multiseed_final",
+        "topology_risk_eit_v5_seed_20260911",
+        "topology_risk_eit_v5_seed_20260912",
+        "topology_risk_eit_v5_seed_20260913",
+        "topology_risk_eit_v5_seed_20260914"
+      ],
+      "category": "主线",
+      "note": "延续早期 V4；主要改变训练约束、测量扰动训练与验证门槛，不表示所有病例都优于 V4。",
+      "config": {},
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/scripts/train_topology_residual_eit_v3.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\topology_risk_eit_v5_seed_20260911\\topology_residual_v4_best.pt",
+          "bytes": 231043883
+        },
+        {
+          "path": "E:\\Codex\\topology_risk_eit_v5_seed_20260912\\topology_residual_v4_best.pt",
+          "bytes": 231040698
+        },
+        {
+          "path": "E:\\Codex\\topology_risk_eit_v5_seed_20260913\\topology_residual_v4_best.pt",
+          "bytes": 231040698
+        },
+        {
+          "path": "E:\\Codex\\topology_risk_eit_v5_seed_20260914\\topology_residual_v4_best.pt",
+          "bytes": 231040698
+        }
+      ],
+      "source_file_count": 1805,
+      "source_bytes": 19387553,
+      "diagram_png": "diagrams/02_v5_topology_risk.png",
+      "diagram_svg": "diagrams/02_v5_topology_risk.svg",
+      "zip": "packages/02_v5_topology_risk_code.zip",
+      "zip_bytes": 6568304,
+      "zip_sha256": "44f78cc6389c08e41ce824c2de8c170ae839936729f51064d9198eab10f8d6cd"
+    },
+    {
+      "id": "03_v6_local_corrected",
+      "name": "V6：局部修正与双风险门控",
+      "family": "legacy_v6",
+      "sources": [
+        "model_exports_20261008/v6_package"
+      ],
+      "evidence": [
+        "model_exports_20261008/v6_package/README_CN.md",
+        "V6_SUPERSEDED_RESULTS.md"
+      ],
+      "outputs": [
+        "topology_local_eit_v6_corrected_paper_final",
+        "model_exports_20261008/v6_package/results"
+      ],
+      "category": "主线",
+      "note": "采用 corrected 记录。未加 corrected 的旧结果存在评估索引错误，不能据此报告性能。",
+      "config": {},
+      "status": "历史源码／记录归档",
+      "entry": "model_exports_20261008/v6_package/run_model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260911\\dual_risk_gate_v6_best.pt",
+          "bytes": 88354
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260911\\local_corrector_v6_best.pt",
+          "bytes": 12735234
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260912\\dual_risk_gate_v6_best.pt",
+          "bytes": 88290
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260912\\local_corrector_v6_best.pt",
+          "bytes": 12735234
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260913\\dual_risk_gate_v6_best.pt",
+          "bytes": 88290
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260913\\local_corrector_v6_best.pt",
+          "bytes": 12735234
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260914\\dual_risk_gate_v6_best.pt",
+          "bytes": 88290
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_local_eit_v6_corrected_seed_20260914\\local_corrector_v6_best.pt",
+          "bytes": 12735234
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_risk_eit_v4_full\\topology_residual_v4_best.pt",
+          "bytes": 231041003
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_risk_eit_v4_seed_20260912\\topology_residual_v4_best.pt",
+          "bytes": 231040939
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_risk_eit_v4_seed_20260913\\topology_residual_v4_best.pt",
+          "bytes": 231040939
+        },
+        {
+          "path": "E:\\Codex\\model_exports_20261008\\v6_package\\results\\topology_risk_eit_v4_seed_20260914\\topology_residual_v4_best.pt",
+          "bytes": 231040939
+        }
+      ],
+      "source_file_count": 65,
+      "source_bytes": 2764233,
+      "diagram_png": "diagrams/03_v6_local_corrected.png",
+      "diagram_svg": "diagrams/03_v6_local_corrected.svg",
+      "zip": "packages/03_v6_local_corrected_code.zip",
+      "zip_bytes": 1007491,
+      "zip_sha256": "09d7fec9b94b4d041a33f0332f3a8a472b3f2c0d4f73b22bdacda3a6aef03846"
+    },
+    {
+      "id": "04_v4_imported",
+      "name": "导入 V4：双频初始图与电压联合重建",
+      "family": "imported",
+      "sources": [
+        "eit_reproduction/integrations/v4_20261015"
+      ],
+      "evidence": [
+        "eit_reproduction/integrations/v4_20261015/README.md"
+      ],
+      "outputs": [
+        "eit_reproduction/integrations/v4_20261015/upstream"
+      ],
+      "category": "主线",
+      "note": "20261015 导入包；7 通道初始图与 4 通道复电压。与本地 12 通道 V4 权重不通用。外部引擎／缓存并非全部随代码提供。",
+      "config": {},
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/integrations/v4_20261015/upstream/v4_bundle_cli.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_reproduction\\integrations\\v4_20261015\\upstream\\EIT_Comparison\\results\\project_v4_long_patience\\best.pt",
+          "bytes": 245761963
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\integrations\\v4_20261015\\upstream\\EIT_Comparison\\results\\project_v4_long_patience\\last.pt",
+          "bytes": 245764075
+        }
+      ],
+      "source_file_count": 38,
+      "source_bytes": 199449,
+      "diagram_png": "diagrams/04_v4_imported.png",
+      "diagram_svg": "diagrams/04_v4_imported.svg",
+      "zip": "packages/04_v4_imported_code.zip",
+      "zip_bytes": 401532,
+      "zip_sha256": "e07a7c820a29e49f9a48a68f1566b87b6d1bf2e59d8343c5c859523bebb62a9b"
+    },
+    {
+      "id": "05_v4_imported_long",
+      "name": "导入 V4：延长耐心训练版",
+      "family": "imported",
+      "sources": [
+        "eit_reproduction/integrations/v4_20261015"
+      ],
+      "evidence": [
+        "eit_reproduction/integrations/v4_20261015/README.md"
+      ],
+      "outputs": [
+        "eit_reproduction/integrations/v4_20261015/upstream"
+      ],
+      "category": "同结构训练版本",
+      "note": "与上一项同架构，训练历史及检查点不同；不能把长训当成额外推理模块。",
+      "config": {},
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/integrations/v4_20261015/upstream/EIT_Comparison/v4_long_patience.py",
+      "alias": "04_v4_imported",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_reproduction\\integrations\\v4_20261015\\upstream\\EIT_Comparison\\results\\project_v4_long_patience\\best.pt",
+          "bytes": 245761963
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\integrations\\v4_20261015\\upstream\\EIT_Comparison\\results\\project_v4_long_patience\\last.pt",
+          "bytes": 245764075
+        }
+      ],
+      "source_file_count": 38,
+      "source_bytes": 199449,
+      "diagram_png": "diagrams/05_v4_imported_long.png",
+      "diagram_svg": "diagrams/05_v4_imported_long.svg",
+      "zip": "packages/05_v4_imported_long_code.zip",
+      "zip_bytes": 402107,
+      "zip_sha256": "82f78994cd5135726d22b78ac2ec2e62ecd7fabd2c72cbc87d3c42adb3fd084b"
+    },
+    {
+      "id": "06_v4_3872_amplitude",
+      "name": "V4 / 3872 数据：仅幅值",
+      "family": "native",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_complex_information_study_20261013"
+      ],
+      "evidence": [
+        "eit_complex_information_study_20261013/EXPERIMENT_README.md",
+        "eit_complex_information_study_20261013/runs/controlled_v2/protocol.json"
+      ],
+      "outputs": [
+        "eit_complex_information_study_20261013/runs/controlled_v2"
+      ],
+      "category": "输入对照",
+      "note": "3872 例数据上的输入受控研究；不是最终 4840 数据实验。",
+      "config": {
+        "input_mode": "amplitude",
+        "ablation": "full",
+        "dataset": 3872
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_complex_information_study_20261013/run_experiment.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\amplitude_seed20261013\\best.pt",
+          "bytes": 89811383
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\amplitude_seed20261013\\last.pt",
+          "bytes": 269046050
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\amplitude_seed20261014\\best.pt",
+          "bytes": 89816887
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\amplitude_seed20261014\\last.pt",
+          "bytes": 269045474
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\amplitude_seed20261015\\best.pt",
+          "bytes": 89800631
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\amplitude_seed20261015\\last.pt",
+          "bytes": 269045474
+        }
+      ],
+      "source_file_count": 1825,
+      "source_bytes": 19507264,
+      "diagram_png": "diagrams/06_v4_3872_amplitude.png",
+      "diagram_svg": "diagrams/06_v4_3872_amplitude.svg",
+      "zip": "packages/06_v4_3872_amplitude_code.zip",
+      "zip_bytes": 6646376,
+      "zip_sha256": "618850c3efa8382c58325cadccf33233a1b0404c22c3158fd2c279f66a917807"
+    },
+    {
+      "id": "07_v4_3872_complex",
+      "name": "V4 / 3872 数据：复数电压",
+      "family": "native",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_complex_information_study_20261013"
+      ],
+      "evidence": [
+        "eit_complex_information_study_20261013/EXPERIMENT_README.md",
+        "eit_complex_information_study_20261013/runs/controlled_v2/protocol.json"
+      ],
+      "outputs": [
+        "eit_complex_information_study_20261013/runs/controlled_v2"
+      ],
+      "category": "输入对照",
+      "note": "3872 例数据上的输入受控研究；不是最终 4840 数据实验。",
+      "config": {
+        "input_mode": "complex",
+        "ablation": "full",
+        "dataset": 3872
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_complex_information_study_20261013/run_experiment.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\complex_seed20261013\\best.pt",
+          "bytes": 89812855
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\complex_seed20261013\\last.pt",
+          "bytes": 269045474
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\complex_seed20261014\\best.pt",
+          "bytes": 89816887
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\complex_seed20261014\\last.pt",
+          "bytes": 269045474
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\complex_seed20261015\\best.pt",
+          "bytes": 89800631
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\complex_seed20261015\\last.pt",
+          "bytes": 269045474
+        }
+      ],
+      "source_file_count": 1825,
+      "source_bytes": 19507264,
+      "diagram_png": "diagrams/07_v4_3872_complex.png",
+      "diagram_svg": "diagrams/07_v4_3872_complex.svg",
+      "zip": "packages/07_v4_3872_complex_code.zip",
+      "zip_bytes": 6649838,
+      "zip_sha256": "34be1cd421bb4d362dc71c9eb3888f820fa8a14d6126efcf249d8567476f3317"
+    },
+    {
+      "id": "08_v4_3872_calibrated",
+      "name": "V4 / 3872 数据：背景校准复数电压",
+      "family": "native",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_complex_information_study_20261013"
+      ],
+      "evidence": [
+        "eit_complex_information_study_20261013/EXPERIMENT_README.md",
+        "eit_complex_information_study_20261013/runs/controlled_v2/protocol.json"
+      ],
+      "outputs": [
+        "eit_complex_information_study_20261013/runs/controlled_v2"
+      ],
+      "category": "输入对照",
+      "note": "3872 例数据上的输入受控研究；不是最终 4840 数据实验。",
+      "config": {
+        "input_mode": "calibrated",
+        "ablation": "full",
+        "dataset": 3872
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_complex_information_study_20261013/run_experiment.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\calibrated_seed20261013\\best.pt",
+          "bytes": 89814903
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\calibrated_seed20261013\\last.pt",
+          "bytes": 269045474
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\calibrated_seed20261014\\best.pt",
+          "bytes": 89816887
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\calibrated_seed20261014\\last.pt",
+          "bytes": 269045474
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\calibrated_seed20261015\\best.pt",
+          "bytes": 89814903
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\calibrated_seed20261015\\last.pt",
+          "bytes": 269045474
+        }
+      ],
+      "source_file_count": 1825,
+      "source_bytes": 19507264,
+      "diagram_png": "diagrams/08_v4_3872_calibrated.png",
+      "diagram_svg": "diagrams/08_v4_3872_calibrated.svg",
+      "zip": "packages/08_v4_3872_calibrated_code.zip",
+      "zip_bytes": 6652023,
+      "zip_sha256": "7d87af3706716bfc3a6a228cf2c24181d5c7f47006bd210b6966dfd3a1ec7cba"
+    },
+    {
+      "id": "09_v4_3872_amplitude_calibrated",
+      "name": "V4 / 3872 数据：背景校准幅值",
+      "family": "native",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_complex_information_study_20261013"
+      ],
+      "evidence": [
+        "eit_complex_information_study_20261013/EXPERIMENT_README.md",
+        "eit_complex_information_study_20261013/runs/controlled_v2/protocol.json"
+      ],
+      "outputs": [
+        "eit_complex_information_study_20261013/runs/amplitude_calibration_control"
+      ],
+      "category": "输入对照",
+      "note": "3872 例数据上的输入受控研究；不是最终 4840 数据实验。",
+      "config": {
+        "input_mode": "amplitude_calibrated",
+        "ablation": "full",
+        "dataset": 3872
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_complex_information_study_20261013/run_experiment.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\amplitude_calibration_control\\amplitude_calibrated_seed20261013\\best.pt",
+          "bytes": 89812855
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\amplitude_calibration_control\\amplitude_calibrated_seed20261013\\last.pt",
+          "bytes": 269045474
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\amplitude_calibration_control\\amplitude_calibrated_seed20261014\\best.pt",
+          "bytes": 89814903
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\amplitude_calibration_control\\amplitude_calibrated_seed20261014\\last.pt",
+          "bytes": 269045474
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\amplitude_calibration_control\\amplitude_calibrated_seed20261015\\best.pt",
+          "bytes": 89812855
+        },
+        {
+          "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\amplitude_calibration_control\\amplitude_calibrated_seed20261015\\last.pt",
+          "bytes": 269045474
+        }
+      ],
+      "source_file_count": 1826,
+      "source_bytes": 19508759,
+      "diagram_png": "diagrams/09_v4_3872_amplitude_calibrated.png",
+      "diagram_svg": "diagrams/09_v4_3872_amplitude_calibrated.svg",
+      "zip": "packages/09_v4_3872_amplitude_calibrated_code.zip",
+      "zip_bytes": 6653870,
+      "zip_sha256": "48e9b6f77bb7641619e4d85ec02668f2e39fdf99b525ce8623c79ab5925c4f4a"
+    },
+    {
+      "id": "10_v4_4840_formal50",
+      "name": "V4 / 4840 数据：校准输入 50 轮版",
+      "family": "native",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "eit_reproduction/FINAL4840_ADAPTATION.md"
+      ],
+      "outputs": [
+        "eit_reproduction/outputs/final4840_formal_calibrated_seed20261016"
+      ],
+      "category": "主线",
+      "note": "50 轮探索性适配，与后面的正式配对多种子实验区分。",
+      "config": {
+        "input_mode": "calibrated",
+        "ablation": "full",
+        "dataset": 4840
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/comsol_v4/train.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_formal_calibrated_seed20261016\\best.pt",
+          "bytes": 269225525
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_formal_calibrated_seed20261016\\last.pt",
+          "bytes": 269231925
+        }
+      ],
+      "source_file_count": 1804,
+      "source_bytes": 19378835,
+      "diagram_png": "diagrams/10_v4_4840_formal50.png",
+      "diagram_svg": "diagrams/10_v4_4840_formal50.svg",
+      "zip": "packages/10_v4_4840_formal50_code.zip",
+      "zip_bytes": 6593471,
+      "zip_sha256": "fda8bc1fcbb26ea8cb7b9cda77a8ff77ee9bfddce613d2e5d04804932b423aa6"
+    },
+    {
+      "id": "11_v4_4840_calibrated",
+      "name": "V4 / 4840 正式对照：背景校准复数电压",
+      "family": "native",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "eit_reproduction/outputs/final4840_paper_suite/protocol.json"
+      ],
+      "outputs": [
+        "eit_reproduction/outputs/final4840_paper_suite/runs/calibrated_seed20261016",
+        "eit_reproduction/outputs/final4840_paper_suite/runs/calibrated_seed20261017",
+        "eit_reproduction/outputs/final4840_paper_suite/runs/calibrated_seed20261018"
+      ],
+      "category": "主线",
+      "note": "相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。",
+      "config": {
+        "input_mode": "calibrated",
+        "ablation": "full",
+        "dataset": 4840
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/comsol_v4/paper_train.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\calibrated_seed20261016\\best.pt",
+          "bytes": 269431093
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\calibrated_seed20261016\\last.pt",
+          "bytes": 269527989
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\calibrated_seed20261017\\best.pt",
+          "bytes": 269473781
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\calibrated_seed20261017\\last.pt",
+          "bytes": 269570741
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\calibrated_seed20261018\\best.pt",
+          "bytes": 269479477
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\calibrated_seed20261018\\last.pt",
+          "bytes": 269576437
+        }
+      ],
+      "source_file_count": 1808,
+      "source_bytes": 19383116,
+      "diagram_png": "diagrams/11_v4_4840_calibrated.png",
+      "diagram_svg": "diagrams/11_v4_4840_calibrated.svg",
+      "zip": "packages/11_v4_4840_calibrated_code.zip",
+      "zip_bytes": 6598101,
+      "zip_sha256": "d02a4f5e7d30c8db1313442980847a3313adc817d0fe0090ee685cb60b1592e1"
+    },
+    {
+      "id": "12_v4_4840_amplitude",
+      "name": "V4 / 4840 正式对照：仅幅值",
+      "family": "native",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "eit_reproduction/outputs/final4840_paper_suite/protocol.json"
+      ],
+      "outputs": [
+        "eit_reproduction/outputs/final4840_paper_suite/runs/amplitude_seed20261016",
+        "eit_reproduction/outputs/final4840_paper_suite/runs/amplitude_seed20261017",
+        "eit_reproduction/outputs/final4840_paper_suite/runs/amplitude_seed20261018"
+      ],
+      "category": "输入／模块消融",
+      "note": "相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。",
+      "config": {
+        "input_mode": "amplitude",
+        "ablation": "full",
+        "dataset": 4840
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/comsol_v4/paper_train.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_seed20261016\\best.pt",
+          "bytes": 269560309
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_seed20261016\\last.pt",
+          "bytes": 269657269
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_seed20261017\\best.pt",
+          "bytes": 269489269
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_seed20261017\\last.pt",
+          "bytes": 269586165
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_seed20261018\\best.pt",
+          "bytes": 269495669
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_seed20261018\\last.pt",
+          "bytes": 269592565
+        }
+      ],
+      "source_file_count": 1808,
+      "source_bytes": 19383119,
+      "diagram_png": "diagrams/12_v4_4840_amplitude.png",
+      "diagram_svg": "diagrams/12_v4_4840_amplitude.svg",
+      "zip": "packages/12_v4_4840_amplitude_code.zip",
+      "zip_bytes": 6595113,
+      "zip_sha256": "08990abf26d22d2f2fb15984db55afc404af134736e4cf450f2903a7e6e75fd4"
+    },
+    {
+      "id": "13_v4_4840_complex",
+      "name": "V4 / 4840 正式对照：复数电压",
+      "family": "native",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "eit_reproduction/outputs/final4840_paper_suite/protocol.json"
+      ],
+      "outputs": [
+        "eit_reproduction/outputs/final4840_paper_suite/runs/complex_seed20261016",
+        "eit_reproduction/outputs/final4840_paper_suite/runs/complex_seed20261017",
+        "eit_reproduction/outputs/final4840_paper_suite/runs/complex_seed20261018"
+      ],
+      "category": "输入／模块消融",
+      "note": "相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。",
+      "config": {
+        "input_mode": "complex",
+        "ablation": "full",
+        "dataset": 4840
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/comsol_v4/paper_train.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\complex_seed20261016\\best.pt",
+          "bytes": 269595829
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\complex_seed20261016\\last.pt",
+          "bytes": 269692789
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\complex_seed20261017\\best.pt",
+          "bytes": 269511861
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\complex_seed20261017\\last.pt",
+          "bytes": 269608821
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\complex_seed20261018\\best.pt",
+          "bytes": 269560245
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\complex_seed20261018\\last.pt",
+          "bytes": 269657205
+        }
+      ],
+      "source_file_count": 1808,
+      "source_bytes": 19383111,
+      "diagram_png": "diagrams/13_v4_4840_complex.png",
+      "diagram_svg": "diagrams/13_v4_4840_complex.svg",
+      "zip": "packages/13_v4_4840_complex_code.zip",
+      "zip_bytes": 6599086,
+      "zip_sha256": "7614d2267ff9437d798304914377c3f0e21b6b6aaec4d3c83d266b5a3e061b84"
+    },
+    {
+      "id": "14_v4_4840_amplitude_calibrated",
+      "name": "V4 / 4840 正式对照：背景校准幅值",
+      "family": "native",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "eit_reproduction/outputs/final4840_paper_suite/protocol.json"
+      ],
+      "outputs": [
+        "eit_reproduction/outputs/final4840_paper_suite/runs/amplitude_calibrated_seed20261016",
+        "eit_reproduction/outputs/final4840_paper_suite/runs/amplitude_calibrated_seed20261017",
+        "eit_reproduction/outputs/final4840_paper_suite/runs/amplitude_calibrated_seed20261018"
+      ],
+      "category": "输入／模块消融",
+      "note": "相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。",
+      "config": {
+        "input_mode": "amplitude_calibrated",
+        "ablation": "full",
+        "dataset": 4840
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/comsol_v4/paper_train.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_calibrated_seed20261016\\best.pt",
+          "bytes": 269389109
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_calibrated_seed20261016\\last.pt",
+          "bytes": 269486069
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_calibrated_seed20261017\\best.pt",
+          "bytes": 269460213
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_calibrated_seed20261017\\last.pt",
+          "bytes": 269540981
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_calibrated_seed20261018\\best.pt",
+          "bytes": 269347061
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\amplitude_calibrated_seed20261018\\last.pt",
+          "bytes": 269443957
+        }
+      ],
+      "source_file_count": 1808,
+      "source_bytes": 19383148,
+      "diagram_png": "diagrams/14_v4_4840_amplitude_calibrated.png",
+      "diagram_svg": "diagrams/14_v4_4840_amplitude_calibrated.svg",
+      "zip": "packages/14_v4_4840_amplitude_calibrated_code.zip",
+      "zip_bytes": 6600463,
+      "zip_sha256": "91376c60644f876aacb99d3260a1be66cfa8f482ede01402d26b3a8b25c69e86"
+    },
+    {
+      "id": "15_v4_4840_no_topology",
+      "name": "V4 / 4840 正式对照：去除拓扑修正",
+      "family": "native",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "eit_reproduction/outputs/final4840_paper_suite/protocol.json"
+      ],
+      "outputs": [
+        "eit_reproduction/outputs/final4840_paper_suite/runs/no_topology_seed20261016",
+        "eit_reproduction/outputs/final4840_paper_suite/runs/no_topology_seed20261017",
+        "eit_reproduction/outputs/final4840_paper_suite/runs/no_topology_seed20261018"
+      ],
+      "category": "输入／模块消融",
+      "note": "相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。",
+      "config": {
+        "input_mode": "calibrated",
+        "ablation": "no_topology",
+        "dataset": 4840
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/comsol_v4/paper_train.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_topology_seed20261016\\best.pt",
+          "bytes": 251085728
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_topology_seed20261016\\last.pt",
+          "bytes": 251182624
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_topology_seed20261017\\best.pt",
+          "bytes": 251066336
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_topology_seed20261017\\last.pt",
+          "bytes": 251163296
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_topology_seed20261018\\best.pt",
+          "bytes": 251108256
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_topology_seed20261018\\last.pt",
+          "bytes": 251205216
+        }
+      ],
+      "source_file_count": 1808,
+      "source_bytes": 19383121,
+      "diagram_png": "diagrams/15_v4_4840_no_topology.png",
+      "diagram_svg": "diagrams/15_v4_4840_no_topology.svg",
+      "zip": "packages/15_v4_4840_no_topology_code.zip",
+      "zip_bytes": 6610081,
+      "zip_sha256": "1c885a8e65d3c9beb1ccc52dd4030790f96b59c378313ed84defe28d5d1bb487"
+    },
+    {
+      "id": "16_v4_4840_no_risk",
+      "name": "V4 / 4840 正式对照：去除风险门控",
+      "family": "native",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "eit_reproduction/outputs/final4840_paper_suite/protocol.json"
+      ],
+      "outputs": [
+        "eit_reproduction/outputs/final4840_paper_suite/runs/no_risk_seed20261016",
+        "eit_reproduction/outputs/final4840_paper_suite/runs/no_risk_seed20261017",
+        "eit_reproduction/outputs/final4840_paper_suite/runs/no_risk_seed20261018"
+      ],
+      "category": "输入／模块消融",
+      "note": "相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。",
+      "config": {
+        "input_mode": "calibrated",
+        "ablation": "no_risk",
+        "dataset": 4840
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/comsol_v4/paper_train.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_risk_seed20261016\\best.pt",
+          "bytes": 268775807
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_risk_seed20261016\\last.pt",
+          "bytes": 268872767
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_risk_seed20261017\\best.pt",
+          "bytes": 268772607
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_risk_seed20261017\\last.pt",
+          "bytes": 268869503
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_risk_seed20261018\\best.pt",
+          "bytes": 268762815
+        },
+        {
+          "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_risk_seed20261018\\last.pt",
+          "bytes": 268859775
+        }
+      ],
+      "source_file_count": 1808,
+      "source_bytes": 19383112,
+      "diagram_png": "diagrams/16_v4_4840_no_risk.png",
+      "diagram_svg": "diagrams/16_v4_4840_no_risk.svg",
+      "zip": "packages/16_v4_4840_no_risk_code.zip",
+      "zip_bytes": 6602968,
+      "zip_sha256": "e01ce60925ae8dc768f7535453d7ea42b0cbf7a07b7f7c25db1fcdeca51b2803"
+    },
+    {
+      "id": "17_v4_k1_feedback",
+      "name": "旧 V4 + 单轮修正",
+      "family": "k1",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "complex_feedback_v1/protocol.json",
+        "eit_reproduction/comsol_feedback/README.md"
+      ],
+      "outputs": [
+        "complex_feedback_v1"
+      ],
+      "category": "主线",
+      "note": "冻结 V4，只训练一次修正；非三轮联合闭环。历史 FEM 有像素覆盖近似，不能套用后来的覆盖验收。",
+      "config": {
+        "no_feedback": false
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/comsol_feedback/run.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\complex_feedback_v1\\runs\\feedback\\best.pt",
+          "bytes": 64372714
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_v1\\runs\\feedback\\last.pt",
+          "bytes": 64402666
+        }
+      ],
+      "source_file_count": 1809,
+      "source_bytes": 19381995,
+      "diagram_png": "diagrams/17_v4_k1_feedback.png",
+      "diagram_svg": "diagrams/17_v4_k1_feedback.svg",
+      "zip": "packages/17_v4_k1_feedback_code.zip",
+      "zip_bytes": 6515752,
+      "zip_sha256": "6d8a8d3a05fd3d585bc2b484b8209a1a399d1c26914fe3e9291e7f5d4741bc79"
+    },
+    {
+      "id": "18_v4_k1_no_feedback",
+      "name": "旧 V4 + 单轮修正：无物理反馈对照",
+      "family": "k1",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "complex_feedback_v1/protocol.json",
+        "eit_reproduction/comsol_feedback/README.md"
+      ],
+      "outputs": [
+        "complex_feedback_v1"
+      ],
+      "category": "消融",
+      "note": "冻结 V4，只训练一次修正；非三轮联合闭环。历史 FEM 有像素覆盖近似，不能套用后来的覆盖验收。",
+      "config": {
+        "no_feedback": true
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/comsol_feedback/run.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\complex_feedback_v1\\runs\\no_feedback\\best.pt",
+          "bytes": 21462185
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_v1\\runs\\no_feedback\\last.pt",
+          "bytes": 64402666
+        }
+      ],
+      "source_file_count": 1809,
+      "source_bytes": 19381995,
+      "diagram_png": "diagrams/18_v4_k1_no_feedback.png",
+      "diagram_svg": "diagrams/18_v4_k1_no_feedback.svg",
+      "zip": "packages/18_v4_k1_no_feedback_code.zip",
+      "zip_bytes": 6526251,
+      "zip_sha256": "846d8a44882e244d59b130af1a81e36760af9933e412f30f4eca699bca771aec"
+    },
+    {
+      "id": "19_v4_k1_long_feedback",
+      "name": "旧 V4 + 单轮修正（多种子长训）",
+      "family": "k1",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "complex_feedback_long_v1/protocol.json",
+        "eit_reproduction/comsol_feedback/README.md"
+      ],
+      "outputs": [
+        "complex_feedback_long_v1"
+      ],
+      "category": "主线",
+      "note": "冻结 V4，只训练一次修正；非三轮联合闭环。历史 FEM 有像素覆盖近似，不能套用后来的覆盖验收。",
+      "config": {
+        "no_feedback": false
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/comsol_feedback/long_run.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261016\\runs\\feedback\\best.pt",
+          "bytes": 64372714
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261016\\runs\\feedback\\last.pt",
+          "bytes": 64620266
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261017\\runs\\feedback\\best.pt",
+          "bytes": 64356394
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261017\\runs\\feedback\\last.pt",
+          "bytes": 64620266
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261018\\runs\\feedback\\best.pt",
+          "bytes": 64356394
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261018\\runs\\feedback\\last.pt",
+          "bytes": 64620266
+        }
+      ],
+      "source_file_count": 1822,
+      "source_bytes": 19391789,
+      "diagram_png": "diagrams/19_v4_k1_long_feedback.png",
+      "diagram_svg": "diagrams/19_v4_k1_long_feedback.svg",
+      "zip": "packages/19_v4_k1_long_feedback_code.zip",
+      "zip_bytes": 6531912,
+      "zip_sha256": "a2ec7e8d5019865bd2953197e9c10895f291b9c14463770508344b9c68e762e6"
+    },
+    {
+      "id": "20_v4_k1_long_no_feedback",
+      "name": "旧 V4 + 单轮修正（多种子长训）：无物理反馈对照",
+      "family": "k1",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "complex_feedback_long_v1/protocol.json",
+        "eit_reproduction/comsol_feedback/README.md"
+      ],
+      "outputs": [
+        "complex_feedback_long_v1"
+      ],
+      "category": "消融",
+      "note": "冻结 V4，只训练一次修正；非三轮联合闭环。历史 FEM 有像素覆盖近似，不能套用后来的覆盖验收。",
+      "config": {
+        "no_feedback": true
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/comsol_feedback/long_run.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261016\\runs\\no_feedback\\best.pt",
+          "bytes": 21462185
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261016\\runs\\no_feedback\\last.pt",
+          "bytes": 64620266
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261017\\runs\\no_feedback\\best.pt",
+          "bytes": 64353706
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261017\\runs\\no_feedback\\last.pt",
+          "bytes": 64620266
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261018\\runs\\no_feedback\\best.pt",
+          "bytes": 64353706
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_long_v1\\seed20261018\\runs\\no_feedback\\last.pt",
+          "bytes": 64620266
+        }
+      ],
+      "source_file_count": 1822,
+      "source_bytes": 19391789,
+      "diagram_png": "diagrams/20_v4_k1_long_no_feedback.png",
+      "diagram_svg": "diagrams/20_v4_k1_long_no_feedback.svg",
+      "zip": "packages/20_v4_k1_long_no_feedback_code.zip",
+      "zip_bytes": 6541577,
+      "zip_sha256": "61553aa043eaa92d4a34dfbbfad71b466bba89f15b39ceb3f5f2185b02e84338"
+    },
+    {
+      "id": "21_v4_k3_quick",
+      "name": "旧 V4 联合微调：固定三轮短训版",
+      "family": "k3",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "complex_feedback_quick_v2/protocol.json",
+        "eit_reproduction/comsol_feedback_loop/README.md"
+      ],
+      "outputs": [
+        "complex_feedback_quick_v2"
+      ],
+      "category": "主线",
+      "note": "3 个完整 epoch，选第 2 轮；外凸研究前的旧 K3 对照。 历史 FEM 并非后来 3096 像素覆盖修订版。",
+      "config": {},
+      "status": "历史源码／记录归档",
+      "entry": "eit_experiment_control/quick_loop.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\complex_feedback_quick_v2\\best.pt",
+          "bytes": 333456541
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_quick_v2\\last.pt",
+          "bytes": 333459613
+        }
+      ],
+      "source_file_count": 1808,
+      "source_bytes": 19388017,
+      "diagram_png": "diagrams/21_v4_k3_quick.png",
+      "diagram_svg": "diagrams/21_v4_k3_quick.svg",
+      "zip": "packages/21_v4_k3_quick_code.zip",
+      "zip_bytes": 6577528,
+      "zip_sha256": "2c0eb65288403c1a854b00ce4c95ac596959126edd0b6e18caf3ac2601142c1f"
+    },
+    {
+      "id": "22_v4_k3_long",
+      "name": "旧 V4 联合微调：三轮长训分支",
+      "family": "k3",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control"
+      ],
+      "evidence": [
+        "complex_feedback_loop_v2/protocol.json",
+        "eit_reproduction/comsol_feedback_loop/README.md"
+      ],
+      "outputs": [
+        "complex_feedback_loop_v2"
+      ],
+      "category": "主线",
+      "note": "保留原长训分支的实际状态，不恢复训练，也不声称它已完成。 历史 FEM 并非后来 3096 像素覆盖修订版。",
+      "config": {},
+      "status": "历史源码／记录归档",
+      "entry": "eit_reproduction/comsol_feedback_loop/run.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\complex_feedback_loop_v2\\best.pt",
+          "bytes": 111340550
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_loop_v2\\last.pt",
+          "bytes": 333453405
+        }
+      ],
+      "source_file_count": 1806,
+      "source_bytes": 19386697,
+      "diagram_png": "diagrams/22_v4_k3_long.png",
+      "diagram_svg": "diagrams/22_v4_k3_long.svg",
+      "zip": "packages/22_v4_k3_long_code.zip",
+      "zip_bytes": 6576231,
+      "zip_sha256": "8eca3ca81020963c28e8a443149d03ddf8c35cb2fa69ab9bb6b9837cb368ecce"
+    },
+    {
+      "id": "23_probe_delete_global",
+      "name": "外凸诊断：只减不增的全局修正",
+      "family": "probe",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study"
+      ],
+      "evidence": [
+        "protrusion_study_v1/selection.json"
+      ],
+      "outputs": [
+        "protrusion_study_v1/candidates"
+      ],
+      "category": "诊断候选",
+      "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+      "config": {
+        "variant": "delete_global",
+        "kind": "readout"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_protrusion_study/readout.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\delete_global_seed20261022\\best.pt",
+          "bytes": 301113
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\delete_global_seed20261022\\last.pt",
+          "bytes": 307961
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\delete_global_seed20261023\\best.pt",
+          "bytes": 305721
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\delete_global_seed20261023\\last.pt",
+          "bytes": 312569
+        }
+      ],
+      "source_file_count": 1833,
+      "source_bytes": 19534441,
+      "diagram_png": "diagrams/23_probe_delete_global.png",
+      "diagram_svg": "diagrams/23_probe_delete_global.svg",
+      "zip": "packages/23_probe_delete_global_code.zip",
+      "zip_bytes": 6560760,
+      "zip_sha256": "9631972b19961099c96cf04e882a1cc958a741c0fd9d24360b4244a6cf81cb0d"
+    },
+    {
+      "id": "24_probe_signed_global",
+      "name": "外凸诊断：可增可减的全局修正",
+      "family": "probe",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study"
+      ],
+      "evidence": [
+        "protrusion_study_v1/selection.json"
+      ],
+      "outputs": [
+        "protrusion_study_v1/candidates"
+      ],
+      "category": "诊断候选",
+      "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+      "config": {
+        "variant": "signed_global",
+        "kind": "readout"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_protrusion_study/readout.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_global_seed20261022\\best.pt",
+          "bytes": 303417
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_global_seed20261022\\last.pt",
+          "bytes": 310265
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_global_seed20261023\\best.pt",
+          "bytes": 305721
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_global_seed20261023\\last.pt",
+          "bytes": 312569
+        }
+      ],
+      "source_file_count": 1833,
+      "source_bytes": 19534441,
+      "diagram_png": "diagrams/24_probe_signed_global.png",
+      "diagram_svg": "diagrams/24_probe_signed_global.svg",
+      "zip": "packages/24_probe_signed_global_code.zip",
+      "zip_bytes": 6564308,
+      "zip_sha256": "4ea4328bb6104559a948925bd6f14d91da14fb38342401dc0d0a08e3999e8782"
+    },
+    {
+      "id": "25_probe_signed_boundary",
+      "name": "外凸诊断：可增可减 + 边界监督",
+      "family": "probe",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study"
+      ],
+      "evidence": [
+        "protrusion_study_v1/selection.json"
+      ],
+      "outputs": [
+        "protrusion_study_v1/candidates"
+      ],
+      "category": "诊断候选",
+      "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+      "config": {
+        "variant": "signed_boundary",
+        "kind": "readout"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_protrusion_study/readout.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_boundary_seed20261022\\best.pt",
+          "bytes": 301113
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_boundary_seed20261022\\last.pt",
+          "bytes": 307961
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_boundary_seed20261023\\best.pt",
+          "bytes": 301113
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_boundary_seed20261023\\last.pt",
+          "bytes": 307961
+        }
+      ],
+      "source_file_count": 1833,
+      "source_bytes": 19534441,
+      "diagram_png": "diagrams/25_probe_signed_boundary.png",
+      "diagram_svg": "diagrams/25_probe_signed_boundary.svg",
+      "zip": "packages/25_probe_signed_boundary_code.zip",
+      "zip_bytes": 6565916,
+      "zip_sha256": "be67bd1eb4e686f3c3c31dfb2195b8918d75d067707a8a73d2535bd43f12aa79"
+    },
+    {
+      "id": "26_probe_signed_local",
+      "name": "外凸诊断：可增可减 + 局部监督",
+      "family": "probe",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study"
+      ],
+      "evidence": [
+        "protrusion_study_v1/selection.json"
+      ],
+      "outputs": [
+        "protrusion_study_v1/candidates"
+      ],
+      "category": "诊断候选",
+      "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+      "config": {
+        "variant": "signed_local",
+        "kind": "readout"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_protrusion_study/readout.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_local_seed20261022\\best.pt",
+          "bytes": 100365
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_local_seed20261022\\last.pt",
+          "bytes": 306809
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_local_seed20261023\\best.pt",
+          "bytes": 100365
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\signed_local_seed20261023\\last.pt",
+          "bytes": 306809
+        }
+      ],
+      "source_file_count": 1833,
+      "source_bytes": 19534441,
+      "diagram_png": "diagrams/26_probe_signed_local.png",
+      "diagram_svg": "diagrams/26_probe_signed_local.svg",
+      "zip": "packages/26_probe_signed_local_code.zip",
+      "zip_bytes": 6566031,
+      "zip_sha256": "43bae2a1e678e62bf707f8a47ccd4ad1dd5f31e1ac7b547a72213c46109531e7"
+    },
+    {
+      "id": "27_probe_probability_local",
+      "name": "外凸诊断：概率直接修正 + 局部监督",
+      "family": "probe",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study"
+      ],
+      "evidence": [
+        "protrusion_study_v1/selection.json"
+      ],
+      "outputs": [
+        "protrusion_study_v1/candidates"
+      ],
+      "category": "诊断候选",
+      "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+      "config": {
+        "variant": "probability_local",
+        "kind": "readout"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_protrusion_study/readout.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\probability_local_seed20261022\\best.pt",
+          "bytes": 301113
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\probability_local_seed20261022\\last.pt",
+          "bytes": 308025
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\probability_local_seed20261023\\best.pt",
+          "bytes": 100365
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\probability_local_seed20261023\\last.pt",
+          "bytes": 306873
+        }
+      ],
+      "source_file_count": 1833,
+      "source_bytes": 19534441,
+      "diagram_png": "diagrams/27_probe_probability_local.png",
+      "diagram_svg": "diagrams/27_probe_probability_local.svg",
+      "zip": "packages/27_probe_probability_local_code.zip",
+      "zip_bytes": 6565198,
+      "zip_sha256": "2bcdd8fe4de03fbd087c74da606031da56289b596c054df52eea27e3647e25ae"
+    },
+    {
+      "id": "28_probe_joint_global",
+      "name": "外凸诊断：V4 联合训练 + 全局修正",
+      "family": "probe",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study"
+      ],
+      "evidence": [
+        "protrusion_study_v1/selection.json"
+      ],
+      "outputs": [
+        "protrusion_study_v1/joint_candidates"
+      ],
+      "category": "诊断候选",
+      "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+      "config": {
+        "variant": "joint_global",
+        "kind": "joint"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_protrusion_study/joint_probe.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_global_seed20261022\\best.pt",
+          "bytes": 269154717
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_global_seed20261022\\last.pt",
+          "bytes": 269164061
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_global_seed20261023\\best.pt",
+          "bytes": 269155869
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_global_seed20261023\\last.pt",
+          "bytes": 269165213
+        }
+      ],
+      "source_file_count": 1829,
+      "source_bytes": 19519649,
+      "diagram_png": "diagrams/28_probe_joint_global.png",
+      "diagram_svg": "diagrams/28_probe_joint_global.svg",
+      "zip": "packages/28_probe_joint_global_code.zip",
+      "zip_bytes": 6557889,
+      "zip_sha256": "4b898b153b280247f964c654b616babf342b9cae8dbb89d32ed11c2af8d04adb"
+    },
+    {
+      "id": "29_probe_joint_local",
+      "name": "外凸诊断：V4 联合训练 + 局部监督",
+      "family": "probe",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study"
+      ],
+      "evidence": [
+        "protrusion_study_v1/selection.json"
+      ],
+      "outputs": [
+        "protrusion_study_v1/joint_candidates"
+      ],
+      "category": "诊断候选",
+      "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+      "config": {
+        "variant": "joint_local",
+        "kind": "joint"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_protrusion_study/joint_probe.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_local_seed20261022\\best.pt",
+          "bytes": 89732536
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_local_seed20261022\\last.pt",
+          "bytes": 269164061
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_local_seed20261023\\best.pt",
+          "bytes": 89732536
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_local_seed20261023\\last.pt",
+          "bytes": 269164061
+        }
+      ],
+      "source_file_count": 1829,
+      "source_bytes": 19519649,
+      "diagram_png": "diagrams/29_probe_joint_local.png",
+      "diagram_svg": "diagrams/29_probe_joint_local.svg",
+      "zip": "packages/29_probe_joint_local_code.zip",
+      "zip_bytes": 6558836,
+      "zip_sha256": "f55404daafaae0f23feef3c38fe1b62117f119543d8aebe14c300bca3f7a3cea"
+    },
+    {
+      "id": "30_probe_joint_local_precise",
+      "name": "外凸诊断：联合局部监督 + 邻近误填约束",
+      "family": "probe",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study"
+      ],
+      "evidence": [
+        "protrusion_study_v1/selection.json"
+      ],
+      "outputs": [
+        "protrusion_study_v1/joint_candidates"
+      ],
+      "category": "诊断候选",
+      "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+      "config": {
+        "variant": "joint_local_precise",
+        "kind": "joint"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_protrusion_study/joint_probe.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_local_precise_seed20261022\\best.pt",
+          "bytes": 269154717
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_local_precise_seed20261022\\last.pt",
+          "bytes": 269164061
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_local_precise_seed20261023\\best.pt",
+          "bytes": 89732536
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\joint_candidates\\joint_local_precise_seed20261023\\last.pt",
+          "bytes": 269164061
+        }
+      ],
+      "source_file_count": 1829,
+      "source_bytes": 19519649,
+      "diagram_png": "diagrams/30_probe_joint_local_precise.png",
+      "diagram_svg": "diagrams/30_probe_joint_local_precise.svg",
+      "zip": "packages/30_probe_joint_local_precise_code.zip",
+      "zip_bytes": 6565693,
+      "zip_sha256": "eb223a60734eee144d74055fd4506d282900c4e1734c56549557babb2199c1ba"
+    },
+    {
+      "id": "31_probe_gate_control",
+      "name": "外凸诊断：预测边界带内的门控修正",
+      "family": "probe",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study"
+      ],
+      "evidence": [
+        "protrusion_study_v1/selection.json"
+      ],
+      "outputs": [
+        "protrusion_study_v1/localization_probe"
+      ],
+      "category": "诊断候选",
+      "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+      "config": {
+        "variant": "gate_control",
+        "kind": "gate"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_protrusion_study/localization_probe.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\localization_probe\\gate_control_seed20261022\\best.pt",
+          "bytes": 151241
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\localization_probe\\gate_control_seed20261022\\last.pt",
+          "bytes": 467177
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\localization_probe\\gate_control_seed20261023\\best.pt",
+          "bytes": 151241
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\localization_probe\\gate_control_seed20261023\\last.pt",
+          "bytes": 467177
+        }
+      ],
+      "source_file_count": 1830,
+      "source_bytes": 19528059,
+      "diagram_png": "diagrams/31_probe_gate_control.png",
+      "diagram_svg": "diagrams/31_probe_gate_control.svg",
+      "zip": "packages/31_probe_gate_control_code.zip",
+      "zip_bytes": 6574795,
+      "zip_sha256": "18511b817873dd36e2694518191aa2ecac31f5924b28b8b9474855fa7f30a3d0"
+    },
+    {
+      "id": "32_probe_gate_supervised",
+      "name": "外凸诊断：门控修正 + 局部定位监督",
+      "family": "probe",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study"
+      ],
+      "evidence": [
+        "protrusion_study_v1/selection.json"
+      ],
+      "outputs": [
+        "protrusion_study_v1/localization_probe"
+      ],
+      "category": "诊断候选",
+      "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+      "config": {
+        "variant": "gate_supervised",
+        "kind": "gate"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_protrusion_study/localization_probe.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\localization_probe\\gate_supervised_seed20261022\\best.pt",
+          "bytes": 151241
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\localization_probe\\gate_supervised_seed20261022\\last.pt",
+          "bytes": 467177
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\localization_probe\\gate_supervised_seed20261023\\best.pt",
+          "bytes": 151241
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\localization_probe\\gate_supervised_seed20261023\\last.pt",
+          "bytes": 467177
+        }
+      ],
+      "source_file_count": 1830,
+      "source_bytes": 19528059,
+      "diagram_png": "diagrams/32_probe_gate_supervised.png",
+      "diagram_svg": "diagrams/32_probe_gate_supervised.svg",
+      "zip": "packages/32_probe_gate_supervised_code.zip",
+      "zip_bytes": 6575372,
+      "zip_sha256": "a3430c599fad2a280e55d44f676d8584c510a3962c9e94ba76eb02c8d1847d1f"
+    },
+    {
+      "id": "33_probe_k3_integration",
+      "name": "局部概率修正接入旧 K3 的验证版",
+      "family": "probe_k3",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study"
+      ],
+      "evidence": [
+        "protrusion_study_v1/selection.json",
+        "protrusion_study_v1/integration_protocol.json"
+      ],
+      "outputs": [
+        "protrusion_study_v1/integration_validation",
+        "protrusion_study_v1/candidates/probability_local_seed20261022",
+        "complex_feedback_quick_v2"
+      ],
+      "category": "诊断组合",
+      "note": "probability_local 改初始几何并重新耦合材料，再接原 K3 修正器；不能视作重新联合训练的最佳模型。",
+      "config": {},
+      "status": "历史源码／记录归档",
+      "entry": "eit_protrusion_study/promotion.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\probability_local_seed20261022\\best.pt",
+          "bytes": 301113
+        },
+        {
+          "path": "E:\\Codex\\protrusion_study_v1\\candidates\\probability_local_seed20261022\\last.pt",
+          "bytes": 308025
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_quick_v2\\best.pt",
+          "bytes": 333456541
+        },
+        {
+          "path": "E:\\Codex\\complex_feedback_quick_v2\\last.pt",
+          "bytes": 333459613
+        }
+      ],
+      "source_file_count": 1829,
+      "source_bytes": 19512907,
+      "diagram_png": "diagrams/33_probe_k3_integration.png",
+      "diagram_svg": "diagrams/33_probe_k3_integration.svg",
+      "zip": "packages/33_probe_k3_integration_code.zip",
+      "zip_bytes": 6684087,
+      "zip_sha256": "c6ef42606e766dc6aec4adea2c47d69b7ca13d7cd94cffaa9ce8c42e5eab3097"
+    },
+    {
+      "id": "34_shape1_single16",
+      "name": "通用形状第一阶段：单通道低分辨率映射",
+      "family": "shape_learned",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general"
+      ],
+      "evidence": [
+        "shape_generalization_v1/protocol.json"
+      ],
+      "outputs": [
+        "shape_generalization_v1/runs/single16_seed20261023",
+        "shape_generalization_v1/runs/single16_seed20261024"
+      ],
+      "category": "表示对照",
+      "note": "全图通用形状与材料预测，无 V4 删除门控、完整 Champion 或在线 FEM。",
+      "config": {
+        "variant": "single16"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_shape_general/run.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\single16_seed20261023\\best.pt",
+          "bytes": 80420036
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\single16_seed20261023\\last.pt",
+          "bytes": 80420036
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\single16_seed20261024\\best.pt",
+          "bytes": 80414980
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\single16_seed20261024\\last.pt",
+          "bytes": 80420036
+        }
+      ],
+      "source_file_count": 1874,
+      "source_bytes": 19826094,
+      "diagram_png": "diagrams/34_shape1_single16.png",
+      "diagram_svg": "diagrams/34_shape1_single16.svg",
+      "zip": "packages/34_shape1_single16_code.zip",
+      "zip_bytes": 6734878,
+      "zip_sha256": "80e95ead20eaa487f2f8d234e0e97124352d81751d574791f58c829fd8ca9627"
+    },
+    {
+      "id": "35_shape1_multi16",
+      "name": "通用形状第一阶段：多通道低分辨率映射",
+      "family": "shape_learned",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general"
+      ],
+      "evidence": [
+        "shape_generalization_v1/protocol.json"
+      ],
+      "outputs": [
+        "shape_generalization_v1/runs/multi16_seed20261023",
+        "shape_generalization_v1/runs/multi16_seed20261024"
+      ],
+      "category": "表示对照",
+      "note": "全图通用形状与材料预测，无 V4 删除门控、完整 Champion 或在线 FEM。",
+      "config": {
+        "variant": "multi16"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_shape_general/run.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\multi16_seed20261023\\best.pt",
+          "bytes": 104097028
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\multi16_seed20261023\\last.pt",
+          "bytes": 104098052
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\multi16_seed20261024\\best.pt",
+          "bytes": 104095044
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\multi16_seed20261024\\last.pt",
+          "bytes": 104098052
+        }
+      ],
+      "source_file_count": 1874,
+      "source_bytes": 19826019,
+      "diagram_png": "diagrams/35_shape1_multi16.png",
+      "diagram_svg": "diagrams/35_shape1_multi16.svg",
+      "zip": "packages/35_shape1_multi16_code.zip",
+      "zip_bytes": 6735270,
+      "zip_sha256": "c9b3a078c7129621b961618c9f12bec0aa92ccb81986f6ef8cbb99a722aaa06c"
+    },
+    {
+      "id": "36_shape1_dense64",
+      "name": "通用形状第一阶段：高分辨率直接映射",
+      "family": "shape_learned",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general"
+      ],
+      "evidence": [
+        "shape_generalization_v1/protocol.json"
+      ],
+      "outputs": [
+        "shape_generalization_v1/runs/dense64_seed20261023",
+        "shape_generalization_v1/runs/dense64_seed20261024"
+      ],
+      "category": "表示对照",
+      "note": "全图通用形状与材料预测，无 V4 删除门控、完整 Champion 或在线 FEM。",
+      "config": {
+        "variant": "dense64"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_shape_general/run.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\dense64_seed20261023\\best.pt",
+          "bytes": 179710852
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\dense64_seed20261023\\last.pt",
+          "bytes": 179711876
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\dense64_seed20261024\\best.pt",
+          "bytes": 179705796
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\dense64_seed20261024\\last.pt",
+          "bytes": 179711876
+        }
+      ],
+      "source_file_count": 1874,
+      "source_bytes": 19826102,
+      "diagram_png": "diagrams/36_shape1_dense64.png",
+      "diagram_svg": "diagrams/36_shape1_dense64.svg",
+      "zip": "packages/36_shape1_dense64_code.zip",
+      "zip_bytes": 6736741,
+      "zip_sha256": "2ceb69665e318c3637612ed265a51238b8ff3c1991cb1cdc3d04cfd6f8887b2e"
+    },
+    {
+      "id": "37_shape1_dense64_boundary",
+      "name": "通用形状第一阶段：高分辨率映射 + 边界监督",
+      "family": "shape_learned",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general"
+      ],
+      "evidence": [
+        "shape_generalization_v1/protocol.json"
+      ],
+      "outputs": [
+        "shape_generalization_v1/runs/dense64_boundary_seed20261023",
+        "shape_generalization_v1/runs/dense64_boundary_seed20261024"
+      ],
+      "category": "表示对照",
+      "note": "全图通用形状与材料预测，无 V4 删除门控、完整 Champion 或在线 FEM。",
+      "config": {
+        "variant": "dense64_boundary"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_shape_general/run.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\dense64_boundary_seed20261023\\best.pt",
+          "bytes": 179710916
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\dense64_boundary_seed20261023\\last.pt",
+          "bytes": 179711876
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\dense64_boundary_seed20261024\\best.pt",
+          "bytes": 179709892
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\dense64_boundary_seed20261024\\last.pt",
+          "bytes": 179711876
+        }
+      ],
+      "source_file_count": 1874,
+      "source_bytes": 19826045,
+      "diagram_png": "diagrams/37_shape1_dense64_boundary.png",
+      "diagram_svg": "diagrams/37_shape1_dense64_boundary.svg",
+      "zip": "packages/37_shape1_dense64_boundary_code.zip",
+      "zip_bytes": 6742188,
+      "zip_sha256": "32e9bae38a1006008fb2501feb6584a2eeb71aed9a43770577c6aa3ef4eb5c3a"
+    },
+    {
+      "id": "38_shape1_query_boundary",
+      "name": "通用形状第一阶段：逐位置查询 + 边界监督",
+      "family": "shape_learned",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general"
+      ],
+      "evidence": [
+        "shape_generalization_v1/protocol.json"
+      ],
+      "outputs": [
+        "shape_generalization_v1/runs/query_boundary_seed20261023",
+        "shape_generalization_v1/runs/query_boundary_seed20261024"
+      ],
+      "category": "表示对照",
+      "note": "全图通用形状与材料预测，无 V4 删除门控、完整 Champion 或在线 FEM。",
+      "config": {
+        "variant": "query_boundary"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_shape_general/run.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\query_boundary_seed20261023\\best.pt",
+          "bytes": 80192235
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\query_boundary_seed20261023\\last.pt",
+          "bytes": 80192235
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\query_boundary_seed20261024\\best.pt",
+          "bytes": 80192235
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\runs\\query_boundary_seed20261024\\last.pt",
+          "bytes": 80192235
+        }
+      ],
+      "source_file_count": 1874,
+      "source_bytes": 19826093,
+      "diagram_png": "diagrams/38_shape1_query_boundary.png",
+      "diagram_svg": "diagrams/38_shape1_query_boundary.svg",
+      "zip": "packages/38_shape1_query_boundary_code.zip",
+      "zip_bytes": 6740580,
+      "zip_sha256": "5cfab76669ed20b04250087effeb874137c3834d7f4879d3a8dca5daff06122e"
+    },
+    {
+      "id": "39_shape2_physical",
+      "name": "通用形状第二阶段：固定物理投影",
+      "family": "projection",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general"
+      ],
+      "evidence": [
+        "shape_generalization_v1/phase2/protocol.json"
+      ],
+      "outputs": [
+        "shape_generalization_v1/phase2/runs/physical_seed20261023",
+        "shape_generalization_v1/phase2/runs/physical_seed20261024"
+      ],
+      "category": "表示／训练对照",
+      "note": "固定投影不等于每次重新进行非线性 FEM 正求解；延长训练项延续原结构。",
+      "config": {
+        "variant": "physical",
+        "pool": false
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_shape_general/phase2.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_seed20261023\\best.pt",
+          "bytes": 151951008
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_seed20261023\\last.pt",
+          "bytes": 152014624
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_seed20261024\\best.pt",
+          "bytes": 151949024
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_seed20261024\\best_guarded.pt",
+          "bytes": 151937784
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_seed20261024\\last.pt",
+          "bytes": 152014624
+        }
+      ],
+      "source_file_count": 1874,
+      "source_bytes": 19822843,
+      "diagram_png": "diagrams/39_shape2_physical.png",
+      "diagram_svg": "diagrams/39_shape2_physical.svg",
+      "zip": "packages/39_shape2_physical_code.zip",
+      "zip_bytes": 6782430,
+      "zip_sha256": "8c3a294da14be4ed12bc531a11aeabf3477eba547ca1a81610b1fd693a2a1c06"
+    },
+    {
+      "id": "40_shape2_physical_boundary",
+      "name": "通用形状第二阶段：固定物理投影 + 边界监督",
+      "family": "projection",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general"
+      ],
+      "evidence": [
+        "shape_generalization_v1/phase2/protocol.json"
+      ],
+      "outputs": [
+        "shape_generalization_v1/phase2/runs/physical_boundary_seed20261023",
+        "shape_generalization_v1/phase2/runs/physical_boundary_seed20261024"
+      ],
+      "category": "表示／训练对照",
+      "note": "固定投影不等于每次重新进行非线性 FEM 正求解；延长训练项延续原结构。",
+      "config": {
+        "variant": "physical_boundary",
+        "pool": false
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_shape_general/phase2.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_boundary_seed20261023\\best.pt",
+          "bytes": 151951008
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_boundary_seed20261023\\best_guarded.pt",
+          "bytes": 151949880
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_boundary_seed20261023\\last.pt",
+          "bytes": 152014688
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_boundary_seed20261024\\best.pt",
+          "bytes": 151966176
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\physical_boundary_seed20261024\\last.pt",
+          "bytes": 152014688
+        }
+      ],
+      "source_file_count": 1874,
+      "source_bytes": 19822850,
+      "diagram_png": "diagrams/40_shape2_physical_boundary.png",
+      "diagram_svg": "diagrams/40_shape2_physical_boundary.svg",
+      "zip": "packages/40_shape2_physical_boundary_code.zip",
+      "zip_bytes": 6796029,
+      "zip_sha256": "b53dbb21b2ea2fe0eaa9a704d2c4dd14494419f79ed5fbbd53b95cb6d68a03a0"
+    },
+    {
+      "id": "41_shape2_multi16_extended",
+      "name": "通用形状第二阶段：多通道映射延长训练",
+      "family": "shape_learned",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general"
+      ],
+      "evidence": [
+        "shape_generalization_v1/phase2/protocol.json"
+      ],
+      "outputs": [
+        "shape_generalization_v1/phase2/runs/multi16_extended_seed20261023",
+        "shape_generalization_v1/phase2/runs/multi16_extended_seed20261024"
+      ],
+      "category": "表示／训练对照",
+      "note": "沿用第一阶段的学习式测量到空间映射，延长训练；本项没有固定物理投影或在线 FEM。",
+      "config": {
+        "variant": "multi16_extended",
+        "pool": false
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_shape_general/phase2.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\multi16_extended_seed20261023\\best.pt",
+          "bytes": 104120580
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\multi16_extended_seed20261023\\last.pt",
+          "bytes": 104145796
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\multi16_extended_seed20261024\\best.pt",
+          "bytes": 104110468
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\multi16_extended_seed20261024\\last.pt",
+          "bytes": 104138756
+        }
+      ],
+      "source_file_count": 1876,
+      "source_bytes": 19820723,
+      "diagram_png": "diagrams/41_shape2_multi16_extended.png",
+      "diagram_svg": "diagrams/41_shape2_multi16_extended.svg",
+      "zip": "packages/41_shape2_multi16_extended_code.zip",
+      "zip_bytes": 6737145,
+      "zip_sha256": "1c6b7f4140f5af84f2764e9c08ee183564930292a4af4a4fb826a2f71d5f25fd"
+    },
+    {
+      "id": "42_shape2_dense64_boundary_extended",
+      "name": "通用形状第二阶段：高分辨率边界版延长训练",
+      "family": "shape_learned",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general"
+      ],
+      "evidence": [
+        "shape_generalization_v1/phase2/protocol.json"
+      ],
+      "outputs": [
+        "shape_generalization_v1/phase2/runs/dense64_boundary_extended_seed20261023",
+        "shape_generalization_v1/phase2/runs/dense64_boundary_extended_seed20261024"
+      ],
+      "category": "表示／训练对照",
+      "note": "沿用第一阶段的学习式测量到空间映射，延长训练；本项没有固定物理投影或在线 FEM。",
+      "config": {
+        "variant": "dense64_boundary_extended",
+        "pool": false
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_shape_general/phase2.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\dense64_boundary_extended_seed20261023\\best.pt",
+          "bytes": 179708804
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\dense64_boundary_extended_seed20261023\\last.pt",
+          "bytes": 179752580
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\dense64_boundary_extended_seed20261024\\best.pt",
+          "bytes": 179707780
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\dense64_boundary_extended_seed20261024\\last.pt",
+          "bytes": 179752580
+        }
+      ],
+      "source_file_count": 1876,
+      "source_bytes": 19820770,
+      "diagram_png": "diagrams/42_shape2_dense64_boundary_extended.png",
+      "diagram_svg": "diagrams/42_shape2_dense64_boundary_extended.svg",
+      "zip": "packages/42_shape2_dense64_boundary_extended_code.zip",
+      "zip_bytes": 6745134,
+      "zip_sha256": "44e6dac921aab0af347f691b153ee810f8fba5ae3691f7e09a261f5d6c762adf"
+    },
+    {
+      "id": "43_shape3_physical_control",
+      "name": "通用形状第三阶段：固定投影：不加旋转训练对照",
+      "family": "projection",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general"
+      ],
+      "evidence": [
+        "shape_generalization_v1/phase3/protocol.json"
+      ],
+      "outputs": [
+        "shape_generalization_v1/phase3/runs/physical_control_seed20261023",
+        "shape_generalization_v1/phase3/runs/physical_control_seed20261024",
+        "shape_generalization_v1/phase3/runs/physical_control_seed20261025"
+      ],
+      "category": "主线",
+      "note": "physical_c4 名称中的四方向是训练增强；这一历史评估路径在推理时只有一次网络计算。",
+      "config": {
+        "pool": false,
+        "train_c4": false
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_shape_general/phase3.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_control_seed20261025\\best.pt",
+          "bytes": 151949024
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_control_seed20261025\\last.pt",
+          "bytes": 152014688
+        }
+      ],
+      "source_file_count": 1875,
+      "source_bytes": 19827206,
+      "diagram_png": "diagrams/43_shape3_physical_control.png",
+      "diagram_svg": "diagrams/43_shape3_physical_control.svg",
+      "zip": "packages/43_shape3_physical_control_code.zip",
+      "zip_bytes": 6788773,
+      "zip_sha256": "ac9647df3fa76083ab42236817de544986ca6d1b0ec095d29d7137dd25d6ee15"
+    },
+    {
+      "id": "44_shape3_physical_c4",
+      "name": "通用形状第三阶段：固定投影：四方向训练增强版",
+      "family": "projection",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general"
+      ],
+      "evidence": [
+        "shape_generalization_v1/phase3/protocol.json"
+      ],
+      "outputs": [
+        "shape_generalization_v1/phase3/runs/physical_c4_seed20261023",
+        "shape_generalization_v1/phase3/runs/physical_c4_seed20261024",
+        "shape_generalization_v1/phase3/runs/physical_c4_seed20261025"
+      ],
+      "category": "主线",
+      "note": "physical_c4 名称中的四方向是训练增强；这一历史评估路径在推理时只有一次网络计算。",
+      "config": {
+        "pool": false,
+        "train_c4": true
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_shape_general/phase3.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261023\\best.pt",
+          "bytes": 151997472
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261023\\best_guarded.pt",
+          "bytes": 151945848
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261023\\last.pt",
+          "bytes": 152022752
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261024\\best.pt",
+          "bytes": 152023776
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261024\\best_guarded.pt",
+          "bytes": 151932728
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261024\\last.pt",
+          "bytes": 152048992
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\best.pt",
+          "bytes": 152019680
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\best_guarded.pt",
+          "bytes": 151976120
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\last.pt",
+          "bytes": 152044960
+        }
+      ],
+      "source_file_count": 1875,
+      "source_bytes": 19832587,
+      "diagram_png": "diagrams/44_shape3_physical_c4.png",
+      "diagram_svg": "diagrams/44_shape3_physical_c4.svg",
+      "zip": "packages/44_shape3_physical_c4_code.zip",
+      "zip_bytes": 6799810,
+      "zip_sha256": "6d780ee093a53874fc31d8baec1f24103c3d4ef68b2167da559ac5cd022abe67"
+    },
+    {
+      "id": "45_champion_full",
+      "name": "完整 Champion：四方向几何与区域材料重建",
+      "family": "champion",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2"
+      ],
+      "evidence": [
+        "eit_champion_loop_v2/README.md"
+      ],
+      "outputs": [
+        "eit_champion_loop_v2/vendor/EIT_C4_Champion_20261020"
+      ],
+      "category": "主线",
+      "note": "含电压注意力、双路骨干、细几何查询、方向融合与界面宽度；不是把旧 V4 代码原封不动并联在内。",
+      "config": {
+        "ablate": "none",
+        "loop": "none"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_champion_loop_v2/vendor/EIT_C4_Champion_20261020/infer.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\eit_champion_loop_v2\\vendor\\EIT_C4_Champion_20261020\\weights\\seed_20260911_epoch_6.pt",
+          "bytes": 84921895
+        },
+        {
+          "path": "E:\\Codex\\eit_champion_loop_v2\\vendor\\EIT_C4_Champion_20261020\\weights\\seed_20261013_epoch_10.pt",
+          "bytes": 84921895
+        },
+        {
+          "path": "E:\\Codex\\eit_champion_loop_v2\\vendor\\EIT_C4_Champion_20261020\\weights\\seed_20261017_epoch_15.pt",
+          "bytes": 84921895
+        }
+      ],
+      "source_file_count": 1983,
+      "source_bytes": 20400928,
+      "diagram_png": "diagrams/45_champion_full.png",
+      "diagram_svg": "diagrams/45_champion_full.svg",
+      "zip": "packages/45_champion_full_code.zip",
+      "zip_bytes": 7075536,
+      "zip_sha256": "df6373a00b9f6edc92b79849f4294af8f39830914ae6fda616e26b59a6565ec8"
+    },
+    {
+      "id": "46_projection_fixed3_loop",
+      "name": "投影四方向初始化 + 三轮场修正",
+      "family": "projection_loop",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3"
+      ],
+      "evidence": [
+        "eit_final_c4_loop/README.md"
+      ],
+      "outputs": [
+        "final_c4_loop_v1"
+      ],
+      "category": "结构／验收原型",
+      "note": "早期集成原型，无独立完整训练权重；final_c4_loop 名称不代表完整 Champion。投影网络初始化与反馈零头不能冒充反馈已训练。历史网格未继承后续覆盖修订。",
+      "config": {
+        "loop": "fixed3",
+        "ablate": "none"
+      },
+      "status": "未找到独立完整训练权重",
+      "entry": "eit_final_c4_loop/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [],
+      "source_file_count": 1994,
+      "source_bytes": 20457733,
+      "diagram_png": "diagrams/46_projection_fixed3_loop.png",
+      "diagram_svg": "diagrams/46_projection_fixed3_loop.svg",
+      "zip": "packages/46_projection_fixed3_loop_code.zip",
+      "zip_bytes": 7184355,
+      "zip_sha256": "f9fefed46659d0358b2dae2bd4bba2f07d52351fbd246e8810c9bf306508b1d8"
+    },
+    {
+      "id": "47_champion_fixed3_loop",
+      "name": "完整 Champion + 三轮场修正",
+      "family": "champion_loop",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3"
+      ],
+      "evidence": [
+        "eit_champion_loop_v2/README.md"
+      ],
+      "outputs": [
+        "champion_loop_v2"
+      ],
+      "category": "结构／验收原型",
+      "note": "完成代码集成／接口验收，不是独立完整训练版本；默认预训练 Champion + 未训练反馈。以 Champion 替代初始化网络，没有同时保留完整旧 V4 闭环。",
+      "config": {
+        "loop": "fixed3",
+        "ablate": "none"
+      },
+      "status": "接口／梯度验收，未找到独立完整训练权重",
+      "entry": "eit_champion_loop_v2/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [],
+      "source_file_count": 1993,
+      "source_bytes": 20456460,
+      "diagram_png": "diagrams/47_champion_fixed3_loop.png",
+      "diagram_svg": "diagrams/47_champion_fixed3_loop.svg",
+      "zip": "packages/47_champion_fixed3_loop_code.zip",
+      "zip_bytes": 7220011,
+      "zip_sha256": "010e8b74543a46d27cff98db1679b8af19ff53bb3260aaafd7c9c24aef5ba224"
+    },
+    {
+      "id": "48_champion_adaptive_loop",
+      "name": "完整 Champion + 自适应场修正",
+      "family": "champion_loop",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3"
+      ],
+      "evidence": [
+        "eit_champion_adaptive_v3/README.md"
+      ],
+      "outputs": [
+        "champion_adaptive_v3"
+      ],
+      "category": "结构／验收原型",
+      "note": "本项是自适应接口原型；完整短训权重见后续 c_adaptive。3096/3096 像素覆盖修订 FEM 仍非原 COMSOL 完全等价；稳定停止、回退与上限终止分开。",
+      "config": {
+        "loop": "adaptive",
+        "ablate": "none"
+      },
+      "status": "自适应结构验收；训练版见后续 c_adaptive",
+      "entry": "eit_champion_adaptive_v3/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [],
+      "source_file_count": 1992,
+      "source_bytes": 20453083,
+      "diagram_png": "diagrams/48_champion_adaptive_loop.png",
+      "diagram_svg": "diagrams/48_champion_adaptive_loop.svg",
+      "zip": "packages/48_champion_adaptive_loop_code.zip",
+      "zip_bytes": 7225387,
+      "zip_sha256": "c5b9ff28a69c122e7d4b1eed35e0f7e14e61bfe911cb5b15ee29370b2b4560f8"
+    },
+    {
+      "id": "49_short21_c_full",
+      "name": "21 组短训 / 完整 Champion，无反馈",
+      "family": "champion",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_full/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_full"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_full",
+        "route": "champion",
+        "label": "完整 Champion · 无反馈对照",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_full\\initial.pt",
+          "bytes": 106161269
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_full\\last.pt",
+          "bytes": 274612343
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581430,
+      "diagram_png": "diagrams/49_short21_c_full.png",
+      "diagram_svg": "diagrams/49_short21_c_full.svg",
+      "zip": "packages/49_short21_c_full_code.zip",
+      "zip_bytes": 7158916,
+      "zip_sha256": "7a2b1abae007485ff19aeecf58617d0a37e11f01ccede1ce6a25b4bd76d63658"
+    },
+    {
+      "id": "50_short21_p_full",
+      "name": "21 组短训 / 投影四方向网络，无反馈",
+      "family": "projection",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/p_full/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/p_full"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "p_full",
+        "route": "projection",
+        "label": "物理投影 + 通用场 + C4",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\p_full\\initial.pt",
+          "bytes": 102475037
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\p_full\\last.pt",
+          "bytes": 173271704
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581429,
+      "diagram_png": "diagrams/50_short21_p_full.png",
+      "diagram_svg": "diagrams/50_short21_p_full.svg",
+      "zip": "packages/50_short21_p_full_code.zip",
+      "zip_bytes": 7123130,
+      "zip_sha256": "896ee2098cb9e0e53fafd2ce721a1d9d5fb3f59afdfeed228841599774042b64"
+    },
+    {
+      "id": "51_short21_p_no_projection",
+      "name": "21 组短训 / 投影路线：空间投影置零",
+      "family": "projection",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/p_no_projection/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/p_no_projection"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "p_no_projection",
+        "route": "projection",
+        "ablate": "projection",
+        "label": "投影路线 · 禁用固定投影",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\p_no_projection\\initial.pt",
+          "bytes": 102475037
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\p_no_projection\\last.pt",
+          "bytes": 173271768
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581468,
+      "diagram_png": "diagrams/51_short21_p_no_projection.png",
+      "diagram_svg": "diagrams/51_short21_p_no_projection.svg",
+      "zip": "packages/51_short21_p_no_projection_code.zip",
+      "zip_bytes": 7122020,
+      "zip_sha256": "2466cb6cb271075144bfc7baf79a86ee9153ddabb3294b899b10ea9dc02eb9bc"
+    },
+    {
+      "id": "52_short21_p_no_context",
+      "name": "21 组短训 / 投影路线：全局电压支路置零",
+      "family": "projection",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/p_no_context/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/p_no_context"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "p_no_context",
+        "route": "projection",
+        "ablate": "context",
+        "label": "投影路线 · 禁用测量上下文",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\p_no_context\\initial.pt",
+          "bytes": 102475037
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\p_no_context\\last.pt",
+          "bytes": 173271768
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581466,
+      "diagram_png": "diagrams/52_short21_p_no_context.png",
+      "diagram_svg": "diagrams/52_short21_p_no_context.svg",
+      "zip": "packages/52_short21_p_no_context_code.zip",
+      "zip_bytes": 7132981,
+      "zip_sha256": "3e0b3e00fa2365d4b682b84ba4f66a62085d4fcb98b09b4c1a2ba22db723aa86"
+    },
+    {
+      "id": "53_short21_p_no_c4",
+      "name": "21 组短训 / 投影路线：取消推理四方向融合",
+      "family": "projection",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/p_no_c4/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/p_no_c4"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "p_no_c4",
+        "route": "projection",
+        "ablate": "c4",
+        "label": "投影路线 · 禁用 C4",
+        "pool": false,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\p_no_c4\\initial.pt",
+          "bytes": 102475037
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\p_no_c4\\last.pt",
+          "bytes": 173271768
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581448,
+      "diagram_png": "diagrams/53_short21_p_no_c4.png",
+      "diagram_svg": "diagrams/53_short21_p_no_c4.svg",
+      "zip": "packages/53_short21_p_no_c4_code.zip",
+      "zip_bytes": 7120184,
+      "zip_sha256": "f2f5a9cb38c419a9655dbbb7880bd19903e122f158e732190c699a9ef8ec3984"
+    },
+    {
+      "id": "54_short21_c_no_c4",
+      "name": "21 组短训 / Champion：取消推理四方向融合",
+      "family": "champion",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_no_c4/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_no_c4"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_no_c4",
+        "route": "champion",
+        "ablate": "c4",
+        "label": "Champion · 禁用 C4",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_c4\\initial.pt",
+          "bytes": 106161269
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_c4\\last.pt",
+          "bytes": 274612407
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581432,
+      "diagram_png": "diagrams/54_short21_c_no_c4.png",
+      "diagram_svg": "diagrams/54_short21_c_no_c4.svg",
+      "zip": "packages/54_short21_c_no_c4_code.zip",
+      "zip_bytes": 7157381,
+      "zip_sha256": "2a115ccb0f836cb462afa6edbcaa28bb647a9b58228e8c99b23179cc09509686"
+    },
+    {
+      "id": "55_short21_c_no_query",
+      "name": "21 组短训 / Champion：取消细几何查询",
+      "family": "champion",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_no_query/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_no_query"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_no_query",
+        "route": "champion",
+        "ablate": "query",
+        "label": "Champion · 禁用精细几何查询",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_query\\initial.pt",
+          "bytes": 105384405
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_query\\last.pt",
+          "bytes": 272279991
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581459,
+      "diagram_png": "diagrams/55_short21_c_no_query.png",
+      "diagram_svg": "diagrams/55_short21_c_no_query.svg",
+      "zip": "packages/55_short21_c_no_query_code.zip",
+      "zip_bytes": 7160153,
+      "zip_sha256": "cccc962dde317aa59938c6131b22a9108199b18d2aae7595dde0c1be1e32d799"
+    },
+    {
+      "id": "56_short21_c_fixed_width",
+      "name": "21 组短训 / Champion：固定界面宽度",
+      "family": "champion",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_fixed_width/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_fixed_width"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_fixed_width",
+        "route": "champion",
+        "ablate": "width",
+        "label": "Champion · 固定界面宽度",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_fixed_width\\initial.pt",
+          "bytes": 106161333
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_fixed_width\\last.pt",
+          "bytes": 274612407
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581457,
+      "diagram_png": "diagrams/56_short21_c_fixed_width.png",
+      "diagram_svg": "diagrams/56_short21_c_fixed_width.svg",
+      "zip": "packages/56_short21_c_fixed_width_code.zip",
+      "zip_bytes": 7158965,
+      "zip_sha256": "b8fefae7cf2d377ce8d1b423ec3eb5a61b2a1f5533538985255aad1ca9084c1c"
+    },
+    {
+      "id": "57_short21_c_front_only",
+      "name": "21 组短训 / Champion：只保留注意力前端输出",
+      "family": "champion",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_front_only/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_front_only"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_front_only",
+        "route": "champion",
+        "ablate": "backbone_query",
+        "label": "Champion · 仅注意力前端读出",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_front_only\\initial.pt",
+          "bytes": 106161333
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_front_only\\last.pt",
+          "bytes": 108668883
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581470,
+      "diagram_png": "diagrams/57_short21_c_front_only.png",
+      "diagram_svg": "diagrams/57_short21_c_front_only.svg",
+      "zip": "packages/57_short21_c_front_only_code.zip",
+      "zip_bytes": 7117631,
+      "zip_sha256": "f8159dca0e9dd031b8d6cae38e58330ccbd93b4a7907ed3ba5fb5e14b7d2d07c"
+    },
+    {
+      "id": "58_short21_c_no_image",
+      "name": "21 组短训 / Champion：图像支路输入置零",
+      "family": "champion",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_no_image/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_no_image"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_no_image",
+        "route": "champion",
+        "ablate": "image",
+        "label": "Champion · 禁用图像编码输入",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_image\\initial.pt",
+          "bytes": 106161333
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_image\\last.pt",
+          "bytes": 274612407
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581458,
+      "diagram_png": "diagrams/58_short21_c_no_image.png",
+      "diagram_svg": "diagrams/58_short21_c_no_image.svg",
+      "zip": "packages/58_short21_c_no_image_code.zip",
+      "zip_bytes": 7161372,
+      "zip_sha256": "4ab8f3dacfcd8958b5f582f313617f859aae117fddd4140e2e874a66d8a15b68"
+    },
+    {
+      "id": "59_short21_c_no_voltage_encoder",
+      "name": "21 组短训 / Champion：骨干电压编码输出置零",
+      "family": "champion",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_no_voltage_encoder/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_no_voltage_encoder"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_no_voltage_encoder",
+        "route": "champion",
+        "ablate": "voltage_encoder",
+        "label": "Champion · 禁用电压编码分支",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_voltage_encoder\\initial.pt",
+          "bytes": 106161333
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_voltage_encoder\\last.pt",
+          "bytes": 274612407
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581479,
+      "diagram_png": "diagrams/59_short21_c_no_voltage_encoder.png",
+      "diagram_svg": "diagrams/59_short21_c_no_voltage_encoder.svg",
+      "zip": "packages/59_short21_c_no_voltage_encoder_code.zip",
+      "zip_bytes": 7168021,
+      "zip_sha256": "7bde6b051c324bf5a58e45f3f4df098a28052b453a04211e5a84eb3e5baf582c"
+    },
+    {
+      "id": "60_short21_c_no_bce",
+      "name": "21 组短训 / Champion：去除像素分类损失",
+      "family": "champion",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_no_bce/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_no_bce"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_no_bce",
+        "route": "champion",
+        "loss_ablate": "bce",
+        "label": "通用监督 · 去 BCE",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_bce\\initial.pt",
+          "bytes": 106161269
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_bce\\last.pt",
+          "bytes": 274612407
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581447,
+      "diagram_png": "diagrams/60_short21_c_no_bce.png",
+      "diagram_svg": "diagrams/60_short21_c_no_bce.svg",
+      "zip": "packages/60_short21_c_no_bce_code.zip",
+      "zip_bytes": 7183558,
+      "zip_sha256": "53e81d10872c34d5e513447b8a36da4c4cb5d00a6b853e3bcfb94f39e497ba6e"
+    },
+    {
+      "id": "61_short21_c_no_dice",
+      "name": "21 组短训 / Champion：去除区域重叠损失",
+      "family": "champion",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_no_dice/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_no_dice"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_no_dice",
+        "route": "champion",
+        "loss_ablate": "dice",
+        "label": "通用监督 · 去 Dice",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_dice\\initial.pt",
+          "bytes": 106161333
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_dice\\last.pt",
+          "bytes": 274612407
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581450,
+      "diagram_png": "diagrams/61_short21_c_no_dice.png",
+      "diagram_svg": "diagrams/61_short21_c_no_dice.svg",
+      "zip": "packages/61_short21_c_no_dice_code.zip",
+      "zip_bytes": 7181352,
+      "zip_sha256": "882adac070cfb516c6ca04377c60c0a4eae474b3389a794fe578bcf31e340ed0"
+    },
+    {
+      "id": "62_short21_c_no_material",
+      "name": "21 组短训 / Champion：去除材料监督损失",
+      "family": "champion",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_no_material/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_no_material"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_no_material",
+        "route": "champion",
+        "loss_ablate": "material",
+        "label": "通用监督 · 去材料损失",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_material\\initial.pt",
+          "bytes": 106161333
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_material\\last.pt",
+          "bytes": 274612407
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581466,
+      "diagram_png": "diagrams/62_short21_c_no_material.png",
+      "diagram_svg": "diagrams/62_short21_c_no_material.svg",
+      "zip": "packages/62_short21_c_no_material_code.zip",
+      "zip_bytes": 7181057,
+      "zip_sha256": "ce5b94c06c45f7f2f031c159307f18525d85a7314705c48706a877117b6c37ee"
+    },
+    {
+      "id": "63_short21_c_adaptive",
+      "name": "21 组短训 / Champion + 自适应反馈",
+      "family": "champion_loop",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_adaptive/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_adaptive"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_adaptive",
+        "route": "champion",
+        "loop": "adaptive",
+        "label": "完整 Champion + 动态 K 反馈",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_adaptive\\initial.pt",
+          "bytes": 106161333
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_adaptive\\last.pt",
+          "bytes": 317019645
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581453,
+      "diagram_png": "diagrams/63_short21_c_adaptive.png",
+      "diagram_svg": "diagrams/63_short21_c_adaptive.svg",
+      "zip": "packages/63_short21_c_adaptive_code.zip",
+      "zip_bytes": 7284292,
+      "zip_sha256": "a5d26bd172a02956a681e00294a17d2b1ebc3b723f9997663735421f65a54611"
+    },
+    {
+      "id": "64_short21_c_fixed3",
+      "name": "21 组短训 / Champion + 固定三轮反馈",
+      "family": "champion_loop",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_fixed3/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_fixed3"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_fixed3",
+        "route": "champion",
+        "loop": "fixed3",
+        "label": "完整 Champion + 固定 K=3",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_fixed3\\initial.pt",
+          "bytes": 106161269
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_fixed3\\last.pt",
+          "bytes": 317019645
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581444,
+      "diagram_png": "diagrams/64_short21_c_fixed3.png",
+      "diagram_svg": "diagrams/64_short21_c_fixed3.svg",
+      "zip": "packages/64_short21_c_fixed3_code.zip",
+      "zip_bytes": 7278453,
+      "zip_sha256": "c09af044bca28bf6045f43242d710ed75e5d5743c9651d780b712ae02a0041a6"
+    },
+    {
+      "id": "65_short21_c_no_hint",
+      "name": "21 组短训 / 自适应 Champion：空间提示置零",
+      "family": "champion_loop",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_no_hint/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_no_hint"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_no_hint",
+        "route": "champion",
+        "loop": "adaptive",
+        "ablate": "hint",
+        "label": "动态反馈 · 禁用伴随提示",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_hint\\initial.pt",
+          "bytes": 106161333
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_hint\\last.pt",
+          "bytes": 317019709
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581480,
+      "diagram_png": "diagrams/65_short21_c_no_hint.png",
+      "diagram_svg": "diagrams/65_short21_c_no_hint.svg",
+      "zip": "packages/65_short21_c_no_hint_code.zip",
+      "zip_bytes": 7285414,
+      "zip_sha256": "aa964c9d0f79d7555f446e6b24be66c07b826d13dea587e9d73e0aa03b47b394"
+    },
+    {
+      "id": "66_short21_c_no_residual",
+      "name": "21 组短训 / 自适应 Champion：残差输入置零",
+      "family": "champion_loop",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_no_residual/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_no_residual"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_no_residual",
+        "route": "champion",
+        "loop": "adaptive",
+        "ablate": "residual",
+        "label": "动态反馈 · 禁用残差输入",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_residual\\initial.pt",
+          "bytes": 106161333
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_residual\\last.pt",
+          "bytes": 317019709
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581489,
+      "diagram_png": "diagrams/66_short21_c_no_residual.png",
+      "diagram_svg": "diagrams/66_short21_c_no_residual.svg",
+      "zip": "packages/66_short21_c_no_residual_code.zip",
+      "zip_bytes": 7291863,
+      "zip_sha256": "69213863bcccc8de236933300edb305324faee4f4c06b058f003b8eacae19da4"
+    },
+    {
+      "id": "67_short21_c_no_physics_loss",
+      "name": "21 组短训 / 自适应 Champion：去除电压残差损失",
+      "family": "champion_loop",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_no_physics_loss/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_no_physics_loss"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_no_physics_loss",
+        "route": "champion",
+        "loop": "adaptive",
+        "loss_ablate": "physics",
+        "label": "动态反馈 · 去物理损失",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_physics_loss\\initial.pt",
+          "bytes": 106161333
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_physics_loss\\last.pt",
+          "bytes": 317019709
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581488,
+      "diagram_png": "diagrams/67_short21_c_no_physics_loss.png",
+      "diagram_svg": "diagrams/67_short21_c_no_physics_loss.svg",
+      "zip": "packages/67_short21_c_no_physics_loss_code.zip",
+      "zip_bytes": 7308059,
+      "zip_sha256": "0dac98667e42f714501205deb31db0182ee3aaa264bb8955dd187d68afcda4ca"
+    },
+    {
+      "id": "68_short21_c_no_auxiliary",
+      "name": "21 组短训 / 自适应 Champion：去除中间监督",
+      "family": "champion_loop",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/c_no_auxiliary/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/c_no_auxiliary"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "c_no_auxiliary",
+        "route": "champion",
+        "loop": "adaptive",
+        "loss_ablate": "auxiliary",
+        "label": "动态反馈 · 去中间监督",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_auxiliary\\initial.pt",
+          "bytes": 106161333
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_no_auxiliary\\last.pt",
+          "bytes": 317019709
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581487,
+      "diagram_png": "diagrams/68_short21_c_no_auxiliary.png",
+      "diagram_svg": "diagrams/68_short21_c_no_auxiliary.svg",
+      "zip": "packages/68_short21_c_no_auxiliary_code.zip",
+      "zip_bytes": 7304459,
+      "zip_sha256": "a65356feefe72d984647c9ea607abfb388edff42fc197b6b4863509e174de3fd"
+    },
+    {
+      "id": "69_short21_p_adaptive",
+      "name": "21 组短训 / 投影四方向网络 + 自适应反馈",
+      "family": "projection_loop",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1"
+      ],
+      "evidence": [
+        "short_selection_v1/protocol.json",
+        "short_selection_v1/completion_v2/execution_addendum.json",
+        "short_selection_v1/runs/p_adaptive/complete.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/p_adaptive"
+      ],
+      "category": "短训消融",
+      "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+      "config": {
+        "id": "p_adaptive",
+        "route": "projection",
+        "loop": "adaptive",
+        "label": "物理投影 + 通用场 + 动态反馈",
+        "pool": true,
+        "short21": true
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_short_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\p_adaptive\\initial.pt",
+          "bytes": 102475037
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\p_adaptive\\last.pt",
+          "bytes": 215679006
+        }
+      ],
+      "source_file_count": 2016,
+      "source_bytes": 20581468,
+      "diagram_png": "diagrams/69_short21_p_adaptive.png",
+      "diagram_svg": "diagrams/69_short21_p_adaptive.svg",
+      "zip": "packages/69_short21_p_adaptive_code.zip",
+      "zip_bytes": 7249603,
+      "zip_sha256": "6e4dd71443fcc1f6af452348ad3a0f50a27769b1f98f0e47e31f1e8f92f49092"
+    },
+    {
+      "id": "70_release_v1",
+      "name": "历史短训发布快照 v1（已取代）",
+      "family": "champion_loop",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1",
+        "eit_short_release_v1"
+      ],
+      "evidence": [
+        "eit_short_release_v1/README.md"
+      ],
+      "outputs": [
+        "eit_short_release_v1",
+        "short_selection_v1/runs/c_adaptive"
+      ],
+      "category": "发布别名",
+      "note": "发布快照不是新增架构，更不是本次跨轮次最终最优结论；保留原 SUPERSEDED 标记。",
+      "config": {
+        "loop": "adaptive",
+        "ablate": "none"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_short_release_v1/infer.py",
+      "alias": "63_short21_c_adaptive",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_adaptive\\initial.pt",
+          "bytes": 106161333
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_adaptive\\last.pt",
+          "bytes": 317019645
+        }
+      ],
+      "source_file_count": 2020,
+      "source_bytes": 20721239,
+      "diagram_png": "diagrams/70_release_v1.png",
+      "diagram_svg": "diagrams/70_release_v1.svg",
+      "zip": "packages/70_release_v1_code.zip",
+      "zip_bytes": 7418637,
+      "zip_sha256": "a6f05e70f94f7b2009da5db7b77c3da302523e76b35cae038a5cb5e72a3f9434"
+    },
+    {
+      "id": "71_release_v2",
+      "name": "历史短训发布快照 v2（已取代）",
+      "family": "champion_loop",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1",
+        "eit_short_release_v2"
+      ],
+      "evidence": [
+        "eit_short_release_v2/README.md"
+      ],
+      "outputs": [
+        "eit_short_release_v2",
+        "short_selection_v1/runs/c_adaptive"
+      ],
+      "category": "发布别名",
+      "note": "发布快照不是新增架构，更不是本次跨轮次最终最优结论；保留原 SUPERSEDED 标记。",
+      "config": {
+        "loop": "adaptive",
+        "ablate": "none"
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_short_release_v2/infer.py",
+      "alias": "63_short21_c_adaptive",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_adaptive\\initial.pt",
+          "bytes": 106161333
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\c_adaptive\\last.pt",
+          "bytes": 317019645
+        }
+      ],
+      "source_file_count": 2020,
+      "source_bytes": 20724548,
+      "diagram_png": "diagrams/71_release_v2.png",
+      "diagram_svg": "diagrams/71_release_v2.svg",
+      "zip": "packages/71_release_v2_code.zip",
+      "zip_bytes": 7420495,
+      "zip_sha256": "66d90fba24052d52b64cdcd742af88ead668d681f3f33dde7b683968e2b9f378"
+    },
+    {
+      "id": "72_old_champion_oc_fixed3",
+      "name": "8 组共同底座 / 旧 V4 闭环 + Champion，固定三轮",
+      "family": "combined",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1",
+        "eit_old_champion_selection_v1",
+        "eit_execution_accel_v5",
+        "eit_short_release_v2"
+      ],
+      "evidence": [
+        "old_champion_selection_v1/protocol.json",
+        "old_champion_selection_v1/CROSS_ROUND_SELECTION_ADDENDUM_20261025.md",
+        "old_champion_selection_v1/runs/oc_fixed3/complete.json"
+      ],
+      "outputs": [
+        "old_champion_selection_v1/runs/oc_fixed3"
+      ],
+      "category": "共同底座短训",
+      "note": "完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。",
+      "config": {
+        "id": "oc_fixed3",
+        "projection": false,
+        "loop": "fixed3"
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_old_champion_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\oc_fixed3\\initial.pt",
+          "bytes": 196048045
+        },
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\oc_fixed3\\last.pt",
+          "bytes": 586603805
+        }
+      ],
+      "source_file_count": 2043,
+      "source_bytes": 20817497,
+      "diagram_png": "diagrams/72_old_champion_oc_fixed3.png",
+      "diagram_svg": "diagrams/72_old_champion_oc_fixed3.svg",
+      "zip": "packages/72_old_champion_oc_fixed3_code.zip",
+      "zip_bytes": 7408585,
+      "zip_sha256": "b48138d80d9d2690299798414f132e6e05e972d0a0a233f3bece2253d78dabd3"
+    },
+    {
+      "id": "73_old_champion_oc_adaptive",
+      "name": "8 组共同底座 / 旧 V4 闭环 + Champion，自适应",
+      "family": "combined",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1",
+        "eit_old_champion_selection_v1",
+        "eit_execution_accel_v5",
+        "eit_short_release_v2"
+      ],
+      "evidence": [
+        "old_champion_selection_v1/protocol.json",
+        "old_champion_selection_v1/CROSS_ROUND_SELECTION_ADDENDUM_20261025.md",
+        "old_champion_selection_v1/runs/oc_adaptive/complete.json"
+      ],
+      "outputs": [
+        "old_champion_selection_v1/runs/oc_adaptive"
+      ],
+      "category": "共同底座短训",
+      "note": "完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。",
+      "config": {
+        "id": "oc_adaptive",
+        "projection": false,
+        "loop": "adaptive"
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_old_champion_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\oc_adaptive\\initial.pt",
+          "bytes": 196048045
+        },
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\oc_adaptive\\last.pt",
+          "bytes": 586603805
+        }
+      ],
+      "source_file_count": 2043,
+      "source_bytes": 20817500,
+      "diagram_png": "diagrams/73_old_champion_oc_adaptive.png",
+      "diagram_svg": "diagrams/73_old_champion_oc_adaptive.svg",
+      "zip": "packages/73_old_champion_oc_adaptive_code.zip",
+      "zip_bytes": 7417031,
+      "zip_sha256": "dd965373f5762e384f8dce997714a638fc9b42a106a1048c976aa554de3197d8"
+    },
+    {
+      "id": "74_old_champion_ocp_fixed3",
+      "name": "8 组共同底座 / 旧 V4 闭环 + Champion + 投影，固定三轮",
+      "family": "combined",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1",
+        "eit_old_champion_selection_v1",
+        "eit_execution_accel_v5",
+        "eit_short_release_v2"
+      ],
+      "evidence": [
+        "old_champion_selection_v1/protocol.json",
+        "old_champion_selection_v1/CROSS_ROUND_SELECTION_ADDENDUM_20261025.md",
+        "old_champion_selection_v1/runs/ocp_fixed3/complete.json"
+      ],
+      "outputs": [
+        "old_champion_selection_v1/runs/ocp_fixed3"
+      ],
+      "category": "共同底座短训",
+      "note": "完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。",
+      "config": {
+        "id": "ocp_fixed3",
+        "projection": true,
+        "loop": "fixed3"
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_old_champion_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\ocp_fixed3\\initial.pt",
+          "bytes": 277287341
+        },
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\ocp_fixed3\\last.pt",
+          "bytes": 738634077
+        }
+      ],
+      "source_file_count": 2043,
+      "source_bytes": 20817494,
+      "diagram_png": "diagrams/74_old_champion_ocp_fixed3.png",
+      "diagram_svg": "diagrams/74_old_champion_ocp_fixed3.svg",
+      "zip": "packages/74_old_champion_ocp_fixed3_code.zip",
+      "zip_bytes": 7424416,
+      "zip_sha256": "d2e42d2dea1776b1ab4c0e8bed7125a1cdfa6dd57b11f4795e342ab4de5f6551"
+    },
+    {
+      "id": "75_old_champion_ocp_adaptive",
+      "name": "8 组共同底座 / 旧 V4 闭环 + Champion + 投影，自适应",
+      "family": "combined",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1",
+        "eit_old_champion_selection_v1",
+        "eit_execution_accel_v5",
+        "eit_short_release_v2"
+      ],
+      "evidence": [
+        "old_champion_selection_v1/protocol.json",
+        "old_champion_selection_v1/CROSS_ROUND_SELECTION_ADDENDUM_20261025.md",
+        "old_champion_selection_v1/runs/ocp_adaptive/complete.json"
+      ],
+      "outputs": [
+        "old_champion_selection_v1/runs/ocp_adaptive"
+      ],
+      "category": "共同底座短训",
+      "note": "完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。",
+      "config": {
+        "id": "ocp_adaptive",
+        "projection": true,
+        "loop": "adaptive"
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_old_champion_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\ocp_adaptive\\initial.pt",
+          "bytes": 277287341
+        },
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\ocp_adaptive\\last.pt",
+          "bytes": 738634077
+        }
+      ],
+      "source_file_count": 2043,
+      "source_bytes": 20817498,
+      "diagram_png": "diagrams/75_old_champion_ocp_adaptive.png",
+      "diagram_svg": "diagrams/75_old_champion_ocp_adaptive.svg",
+      "zip": "packages/75_old_champion_ocp_adaptive_code.zip",
+      "zip_bytes": 7432410,
+      "zip_sha256": "341913e79f3295b46e994b21697d157ea8e88dab7c3c7ad0401a70bafcd2323c"
+    },
+    {
+      "id": "76_old_champion_selected_no_hint",
+      "name": "8 组共同底座 / 选中共同底座：空间提示置零",
+      "family": "combined",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1",
+        "eit_old_champion_selection_v1",
+        "eit_execution_accel_v5",
+        "eit_short_release_v2"
+      ],
+      "evidence": [
+        "old_champion_selection_v1/protocol.json",
+        "old_champion_selection_v1/CROSS_ROUND_SELECTION_ADDENDUM_20261025.md",
+        "old_champion_selection_v1/runs/selected_no_hint/complete.json"
+      ],
+      "outputs": [
+        "old_champion_selection_v1/runs/selected_no_hint"
+      ],
+      "category": "共同底座短训",
+      "note": "完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。",
+      "config": {
+        "id": "selected_no_hint",
+        "projection": true,
+        "loop": "adaptive",
+        "ablate": "hint"
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_old_champion_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\selected_no_hint\\initial.pt",
+          "bytes": 277287341
+        },
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\selected_no_hint\\last.pt",
+          "bytes": 738634077
+        }
+      ],
+      "source_file_count": 2043,
+      "source_bytes": 20817524,
+      "diagram_png": "diagrams/76_old_champion_selected_no_hint.png",
+      "diagram_svg": "diagrams/76_old_champion_selected_no_hint.svg",
+      "zip": "packages/76_old_champion_selected_no_hint_code.zip",
+      "zip_bytes": 7429350,
+      "zip_sha256": "6e9503ba5fc8cede966b4fbecf6dbdb1c15e966021a32a5ad97c1624db42afd4"
+    },
+    {
+      "id": "77_old_champion_selected_no_residual",
+      "name": "8 组共同底座 / 选中共同底座：残差输入置零",
+      "family": "combined",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1",
+        "eit_old_champion_selection_v1",
+        "eit_execution_accel_v5",
+        "eit_short_release_v2"
+      ],
+      "evidence": [
+        "old_champion_selection_v1/protocol.json",
+        "old_champion_selection_v1/CROSS_ROUND_SELECTION_ADDENDUM_20261025.md",
+        "old_champion_selection_v1/runs/selected_no_residual/complete.json"
+      ],
+      "outputs": [
+        "old_champion_selection_v1/runs/selected_no_residual"
+      ],
+      "category": "共同底座短训",
+      "note": "完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。",
+      "config": {
+        "id": "selected_no_residual",
+        "projection": true,
+        "loop": "adaptive",
+        "ablate": "residual"
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_old_champion_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\selected_no_residual\\initial.pt",
+          "bytes": 277287341
+        },
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\selected_no_residual\\last.pt",
+          "bytes": 738634141
+        }
+      ],
+      "source_file_count": 2043,
+      "source_bytes": 20817533,
+      "diagram_png": "diagrams/77_old_champion_selected_no_residual.png",
+      "diagram_svg": "diagrams/77_old_champion_selected_no_residual.svg",
+      "zip": "packages/77_old_champion_selected_no_residual_code.zip",
+      "zip_bytes": 7434968,
+      "zip_sha256": "c36dc0d97d3d4b1b791ddc83a8950d3ed351bf00f56d9a3bb57599b1461c093d"
+    },
+    {
+      "id": "78_old_champion_selected_no_physics",
+      "name": "8 组共同底座 / 选中共同底座：去除物理损失",
+      "family": "combined",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1",
+        "eit_old_champion_selection_v1",
+        "eit_execution_accel_v5",
+        "eit_short_release_v2"
+      ],
+      "evidence": [
+        "old_champion_selection_v1/protocol.json",
+        "old_champion_selection_v1/CROSS_ROUND_SELECTION_ADDENDUM_20261025.md",
+        "old_champion_selection_v1/runs/selected_no_physics/complete.json"
+      ],
+      "outputs": [
+        "old_champion_selection_v1/runs/selected_no_physics"
+      ],
+      "category": "共同底座短训",
+      "note": "完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。",
+      "config": {
+        "id": "selected_no_physics",
+        "projection": true,
+        "loop": "adaptive",
+        "ablate": "physics"
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_old_champion_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\selected_no_physics\\initial.pt",
+          "bytes": 277287341
+        },
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\selected_no_physics\\last.pt",
+          "bytes": 738634077
+        }
+      ],
+      "source_file_count": 2043,
+      "source_bytes": 20817530,
+      "diagram_png": "diagrams/78_old_champion_selected_no_physics.png",
+      "diagram_svg": "diagrams/78_old_champion_selected_no_physics.svg",
+      "zip": "packages/78_old_champion_selected_no_physics_code.zip",
+      "zip_bytes": 7449583,
+      "zip_sha256": "bdfad3754b03cf0a7d80f2b4a5046d584d2618de304d2ed4bf0205b03ae09be6"
+    },
+    {
+      "id": "79_old_champion_selected_no_auxiliary",
+      "name": "8 组共同底座 / 选中共同底座：去除中间监督",
+      "family": "combined",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1",
+        "eit_old_champion_selection_v1",
+        "eit_execution_accel_v5",
+        "eit_short_release_v2"
+      ],
+      "evidence": [
+        "old_champion_selection_v1/protocol.json",
+        "old_champion_selection_v1/CROSS_ROUND_SELECTION_ADDENDUM_20261025.md",
+        "old_champion_selection_v1/runs/selected_no_auxiliary/complete.json"
+      ],
+      "outputs": [
+        "old_champion_selection_v1/runs/selected_no_auxiliary"
+      ],
+      "category": "共同底座短训",
+      "note": "完整旧 V4 与原修正器未被替换；并联完整 Champion，投影版再加独立完整支路。动态轮数只控制旧闭环，融合后另算 FEM。",
+      "config": {
+        "id": "selected_no_auxiliary",
+        "projection": true,
+        "loop": "adaptive",
+        "ablate": "auxiliary"
+      },
+      "status": "完整计算产物已登记",
+      "entry": "eit_old_champion_selection_v1/model.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\selected_no_auxiliary\\initial.pt",
+          "bytes": 277287341
+        },
+        {
+          "path": "E:\\Codex\\old_champion_selection_v1\\runs\\selected_no_auxiliary\\last.pt",
+          "bytes": 738634141
+        }
+      ],
+      "source_file_count": 2043,
+      "source_bytes": 20817535,
+      "diagram_png": "diagrams/79_old_champion_selected_no_auxiliary.png",
+      "diagram_svg": "diagrams/79_old_champion_selected_no_auxiliary.svg",
+      "zip": "packages/79_old_champion_selected_no_auxiliary_code.zip",
+      "zip_bytes": 7447404,
+      "zip_sha256": "7fa6a45640a287ea9383d6524aaeb71276c6faa84fbea1907118caf45c7e8968"
+    },
+    {
+      "id": "80_final_A_phase3_seed25",
+      "name": "最终候选 A：历史 phase3 独立版",
+      "family": "projection",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "model_packages_20261028/phase3_seed20261025"
+      ],
+      "evidence": [
+        "model_packages_20261028/phase3_seed20261025/config.json"
+      ],
+      "outputs": [
+        "shape_generalization_v1/phase3/runs/physical_c4_seed20261025",
+        "model_packages_20261028/phase3_seed20261025"
+      ],
+      "category": "选定检查点",
+      "note": "选定 seed20261025 的 best；单次推理。与 B 的父权重、种子和训练历史不同，不能当成纯方向融合消融。",
+      "config": {
+        "pool": false,
+        "train_c4": true
+      },
+      "status": "历史源码／记录归档",
+      "entry": "model_packages_20261028/phase3_seed20261025/infer.py",
+      "alias": "44_shape3_physical_c4",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\best.pt",
+          "bytes": 152019680
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\best_guarded.pt",
+          "bytes": 151976120
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\last.pt",
+          "bytes": 152044960
+        },
+        {
+          "path": "E:\\Codex\\model_packages_20261028\\phase3_seed20261025\\weights\\best.pt",
+          "bytes": 152019680
+        }
+      ],
+      "source_file_count": 2035,
+      "source_bytes": 21085102,
+      "diagram_png": "diagrams/80_final_A_phase3_seed25.png",
+      "diagram_svg": "diagrams/80_final_A_phase3_seed25.svg",
+      "zip": "packages/80_final_A_phase3_seed25_code.zip",
+      "zip_bytes": 7262143,
+      "zip_sha256": "dd8eb769efa4d5d2e367e7eb58bcc9ab05a1e5c46889e804599a9653bdfb67f7"
+    },
+    {
+      "id": "81_final_B_p_full_initial",
+      "name": "最终候选 B：p_full 预训练初始版",
+      "family": "projection",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_final_c4_loop",
+        "eit_champion_loop_v2",
+        "eit_champion_adaptive_v3",
+        "eit_short_selection_v1",
+        "eit_short_completion_v1",
+        "model_packages_20261028/p_full_initial"
+      ],
+      "evidence": [
+        "short_selection_v1/runs/p_full/complete.json",
+        "model_packages_20261028/p_full_initial/config.json"
+      ],
+      "outputs": [
+        "short_selection_v1/runs/p_full",
+        "model_packages_20261028/p_full_initial"
+      ],
+      "category": "选定检查点",
+      "note": "选定 initial.pt；源于 seed20261023 父模型。四方向共用权重，先对齐并平均形状及材料潜在输出，再转换为数值。",
+      "config": {
+        "pool": true
+      },
+      "status": "历史源码／记录归档",
+      "entry": "model_packages_20261028/p_full_initial/infer.py",
+      "alias": "50_short21_p_full",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\p_full\\initial.pt",
+          "bytes": 102475037
+        },
+        {
+          "path": "E:\\Codex\\short_selection_v1\\runs\\p_full\\last.pt",
+          "bytes": 173271704
+        },
+        {
+          "path": "E:\\Codex\\model_packages_20261028\\p_full_initial\\weights\\initial.pt",
+          "bytes": 102475037
+        }
+      ],
+      "source_file_count": 2299,
+      "source_bytes": 22818491,
+      "diagram_png": "diagrams/81_final_B_p_full_initial.png",
+      "diagram_svg": "diagrams/81_final_B_p_full_initial.svg",
+      "zip": "packages/81_final_B_p_full_initial_code.zip",
+      "zip_bytes": 7926027,
+      "zip_sha256": "ffe4d82bb9115c27fbce2512d95d54b02a862c7d63ad67dff35ed901fd57a6cc"
+    },
+    {
+      "id": "82_A_same_weight_c4",
+      "name": "A 的同权重四方向推理验证版",
+      "family": "projection",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_c4_same_weight_validation_v1"
+      ],
+      "evidence": [],
+      "outputs": [
+        "c4_same_weight_validation_v1",
+        "c4_same_weight_validation_v2",
+        "shape_generalization_v1/phase3/runs/physical_c4_seed20261025"
+      ],
+      "category": "推理配置对照",
+      "note": "固定 A 权重，只改变推理包装；不同于 B 的父模型，也不是新训练。",
+      "config": {
+        "pool": true,
+        "train_c4": true
+      },
+      "status": "历史源码／记录归档",
+      "entry": "eit_c4_same_weight_validation_v1",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\best.pt",
+          "bytes": 152019680
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\best_guarded.pt",
+          "bytes": 151976120
+        },
+        {
+          "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_c4_seed20261025\\last.pt",
+          "bytes": 152044960
+        }
+      ],
+      "source_file_count": 1880,
+      "source_bytes": 19861294,
+      "diagram_png": "diagrams/82_A_same_weight_c4.png",
+      "diagram_svg": "diagrams/82_A_same_weight_c4.svg",
+      "zip": "packages/82_A_same_weight_c4_code.zip",
+      "zip_bytes": 6816161,
+      "zip_sha256": "9143898605af37890fcc83e92700d5b9a71a419dd07ef7255234a7abcd03f0e9"
+    },
+    {
+      "id": "83_phase3_c4_long",
+      "name": "phase3 四方向继续训练冻结版",
+      "family": "projection",
+      "sources": [
+        "eit_reproduction",
+        "eit_experiment_control",
+        "eit_protrusion_study",
+        "eit_shape_general",
+        "eit_phase3_c4_long_v1",
+        "phase3_c4_long_release_v1"
+      ],
+      "evidence": [
+        "eit_phase3_c4_long_v1/README.md",
+        "phase3_c4_long_release_v1/README.md"
+      ],
+      "outputs": [
+        "phase3_c4_long_v1",
+        "phase3_c4_long_release_v1"
+      ],
+      "category": "后续训练版本",
+      "note": "从 A 的历史权重继续训练；训练每例一个旋转，验证／推理四方向。保存的冻结版本与 A、B 均需区分；归档不恢复训练。",
+      "config": {
+        "pool": true,
+        "train_c4": true
+      },
+      "status": "历史源码／记录归档",
+      "entry": "phase3_c4_long_release_v1/infer.py",
+      "alias": "",
+      "missing_references": [],
+      "entry_exists": true,
+      "weight_locations": [
+        {
+          "path": "E:\\Codex\\phase3_c4_long_v1\\best.pt",
+          "bytes": 81122177
+        },
+        {
+          "path": "E:\\Codex\\phase3_c4_long_v1\\last.pt",
+          "bytes": 151979038
+        },
+        {
+          "path": "E:\\Codex\\phase3_c4_long_v1\\checkpoints\\epoch_0000.pt",
+          "bytes": 81122177
+        },
+        {
+          "path": "E:\\Codex\\phase3_c4_long_v1\\checkpoints\\epoch_0004.pt",
+          "bytes": 81122177
+        },
+        {
+          "path": "E:\\Codex\\phase3_c4_long_v1\\checkpoints\\epoch_0011.pt",
+          "bytes": 81122177
+        },
+        {
+          "path": "E:\\Codex\\phase3_c4_long_v1\\checkpoints\\epoch_0012.pt",
+          "bytes": 81122177
+        },
+        {
+          "path": "E:\\Codex\\phase3_c4_long_release_v1\\model.pt",
+          "bytes": 81122177
+        }
+      ],
+      "source_file_count": 1882,
+      "source_bytes": 19855499,
+      "diagram_png": "diagrams/83_phase3_c4_long.png",
+      "diagram_svg": "diagrams/83_phase3_c4_long.svg",
+      "zip": "packages/83_phase3_c4_long_code.zip",
+      "zip_bytes": 6819302,
+      "zip_sha256": "30de5a066f93f907bc64e9e1e9026271194bc16261d0e6e76c609514755fc7d1"
+    }
+  ]
+}

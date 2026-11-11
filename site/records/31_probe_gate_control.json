@@ -1,0 +1,52 @@
+{
+  "id": "31_probe_gate_control",
+  "name": "外凸诊断：预测边界带内的门控修正",
+  "family": "probe",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study"
+  ],
+  "evidence": [
+    "protrusion_study_v1/selection.json"
+  ],
+  "outputs": [
+    "protrusion_study_v1/localization_probe"
+  ],
+  "category": "诊断候选",
+  "note": "不是最终冻结模型。真值局部区域只用于训练／评价，不作为推理输入；单独读出实验不等于已通过完整闭环验证。",
+  "config": {
+    "variant": "gate_control",
+    "kind": "gate"
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_protrusion_study/localization_probe.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\localization_probe\\gate_control_seed20261022\\best.pt",
+      "bytes": 151241
+    },
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\localization_probe\\gate_control_seed20261022\\last.pt",
+      "bytes": 467177
+    },
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\localization_probe\\gate_control_seed20261023\\best.pt",
+      "bytes": 151241
+    },
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\localization_probe\\gate_control_seed20261023\\last.pt",
+      "bytes": 467177
+    }
+  ],
+  "source_file_count": 1830,
+  "source_bytes": 19528059,
+  "diagram_png": "diagrams/31_probe_gate_control.png",
+  "diagram_svg": "diagrams/31_probe_gate_control.svg",
+  "zip": "packages/31_probe_gate_control_code.zip",
+  "zip_bytes": 6574795,
+  "zip_sha256": "18511b817873dd36e2694518191aa2ecac31f5924b28b8b9474855fa7f30a3d0"
+}

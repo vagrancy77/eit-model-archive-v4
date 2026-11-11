@@ -1,0 +1,54 @@
+{
+  "id": "42_shape2_dense64_boundary_extended",
+  "name": "通用形状第二阶段：高分辨率边界版延长训练",
+  "family": "shape_learned",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general"
+  ],
+  "evidence": [
+    "shape_generalization_v1/phase2/protocol.json"
+  ],
+  "outputs": [
+    "shape_generalization_v1/phase2/runs/dense64_boundary_extended_seed20261023",
+    "shape_generalization_v1/phase2/runs/dense64_boundary_extended_seed20261024"
+  ],
+  "category": "表示／训练对照",
+  "note": "沿用第一阶段的学习式测量到空间映射，延长训练；本项没有固定物理投影或在线 FEM。",
+  "config": {
+    "variant": "dense64_boundary_extended",
+    "pool": false
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_shape_general/phase2.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\dense64_boundary_extended_seed20261023\\best.pt",
+      "bytes": 179708804
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\dense64_boundary_extended_seed20261023\\last.pt",
+      "bytes": 179752580
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\dense64_boundary_extended_seed20261024\\best.pt",
+      "bytes": 179707780
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase2\\runs\\dense64_boundary_extended_seed20261024\\last.pt",
+      "bytes": 179752580
+    }
+  ],
+  "source_file_count": 1876,
+  "source_bytes": 19820770,
+  "diagram_png": "diagrams/42_shape2_dense64_boundary_extended.png",
+  "diagram_svg": "diagrams/42_shape2_dense64_boundary_extended.svg",
+  "zip": "packages/42_shape2_dense64_boundary_extended_code.zip",
+  "zip_bytes": 6745134,
+  "zip_sha256": "44e6dac921aab0af347f691b153ee810f8fba5ae3691f7e09a261f5d6c762adf"
+}

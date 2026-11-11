@@ -1,0 +1,62 @@
+{
+  "id": "06_v4_3872_amplitude",
+  "name": "V4 / 3872 数据：仅幅值",
+  "family": "native",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_complex_information_study_20261013"
+  ],
+  "evidence": [
+    "eit_complex_information_study_20261013/EXPERIMENT_README.md",
+    "eit_complex_information_study_20261013/runs/controlled_v2/protocol.json"
+  ],
+  "outputs": [
+    "eit_complex_information_study_20261013/runs/controlled_v2"
+  ],
+  "category": "输入对照",
+  "note": "3872 例数据上的输入受控研究；不是最终 4840 数据实验。",
+  "config": {
+    "input_mode": "amplitude",
+    "ablation": "full",
+    "dataset": 3872
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_complex_information_study_20261013/run_experiment.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\amplitude_seed20261013\\best.pt",
+      "bytes": 89811383
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\amplitude_seed20261013\\last.pt",
+      "bytes": 269046050
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\amplitude_seed20261014\\best.pt",
+      "bytes": 89816887
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\amplitude_seed20261014\\last.pt",
+      "bytes": 269045474
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\amplitude_seed20261015\\best.pt",
+      "bytes": 89800631
+    },
+    {
+      "path": "E:\\Codex\\eit_complex_information_study_20261013\\runs\\controlled_v2\\amplitude_seed20261015\\last.pt",
+      "bytes": 269045474
+    }
+  ],
+  "source_file_count": 1825,
+  "source_bytes": 19507264,
+  "diagram_png": "diagrams/06_v4_3872_amplitude.png",
+  "diagram_svg": "diagrams/06_v4_3872_amplitude.svg",
+  "zip": "packages/06_v4_3872_amplitude_code.zip",
+  "zip_bytes": 6646376,
+  "zip_sha256": "618850c3efa8382c58325cadccf33233a1b0404c22c3158fd2c279f66a917807"
+}

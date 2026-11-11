@@ -1,0 +1,52 @@
+{
+  "id": "33_probe_k3_integration",
+  "name": "局部概率修正接入旧 K3 的验证版",
+  "family": "probe_k3",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study"
+  ],
+  "evidence": [
+    "protrusion_study_v1/selection.json",
+    "protrusion_study_v1/integration_protocol.json"
+  ],
+  "outputs": [
+    "protrusion_study_v1/integration_validation",
+    "protrusion_study_v1/candidates/probability_local_seed20261022",
+    "complex_feedback_quick_v2"
+  ],
+  "category": "诊断组合",
+  "note": "probability_local 改初始几何并重新耦合材料，再接原 K3 修正器；不能视作重新联合训练的最佳模型。",
+  "config": {},
+  "status": "历史源码／记录归档",
+  "entry": "eit_protrusion_study/promotion.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\candidates\\probability_local_seed20261022\\best.pt",
+      "bytes": 301113
+    },
+    {
+      "path": "E:\\Codex\\protrusion_study_v1\\candidates\\probability_local_seed20261022\\last.pt",
+      "bytes": 308025
+    },
+    {
+      "path": "E:\\Codex\\complex_feedback_quick_v2\\best.pt",
+      "bytes": 333456541
+    },
+    {
+      "path": "E:\\Codex\\complex_feedback_quick_v2\\last.pt",
+      "bytes": 333459613
+    }
+  ],
+  "source_file_count": 1829,
+  "source_bytes": 19512907,
+  "diagram_png": "diagrams/33_probe_k3_integration.png",
+  "diagram_svg": "diagrams/33_probe_k3_integration.svg",
+  "zip": "packages/33_probe_k3_integration_code.zip",
+  "zip_bytes": 6684087,
+  "zip_sha256": "c6ef42606e766dc6aec4adea2c47d69b7ca13d7cd94cffaa9ce8c42e5eab3097"
+}

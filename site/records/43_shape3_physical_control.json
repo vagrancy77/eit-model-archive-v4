@@ -1,0 +1,47 @@
+{
+  "id": "43_shape3_physical_control",
+  "name": "通用形状第三阶段：固定投影：不加旋转训练对照",
+  "family": "projection",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general"
+  ],
+  "evidence": [
+    "shape_generalization_v1/phase3/protocol.json"
+  ],
+  "outputs": [
+    "shape_generalization_v1/phase3/runs/physical_control_seed20261023",
+    "shape_generalization_v1/phase3/runs/physical_control_seed20261024",
+    "shape_generalization_v1/phase3/runs/physical_control_seed20261025"
+  ],
+  "category": "主线",
+  "note": "physical_c4 名称中的四方向是训练增强；这一历史评估路径在推理时只有一次网络计算。",
+  "config": {
+    "pool": false,
+    "train_c4": false
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_shape_general/phase3.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_control_seed20261025\\best.pt",
+      "bytes": 151949024
+    },
+    {
+      "path": "E:\\Codex\\shape_generalization_v1\\phase3\\runs\\physical_control_seed20261025\\last.pt",
+      "bytes": 152014688
+    }
+  ],
+  "source_file_count": 1875,
+  "source_bytes": 19827206,
+  "diagram_png": "diagrams/43_shape3_physical_control.png",
+  "diagram_svg": "diagrams/43_shape3_physical_control.svg",
+  "zip": "packages/43_shape3_physical_control_code.zip",
+  "zip_bytes": 6788773,
+  "zip_sha256": "ac9647df3fa76083ab42236817de544986ca6d1b0ec095d29d7137dd25d6ee15"
+}

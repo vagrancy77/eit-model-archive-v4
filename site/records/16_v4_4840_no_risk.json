@@ -1,0 +1,62 @@
+{
+  "id": "16_v4_4840_no_risk",
+  "name": "V4 / 4840 正式对照：去除风险门控",
+  "family": "native",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control"
+  ],
+  "evidence": [
+    "eit_reproduction/outputs/final4840_paper_suite/protocol.json"
+  ],
+  "outputs": [
+    "eit_reproduction/outputs/final4840_paper_suite/runs/no_risk_seed20261016",
+    "eit_reproduction/outputs/final4840_paper_suite/runs/no_risk_seed20261017",
+    "eit_reproduction/outputs/final4840_paper_suite/runs/no_risk_seed20261018"
+  ],
+  "category": "输入／模块消融",
+  "note": "相同结构的不同种子留在同一项，不拆成新模型。默认未启用额外物理初始图输入。",
+  "config": {
+    "input_mode": "calibrated",
+    "ablation": "no_risk",
+    "dataset": 4840
+  },
+  "status": "历史源码／记录归档",
+  "entry": "eit_reproduction/comsol_v4/paper_train.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_risk_seed20261016\\best.pt",
+      "bytes": 268775807
+    },
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_risk_seed20261016\\last.pt",
+      "bytes": 268872767
+    },
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_risk_seed20261017\\best.pt",
+      "bytes": 268772607
+    },
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_risk_seed20261017\\last.pt",
+      "bytes": 268869503
+    },
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_risk_seed20261018\\best.pt",
+      "bytes": 268762815
+    },
+    {
+      "path": "E:\\Codex\\eit_reproduction\\outputs\\final4840_paper_suite\\runs\\no_risk_seed20261018\\last.pt",
+      "bytes": 268859775
+    }
+  ],
+  "source_file_count": 1808,
+  "source_bytes": 19383112,
+  "diagram_png": "diagrams/16_v4_4840_no_risk.png",
+  "diagram_svg": "diagrams/16_v4_4840_no_risk.svg",
+  "zip": "packages/16_v4_4840_no_risk_code.zip",
+  "zip_bytes": 6602968,
+  "zip_sha256": "e01ce60925ae8dc768f7535453d7ea42b0cbf7a07b7f7c25db1fcdeca51b2803"
+}

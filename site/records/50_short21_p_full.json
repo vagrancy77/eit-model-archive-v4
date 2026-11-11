@@ -1,0 +1,55 @@
+{
+  "id": "50_short21_p_full",
+  "name": "21 组短训 / 投影四方向网络，无反馈",
+  "family": "projection",
+  "sources": [
+    "eit_reproduction",
+    "eit_experiment_control",
+    "eit_protrusion_study",
+    "eit_shape_general",
+    "eit_final_c4_loop",
+    "eit_champion_loop_v2",
+    "eit_champion_adaptive_v3",
+    "eit_short_selection_v1",
+    "eit_short_completion_v1"
+  ],
+  "evidence": [
+    "short_selection_v1/protocol.json",
+    "short_selection_v1/completion_v2/execution_addendum.json",
+    "short_selection_v1/runs/p_full/complete.json"
+  ],
+  "outputs": [
+    "short_selection_v1/runs/p_full"
+  ],
+  "category": "短训消融",
+  "note": "各 256 次更新、batch 2；initial 是父模型预训练权重，不是随机初始化。初始／训练后都保留。原 18 小时限制已被用户取消，旧入口仅归档。",
+  "config": {
+    "id": "p_full",
+    "route": "projection",
+    "label": "物理投影 + 通用场 + C4",
+    "pool": true,
+    "short21": true
+  },
+  "status": "完整计算产物已登记",
+  "entry": "eit_short_selection_v1/model.py",
+  "alias": "",
+  "missing_references": [],
+  "entry_exists": true,
+  "weight_locations": [
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\p_full\\initial.pt",
+      "bytes": 102475037
+    },
+    {
+      "path": "E:\\Codex\\short_selection_v1\\runs\\p_full\\last.pt",
+      "bytes": 173271704
+    }
+  ],
+  "source_file_count": 2016,
+  "source_bytes": 20581429,
+  "diagram_png": "diagrams/50_short21_p_full.png",
+  "diagram_svg": "diagrams/50_short21_p_full.svg",
+  "zip": "packages/50_short21_p_full_code.zip",
+  "zip_bytes": 7123130,
+  "zip_sha256": "896ee2098cb9e0e53fafd2ce721a1d9d5fb3f59afdfeed228841599774042b64"
+}
